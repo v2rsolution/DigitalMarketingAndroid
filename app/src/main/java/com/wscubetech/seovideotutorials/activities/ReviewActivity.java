@@ -1,3 +1,4 @@
+/*Designed and Developed by V2R Solution*/
 package com.wscubetech.seovideotutorials.activities;
 
 import android.support.v4.view.ViewPager;
