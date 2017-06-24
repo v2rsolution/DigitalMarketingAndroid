@@ -28,10 +28,6 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private static final String TAG = MyFirebaseInstanceIDService.class.getSimpleName();
 
-    //Firebase console credentials
-    /*email:           wscubetechapp@gmail.com
-    password:        WIIP#ws%$#@! */
-
     UserModel userModel;
 
     @Override
