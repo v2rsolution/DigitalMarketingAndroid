@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash_screen"
+    tools:context=".activities.SplashActivity">
+
+    <LinearLayout
+        android:id="@+id/linMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgLogoSplash"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logo_splash"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtSplashTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="360DigitalGyan.com"
+                android:textColor="#fff"
+                android:textSize="26sp"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtDigital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="LEARN DIGITAL MARKETING"
+                android:textColor="@color/colorDarkBlue"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <me.itangqi.waveloadingview.WaveLoadingView
+        android:id="@+id/waveLoadingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:wlv_progressValue="26"
+        app:wlv_shapeType="rectangle"
+        app:wlv_waveAmplitude="28"
+        app:wlv_waveColor="#bbffffff"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:id="@+id/txtPowered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Powered by"
+            android:textColor="@color/colorTextGrey"
+            android:textSize="13sp"/>
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/splash_wscube_blue"/>
+
+
+    </LinearLayout>
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+        android:id="@+id/txtFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:padding="@dimen/dim_10"
+        android:text="SEO, SMO, SMM, SEM, SEARCH ENGINE WORKING "
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/font_size_14"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

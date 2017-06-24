@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorBackgroundGrey"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/dim_3"
+        android:paddingTop="@dimen/dim_5"
+        android:layout_above="@+id/relBottomAd"
+        android:layout_below="@+id/appBar"/>
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/dim_30"
+        android:layout_height="@dimen/dim_30"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dim_200"
+        android:visibility="gone"
+        app:matProg_barColor="@color/color_tile_2"
+        app:matProg_barWidth="@dimen/dim_3"
+        app:matProg_progressIndeterminate="true"/>
+
+    <include layout="@layout/content_empty_screen"/>
+
+</RelativeLayout>

@@ -1,0 +1,285 @@
+{
+    "desc_id": "5",
+    "description": "Manual testing is the process of manually testing software for defects. It requires a tester to play the role of an end user whereby they utilise most of the application's features to ensure correct behavior.",
+    "desc_title": "TESTING (Manual)",
+    "points": [
+        {
+            "points_id": "77",
+            "heading": "Software Application",
+            "points_desc_id": "5",
+            "point": [
+                {
+                    "data_id": "106",
+                    "data": "Basic components and characteristics of software application",
+                    "data_points_id": "77"
+                },
+                {
+                    "data_id": "107",
+                    "data": "Domain of software application",
+                    "data_points_id": "77"
+                },
+                {
+                    "data_id": "108",
+                    "data": "Application Architecture",
+                    "data_points_id": "77"
+                },
+                {
+                    "data_id": "109",
+                    "data": "Technologies used for application development",
+                    "data_points_id": "77"
+                },
+                {
+                    "data_id": "110",
+                    "data": "Application service module",
+                    "data_points_id": "77"
+                },
+                {
+                    "data_id": "111",
+                    "data": "Describe and Identify the types of user and their generic expectation from the application",
+                    "data_points_id": "77"
+                }
+            ]
+        },
+        {
+            "points_id": "78",
+            "heading": "Development of software application",
+            "points_desc_id": "5",
+            "point": [
+                {
+                    "data_id": "112",
+                    "data": "Describe SDLC with Phases",
+                    "data_points_id": "78"
+                },
+                {
+                    "data_id": "113",
+                    "data": "Deliverables of SDLC phases",
+                    "data_points_id": "78"
+                },
+                {
+                    "data_id": "114",
+                    "data": "Identify Project Team",
+                    "data_points_id": "78"
+                },
+                {
+                    "data_id": "115",
+                    "data": "Identify Testing Team with their roles",
+                    "data_points_id": "78"
+                },
+                {
+                    "data_id": "116",
+                    "data": "Possible issues in an application",
+                    "data_points_id": "78"
+                }
+            ]
+        },
+        {
+            "points_id": "79",
+            "heading": "Introduction to software testing",
+            "points_desc_id": "5",
+            "point": [
+                {
+                    "data_id": "117",
+                    "data": "Role of Software Tester",
+                    "data_points_id": "79"
+                },
+                {
+                    "data_id": "118",
+                    "data": "Define and state the software testing",
+                    "data_points_id": "79"
+                },
+                {
+                    "data_id": "119",
+                    "data": "Explain Waterfall Model",
+                    "data_points_id": "79"
+                },
+                {
+                    "data_id": "120",
+                    "data": "Explanation of Agile Methodologies",
+                    "data_points_id": "79"
+                },
+                {
+                    "data_id": "121",
+                    "data": "State Spiral Model",
+                    "data_points_id": "79"
+                },
+                {
+                    "data_id": "122",
+                    "data": "Introduction to V-Model",
+                    "data_points_id": "79"
+                },
+                {
+                    "data_id": "123",
+                    "data": "Types of Testing",
+                    "data_points_id": "79"
+                },
+                {
+                    "data_id": "124",
+                    "data": "Levels of Testing",
+                    "data_points_id": "79"
+                }
+            ]
+        },
+        {
+            "points_id": "80",
+            "heading": "Process of testing",
+            "points_desc_id": "5",
+            "point": [
+                {
+                    "data_id": "125",
+                    "data": "State and define the STLC activities",
+                    "data_points_id": "80"
+                },
+                {
+                    "data_id": "126",
+                    "data": "Describe Test Plan Contents",
+                    "data_points_id": "80"
+                },
+                {
+                    "data_id": "127",
+                    "data": "Introduction to BBT and WBT",
+                    "data_points_id": "80"
+                }
+            ]
+        },
+        {
+            "points_id": "81",
+            "heading": "Test design for Functional Testing",
+            "points_desc_id": "5",
+            "point": [
+                {
+                    "data_id": "128",
+                    "data": "Explain the designing process of Test Design",
+                    "data_points_id": "81"
+                },
+                {
+                    "data_id": "129",
+                    "data": "Define the Test Strategies",
+                    "data_points_id": "81"
+                },
+                {
+                    "data_id": "130",
+                    "data": "Creation of Test Scenarios",
+                    "data_points_id": "81"
+                },
+                {
+                    "data_id": "131",
+                    "data": "Start Designing of Test Cases",
+                    "data_points_id": "81"
+                },
+                {
+                    "data_id": "132",
+                    "data": "Test Data Techniques",
+                    "data_points_id": "81"
+                }
+            ]
+        },
+        {
+            "points_id": "82",
+            "heading": "Test Execution",
+            "points_desc_id": "5",
+            "point": [
+                {
+                    "data_id": "133",
+                    "data": "Entry criteria of Test Execution",
+                    "data_points_id": "82"
+                },
+                {
+                    "data_id": "134",
+                    "data": "State and Define Test execution Cycle",
+                    "data_points_id": "82"
+                },
+                {
+                    "data_id": "135",
+                    "data": "Explain Retesting and Regression Testing",
+                    "data_points_id": "82"
+                }
+            ]
+        },
+        {
+            "points_id": "83",
+            "heading": "Defect Management",
+            "points_desc_id": "5",
+            "point": [
+                {
+                    "data_id": "136",
+                    "data": "Define Defect\/Bug",
+                    "data_points_id": "83"
+                },
+                {
+                    "data_id": "137",
+                    "data": "Concepts of Defects",
+                    "data_points_id": "83"
+                },
+                {
+                    "data_id": "138",
+                    "data": "Distinguish between severity and priority",
+                    "data_points_id": "83"
+                },
+                {
+                    "data_id": "139",
+                    "data": "Describe Defect Life Cycle",
+                    "data_points_id": "83"
+                },
+                {
+                    "data_id": "140",
+                    "data": "Defect Attributes",
+                    "data_points_id": "83"
+                },
+                {
+                    "data_id": "141",
+                    "data": "Advantages of Defect Tracking",
+                    "data_points_id": "83"
+                }
+            ]
+        },
+        {
+            "points_id": "84",
+            "heading": "Other Testing Types",
+            "points_desc_id": "5",
+            "point": [
+                {
+                    "data_id": "142",
+                    "data": "Describe Performance Testing",
+                    "data_points_id": "84"
+                },
+                {
+                    "data_id": "143",
+                    "data": "UI Testing",
+                    "data_points_id": "84"
+                },
+                {
+                    "data_id": "144",
+                    "data": "Usability Testing",
+                    "data_points_id": "84"
+                }
+            ]
+        },
+        {
+            "points_id": "85",
+            "heading": "Quality and Quality Attributes",
+            "points_desc_id": "5",
+            "point": [
+                {
+                    "data_id": "145",
+                    "data": "Distinguish between QMC, QA and QC",
+                    "data_points_id": "85"
+                },
+                {
+                    "data_id": "146",
+                    "data": "Define Quality Standards",
+                    "data_points_id": "85"
+                },
+                {
+                    "data_id": "147",
+                    "data": "Identify Test Matrices",
+                    "data_points_id": "85"
+                },
+                {
+                    "data_id": "148",
+                    "data": "Introduction to Testing career",
+                    "data_points_id": "85"
+                }
+            ]
+        }
+    ]
+}

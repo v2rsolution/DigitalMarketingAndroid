@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/groupMain">
+        <item
+            android:id="@+id/itemHome"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/title_home"/>
+        <item
+            android:id="@+id/itemMyProfileDrawer"
+            android:icon="@drawable/ic_login_person"
+            android:title="My Profile"/>
+        <item
+            android:id="@+id/itemVideoTutorials"
+            android:icon="@drawable/ic_menu_video_tutorials"
+            android:title="@string/title_video_tutorials"/>
+        <item
+            android:id="@+id/itemInterviewQues"
+            android:icon="@drawable/ic_menu_interview_ques"
+            android:title="@string/title_interview_ques"/>
+        <item
+            android:id="@+id/itemQuizTest"
+            android:icon="@drawable/ic_menu_quiz_test"
+            android:title="@string/title_quiz_test"/>
+        <item
+            android:id="@+id/itemTechnicalTerms"
+            android:icon="@drawable/ic_menu_technical_terms"
+            android:title="@string/title_technical_terms"/>
+        <item
+            android:id="@+id/itemQuesAns"
+            android:icon="@drawable/ic_menu_ques_answer"
+            android:title="@string/title_ques_ans"/>
+
+        <item
+            android:id="@+id/itemNotifications"
+            android:icon="@drawable/ic_menu_notification"
+            android:title="@string/title_notifications"/>
+
+    </group>
+    <group
+        android:id="@+id/groupExtras">
+        <item
+            android:id="@+id/itemShare"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/title_share"/>
+        <item
+            android:id="@+id/itemSuggestions"
+            android:icon="@drawable/ic_menu_suggestions"
+            android:title="@string/title_suggestions"/>
+        <item
+            android:id="@+id/itemRateUs"
+            android:icon="@drawable/ic_menu_rate_us"
+            android:title="@string/title_rate_us"/>
+        <item
+            android:id="@+id/itemContactUs"
+            android:icon="@drawable/ic_menu_contact_us"
+            android:title="@string/title_contact_us"/>
+        <item
+            android:id="@+id/itemAboutUs"
+            android:icon="@drawable/ic_menu_about_us"
+            android:title="@string/title_about_us"/>
+    </group>
+</menu>

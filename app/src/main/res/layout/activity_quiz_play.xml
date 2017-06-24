@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="com.wscubetech.seovideotutorials.activities.QuizPlayActivity">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/dim_30"
+            android:layout_height="@dimen/dim_30"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:matProg_barColor="@color/color_tile_2"
+            app:matProg_barWidth="@dimen/dim_3"
+            app:matProg_progressIndeterminate="true"/>
+
+        <RelativeLayout
+            android:id="@+id/relInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <include layout="@layout/content_quiz_instructions"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relQuizPlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackgroundGrey"
+            android:visibility="gone">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/linFooter">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/content_question"/>
+
+                    <include layout="@layout/content_options"/>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+            <LinearLayout
+                android:id="@+id/linFooter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_65"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dim_10"
+                android:weightSum="2">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:id="@+id/txtPrevious"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dim_45"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/dim_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_selector_teal_rectangle_curved_boundary"
+                    android:gravity="center"
+                    android:text="Previous"
+                    android:textColor="@color/colorTeal"
+                    android:textSize="@dimen/font_size_16"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:id="@+id/txtNext"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dim_45"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_selector_teal_rectangle_curved"
+                    android:gravity="center"
+                    android:text="Next"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/font_size_16"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <include layout="@layout/content_empty_screen"/>
+
+    </LinearLayout>
+
+</LinearLayout>

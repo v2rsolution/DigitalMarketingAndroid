@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGrey"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".activities.TestListingActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <include layout="@layout/toolbar_layout"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/dim_5"
+        android:paddingTop="@dimen/dim_5"
+        android:layout_above="@+id/relBottomAd"
+        android:layout_below="@+id/appBar"/>
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/dim_30"
+        android:layout_height="@dimen/dim_30"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:matProg_barColor="@color/colorPrimary"
+        app:matProg_barWidth="@dimen/dim_3"
+        app:matProg_progressIndeterminate="true"/>
+
+    <include layout="@layout/content_empty_screen"/>
+
+    <include layout="@layout/content_ad_banner"/>
+
+</RelativeLayout>

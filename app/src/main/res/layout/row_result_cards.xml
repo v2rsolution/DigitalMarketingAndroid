@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundGrey"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dim_7"
+    android:paddingRight="@dimen/dim_7">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dim_1"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dim_7">
+
+            <ImageView
+                android:id="@+id/imgIcon"
+                android:layout_width="@dimen/dim_35"
+                android:layout_height="@dimen/dim_35"
+                android:background="@drawable/bg_total_ques"
+                android:padding="@dimen/dim_9"
+                android:src="@drawable/ic_total_ques"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dim_10"
+                android:layout_toRightOf="@+id/imgIcon"
+                android:text="Total Questions"
+                android:textColor="@color/result_total_question"
+                android:textSize="@dimen/font_size_14"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtScore"
+                android:layout_width="@dimen/dim_30"
+                android:layout_height="@dimen/dim_30"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_total_ques"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_14"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

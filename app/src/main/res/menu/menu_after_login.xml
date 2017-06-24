@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_more"
+        android:orderInCategory="1"
+        android:title="more"
+        android:icon="@drawable/ic_more_vert"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/itemMyProfile"
+                android:icon="@drawable/ic_login_person"
+                android:title="My Profile"/>
+            <item
+                android:id="@+id/itemLogOut"
+                android:icon="@drawable/ic_menu_log_out"
+                android:title="Log out"/>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,212 @@
+{
+    "desc_id": "3",
+    "desc_title": "ADVANCE JAVA",
+    "description": "Advanced Java Tutorial is aimed towards the Developer who already has learned the Fundamentals of Java Programming. This course provides Struts Framework, Web Application Component development with Servlets, JSP and XML.",
+    "points": [
+        {
+            "points_id": "24",
+            "heading": "Web API Integration(Admin Panel \/ API Scripting and MySQL\/PHP)",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "25",
+            "heading": "Java Beans",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "26",
+            "heading": "RMI (Remote Method Invocation)",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "27",
+            "heading": "Custom JSP Tags",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "28",
+            "heading": "HTML Syntax",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "29",
+            "heading": "Struts",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "30",
+            "heading": "Spring",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "31",
+            "heading": "Stands",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "32",
+            "heading": "URL Pattern",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "33",
+            "heading": "Tomcat",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "34",
+            "heading": "OCI Driver",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "35",
+            "heading": "IOC 4Lookup",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "36",
+            "heading": "DTO",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "37",
+            "heading": "EJB (Enterprise Java Beans)",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "38",
+            "heading": "JSF",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "39",
+            "heading": "CMP,BMP",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "40",
+            "heading": "JMS (Java Message Service)",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "41",
+            "heading": "Portlet",
+            "points_desc_id": "3",
+            "point": []
+        },
+        {
+            "points_id": "42",
+            "heading": "Servlets",
+            "points_desc_id": "3",
+            "point": [
+                {
+                    "data_id": "88",
+                    "data": "Environment Setup",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "89",
+                    "data": "Life Cycle",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "90",
+                    "data": "Form Data",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "91",
+                    "data": "Client Request",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "92",
+                    "data": "Server Response",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "93",
+                    "data": "HTTP Codes",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "94",
+                    "data": "Writing Filters",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "95",
+                    "data": "Cookies Handling",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "96",
+                    "data": "Session Handling",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "97",
+                    "data": "Remote Database Access",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "98",
+                    "data": "File Uploading",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "99",
+                    "data": "Page Redirect",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "100",
+                    "data": "Hits Counter",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "101",
+                    "data": "Auto Refresh",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "102",
+                    "data": "Sending Server Mails",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "103",
+                    "data": "Packaging",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "104",
+                    "data": "Debugging",
+                    "data_points_id": "42"
+                },
+                {
+                    "data_id": "105",
+                    "data": "Internationalization",
+                    "data_points_id": "42"
+                }
+            ]
+        }
+    ]
+}

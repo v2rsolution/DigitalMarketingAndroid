@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dim_3"
+    android:layout_marginRight="@dimen/dim_3"
+    android:background="@color/colorBackgroundGrey"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/dim_1">
+
+        <LinearLayout
+            android:id="@+id/linParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_selector_rectangle"
+            android:orientation="horizontal"
+            android:padding="@dimen/dim_5">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dim_85"
+                android:layout_height="@dimen/dim_85">
+
+                <ImageView
+                    android:id="@+id/imgThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:transitionName="@string/title_video_tutorials"
+                    android:src="@color/color_tile_0"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_15"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center|bottom"
+                    android:text="12:00"
+                    android:textColor="#fff"
+                    android:background="#66000000"
+                    android:textSize="@dimen/font_size_12"/>
+
+                <ImageView
+                    android:layout_width="@dimen/dim_24"
+                    android:layout_height="@dimen/dim_24"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dim_27"
+                    android:src="@drawable/ic_play_circle_filled_black_24dp"
+                    android:tint="#fff"/>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_5"
+                android:orientation="vertical">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:text="Title"
+                    android:lineSpacingExtra="2dp"
+                    android:ellipsize="end"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_14"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Description"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_13"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

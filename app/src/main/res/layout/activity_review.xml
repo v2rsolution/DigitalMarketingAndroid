@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wscubetech.seovideotutorials.activities.ReviewActivity">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/linFooter"/>
+
+    <LinearLayout
+        android:id="@+id/linFooter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_65"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dim_10"
+        android:weightSum="2">
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+            android:id="@+id/txtPrevious"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dim_45"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector_teal_rectangle_curved_boundary"
+            android:gravity="center"
+            android:text="Previous"
+            android:textColor="@color/colorTeal"
+            android:textSize="@dimen/font_size_16"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+            android:id="@+id/txtNext"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dim_45"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dim_10"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector_teal_rectangle_curved"
+            android:gravity="center"
+            android:text="Next"
+            android:textColor="#fff"
+            android:textSize="@dimen/font_size_16"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

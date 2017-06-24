@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGrey"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dim_5"
+        android:layout_marginLeft="@dimen/dim_5"
+        android:layout_marginRight="@dimen/dim_5"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dim_10">
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_15"
+            />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dim_5"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dim_4"
+        android:layout_marginLeft="@dimen/dim_5"
+        android:layout_marginRight="@dimen/dim_5"
+        android:layout_marginTop="@dimen/dim_2"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/dim_8">
+
+            <ImageView
+                android:layout_width="@dimen/dim_50"
+                android:layout_height="@dimen/dim_50"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dim_9"
+                android:src="@drawable/ic_blue_circle_phone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_10"
+                android:orientation="vertical">
+
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dim_5"
+                    android:text="For more details contact us:"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_15"/>
+
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtNumber1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dim_5"
+                    android:text="+91-9269698122"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_size_17"/>
+
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtNumber2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dim_5"
+                    android:text="+91-8561089567"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_size_17"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dim_300"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_80"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_menu_notification"
+            android:tint="#fff"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:id="@+id/txtNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/title_notifications"
+            android:textColor="#fff"
+            android:textSize="@dimen/font_size_16"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linNotifyToggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:descendantFocusability="blocksDescendants"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/dim_15"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.7"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtNotify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notify"
+                android:textColor="#000"
+                android:textSize="@dimen/font_size_16"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap to toggle notification status"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="@dimen/font_size_12"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:gravity="center_vertical|right">
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtOnOff"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/circle_primary"
+                android:gravity="center"
+                android:text="On"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_12"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+        android:id="@+id/txtDone"
+        android:layout_width="@dimen/dim_70"
+        android:layout_height="@dimen/dim_35"
+        android:layout_marginTop="@dimen/dim_5"
+        android:layout_marginBottom="@dimen/dim_10"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Save"
+        android:background="?attr/selectableItemBackground"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/font_size_16"/>
+
+</LinearLayout>

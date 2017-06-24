@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundGrey"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dim_5"
+    android:padding="@dimen/dim_12">
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send us a Message"
+        android:textColor="#000"
+        android:textSize="@dimen/font_size_18"/>
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dim_3"
+        android:lineSpacingExtra="2dp"
+        android:text="@string/contact_us_part_2_text"
+        android:textColor="@color/colorBrownGreyNice"
+        android:textSize="@dimen/font_size_12"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dim_10"
+        android:orientation="vertical">
+
+        <com.wscubetech.seovideotutorials.custom_views.MyEditTextRegular
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:hint="Name"
+            android:maxLines="1"
+            android:padding="@dimen/dim_8"
+            android:textColorHint="@color/colorBrownGreyNice"
+            android:textSize="@dimen/font_size_15"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyEditTextRegular
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_10"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:padding="@dimen/dim_8"
+            android:textColorHint="@color/colorBrownGreyNice"
+            android:textSize="@dimen/font_size_15"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyEditTextRegular
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_10"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:padding="@dimen/dim_8"
+            android:textColorHint="@color/colorBrownGreyNice"
+            android:textSize="@dimen/font_size_14"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyEditTextRegular
+            android:id="@+id/etWebsiteName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_10"
+            android:background="#fff"
+            android:hint="Website Name (Optional)"
+            android:maxLines="1"
+            android:padding="@dimen/dim_8"
+            android:textColorHint="@color/colorBrownGreyNice"
+            android:textSize="@dimen/font_size_14"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_10"
+            android:background="#fff"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:padding="@dimen/dim_8">
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:textSize="@dimen/font_size_14"
+                android:text="Contacting For"
+                android:textColor="@color/colorBrownGreyNice"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_2"
+                android:background="#fff"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/radioTraining"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:buttonTint="@color/color_tile_8"
+                    android:checked="true"
+                    android:text="Training"
+                    android:textColor="#000"
+                    android:textSize="@dimen/font_size_15"/>
+
+                <RadioButton
+                    android:id="@+id/radioTechnical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:buttonTint="@color/color_tile_8"
+                    android:text="Technical Support"
+                    android:textColor="#000"
+                    android:textSize="@dimen/font_size_15"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+        <com.wscubetech.seovideotutorials.custom_views.MyEditTextRegular
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_10"
+            android:background="#fff"
+            android:gravity="left"
+            android:hint="Message"
+            android:lines="4"
+            android:padding="@dimen/dim_8"
+            android:textColorHint="@color/colorBrownGreyNice"
+            android:textSize="@dimen/font_size_14"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:id="@+id/txtSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_35"
+            android:layout_marginTop="@dimen/dim_15"
+            android:background="@color/color_tile_8"
+            android:gravity="center"
+            android:text="SUBMIT"
+            android:textColor="#fff"
+            android:textSize="@dimen/font_size_16"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

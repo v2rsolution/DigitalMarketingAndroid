@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relDemoScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#dd000000"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/imgCircles"
+            android:layout_width="@dimen/dim_80"
+            android:layout_height="@dimen/dim_80"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/minus_12"
+            android:layout_marginRight="@dimen/minus_18"
+            android:src="@drawable/img_circles_demo"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTitle"
+            android:textColor="#fff"
+            android:layout_marginTop="@dimen/dim_80"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:textSize="@dimen/font_size_15"
+            android:text="Tap here to Choose Language\nSelected Language\'s list of videos will appear"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+            android:id="@+id/txtOkArrow"
+            android:layout_width="@dimen/dim_100"
+            android:layout_height="@dimen/dim_40"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_primary_selector_rectangle_curved"
+            android:gravity="center"
+            android:text="OK"
+            android:textColor="#fff"
+            android:textSize="@dimen/font_size_18"/>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,138 @@
+{
+  "project_info": {
+    "project_number": "950994437334",
+    "firebase_url": "https://digital-marketing-seo-e5775.firebaseio.com",
+    "project_id": "digital-marketing-seo-e5775",
+    "storage_bucket": "digital-marketing-seo-e5775.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950994437334:android:8dcfee7e112bc82d",
+        "android_client_info": {
+          "package_name": "com.wscubetech.seovideotutorials"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950994437334-dukm9adm8g4eofvl9ucocico4u47jbbf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wscubetech.seovideotutorials",
+            "certificate_hash": "a04e20e890cb702ce4f24105dd5c83a0b2bda1cd"
+          }
+        },
+        {
+          "client_id": "950994437334-q0bc91mkqtkgisorcl85hsdheb2rbm9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wscubetech.seovideotutorials",
+            "certificate_hash": "8c1e870e25e2640623053320d4c17427af0cfa0f"
+          }
+        },
+        {
+          "client_id": "950994437334-78lgi3mes388jidssnu00bbrhmjplbbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwDCJz6aCzFQBCnc939vLUYcxs0YSCtSk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950994437334-78lgi3mes388jidssnu00bbrhmjplbbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950994437334:android:b6b61dfb81e41274",
+        "android_client_info": {
+          "package_name": "com.wscubetech.learnjava"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950994437334-03pfgfuvnjak2rqg0pfmrvf2puf7jdgl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wscubetech.learnjava",
+            "certificate_hash": "8c1e870e25e2640623053320d4c17427af0cfa0f"
+          }
+        },
+        {
+          "client_id": "950994437334-78lgi3mes388jidssnu00bbrhmjplbbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwDCJz6aCzFQBCnc939vLUYcxs0YSCtSk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950994437334-78lgi3mes388jidssnu00bbrhmjplbbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950994437334:android:832b1e99744fe57c",
+        "android_client_info": {
+          "package_name": "com.wscubetech.learnandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950994437334-78lgi3mes388jidssnu00bbrhmjplbbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwDCJz6aCzFQBCnc939vLUYcxs0YSCtSk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

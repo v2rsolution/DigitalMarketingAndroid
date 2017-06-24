@@ -1,0 +1,67 @@
+{
+    "desc_id": "8",
+    "description": "Rails is a software library that extends the ruby programming language.Rails is also an MVC (model, view, controller) framework where all layers are provided by Rails, as opposed to reliance on other, additional frameworks to achieve full MVC support.",
+    "desc_title": "Ruby on Rails",
+    "points": [
+        {
+            "points_id": "135",
+            "heading": "Hello, World!",
+            "points_desc_id": "8",
+            "point": []
+        },
+        {
+            "points_id": "136",
+            "heading": "Variables and Types",
+            "points_desc_id": "8",
+            "point": []
+        },
+        {
+            "points_id": "137",
+            "heading": "Math",
+            "points_desc_id": "8",
+            "point": []
+        },
+        {
+            "points_id": "138",
+            "heading": "Strings",
+            "points_desc_id": "8",
+            "point": []
+        },
+        {
+            "points_id": "139",
+            "heading": "Arrays",
+            "points_desc_id": "8",
+            "point": []
+        },
+        {
+            "points_id": "140",
+            "heading": "Hashes and Symbols",
+            "points_desc_id": "8",
+            "point": []
+        },
+        {
+            "points_id": "141",
+            "heading": "Conditional Statements",
+            "points_desc_id": "8",
+            "point": []
+        },
+        {
+            "points_id": "142",
+            "heading": "Unless, Until, and While",
+            "points_desc_id": "8",
+            "point": []
+        },
+        {
+            "points_id": "143",
+            "heading": "Methods",
+            "points_desc_id": "8",
+            "point": []
+        },
+        {
+            "points_id": "144",
+            "heading": "Methods with Parameters",
+            "points_desc_id": "8",
+            "point": []
+        }
+    ]
+}

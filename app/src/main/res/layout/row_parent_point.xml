@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:textSize="@dimen/dim_14"
+        />
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+        android:id="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Session 1:"
+        android:textAlignment="inherit"
+        android:textColor="@color/color_tile_6"
+        android:textSize="@dimen/dim_16"
+        android:layout_marginTop="@dimen/dim_10"/>
+
+
+
+</LinearLayout>
+

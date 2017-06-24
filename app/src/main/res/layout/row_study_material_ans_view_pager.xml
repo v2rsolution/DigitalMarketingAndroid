@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundGrey"
+    android:orientation="vertical"
+    android:padding="@dimen/dim_5">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtMsg"
+            android:layout_below="@+id/toolbar"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtQuesSerialNo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@+id/lin"
+                    android:layout_alignTop="@+id/lin"
+                    android:background="@color/color_tile_5"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/font_size_16"
+                />
+
+                <LinearLayout
+                    android:id="@+id/linQues"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/txtQuesSerialNo"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dim_12">
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:id="@+id/txtQuesTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="2dp"
+                        android:text="Question"
+                        android:textColor="@color/colorTextGrey"
+                        android:textIsSelectable="true"
+                        android:textSize="@dimen/font_size_16"/>
+
+
+                </LinearLayout>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linQues"
+                    android:layout_marginTop="@dimen/dim_7"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="@dimen/dim_12"
+                    android:text=""
+                    android:textColor="@color/colorDimPrimary"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/font_size_16"
+                />
+
+                <ImageView
+                    android:id="@+id/imgAns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtAnswer"
+                    android:layout_marginTop="@dimen/dim_7"
+                    android:minHeight="@dimen/dim_150"
+                    android:padding="@dimen/dim_12"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_placeholder"
+                    android:transitionName="imgAns"
+                />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+</LinearLayout>

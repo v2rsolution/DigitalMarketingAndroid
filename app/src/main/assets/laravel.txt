@@ -1,0 +1,127 @@
+{
+    "desc_id": "7",
+    "description": "Laravel is a powerful MVC PHP framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications.",
+    "desc_title": "Laravel Framework",
+    "points": [
+        {
+            "points_id": "90",
+            "heading": "Routing",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "91",
+            "heading": "Middleware",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "92",
+            "heading": "CSRF Protection",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "93",
+            "heading": "Controllers",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "94",
+            "heading": "Requests",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "95",
+            "heading": "Responses",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "96",
+            "heading": "Views",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "97",
+            "heading": "Session",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "98",
+            "heading": "Validation",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "99",
+            "heading": "Errors and Logging",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "100",
+            "heading": "Blade Templates",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "101",
+            "heading": "Localization",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "102",
+            "heading": "Frontend Scaffolding",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "103",
+            "heading": "Compiling Assets",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "104",
+            "heading": "Authentication",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "105",
+            "heading": "Artisan Console",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "106",
+            "heading": "Broadcasting",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "107",
+            "heading": "Mail",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "108",
+            "heading": "Package Management",
+            "points_desc_id": "7",
+            "point": []
+        },
+        {
+            "points_id": "109",
+            "heading": "Task Scheduling",
+            "points_desc_id": "7",
+            "point": []
+        }
+    ]
+}

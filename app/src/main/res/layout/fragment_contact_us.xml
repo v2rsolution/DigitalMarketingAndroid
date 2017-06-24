@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGrey"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dim_5">
+
+            <include
+                layout="@layout/content_contact_us_part_1"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_250"
+                    android:orientation="vertical">
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:id="@+id/txtMapInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dim_12"
+                        android:text="Find us on Map"
+                        android:textColor="#000"
+                        android:textSize="@dimen/font_size_18"/>
+
+                    <include
+                        layout="@layout/content_map"/>
+
+                    <ImageView
+                        android:id="@+id/imgTransparent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@android:color/transparent"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <include
+                layout="@layout/content_contact_us_part_2"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

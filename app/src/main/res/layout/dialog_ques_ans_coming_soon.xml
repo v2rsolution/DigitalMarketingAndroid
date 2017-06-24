@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dim_300"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardElevation="@dimen/dim_5"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_tile_4"
+            android:gravity="center"
+            android:minHeight="@dimen/dim_130"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgHeader"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/dim_10"
+                android:src="@drawable/ic_tile_ques_ans"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_7"
+                android:text="@string/title_ques_ans"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_16"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dim_15">
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign in Required"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_20"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_7"
+                android:lineSpacingExtra="2dp"
+                android:text="You need to log in to our app in order to access this interactive section"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_15"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_9"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal">
+
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:id="@+id/txtCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="@dimen/dim_10"
+                    android:text="Cancel"
+                    android:textColor="@color/color_tile_4"
+                    android:textSize="@dimen/font_size_18"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:id="@+id/txtLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="@dimen/dim_10"
+                    android:text="Log in"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:textColor="@color/color_tile_4"
+                    android:textSize="@dimen/font_size_18"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

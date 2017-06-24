@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+    android:id="@+id/txt"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/dim_12"
+    android:background="?attr/selectableItemBackground"
+    android:textSize="@dimen/font_size_14"
+    android:text="Select"
+    android:textColor="@color/colorDimPrimary">
+
+</com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular>

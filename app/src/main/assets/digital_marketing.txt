@@ -1,0 +1,205 @@
+{
+    "desc_id": "1",
+    "desc_title": "DIGITAL MARKETING",
+    "description": "Devising strategies to drive online traffic to the company website. Tracking conversion rates and making improvements to the website. Utilising a range of techniques including paid search, SEO and PPC.",
+    "points": [
+        {
+            "points_id": "1",
+            "heading": "SEO",
+            "points_desc_id": "1",
+            "point": [
+                {
+                    "data_id": "1",
+                    "data": "Pre-SEO Report",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "2",
+                    "data": "Keyword Analysis",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "3",
+                    "data": "Competitor Analysis",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "4",
+                    "data": "ON PAGE - TITLE",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "5",
+                    "data": "ON PAGE - URL",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "6",
+                    "data": "ON PAGE - META DESCRIPTION",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "7",
+                    "data": "ON PAGE - META KEYWORDS",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "8",
+                    "data": "ON PAGE - IMAGE OPTIMIZATION",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "9",
+                    "data": "ON PAGE - LINK OPTIMIZATION",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "10",
+                    "data": "ON PAGE - Suggest Changes in content",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "11",
+                    "data": "ON PAGE - Google Analytics",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "12",
+                    "data": "ON PAGE - Google Webmaster",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "13",
+                    "data": "OFF PAGE - Submission to all Search Engines",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "14",
+                    "data": "OFF PAGE - Local Listing",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "15",
+                    "data": "OFF PAGE - Directory Submission",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "16",
+                    "data": "OFF PAGE - Blog writing, posting and submission",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "17",
+                    "data": "OFF PAGE - Forum posting",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "18",
+                    "data": "OFF PAGE - Image Submission",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "19",
+                    "data": "OFF PAGE - Video Marketing",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "20",
+                    "data": "OFF PAGE - Social Bookmarking",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "21",
+                    "data": "OFF PAGE - PDF submission",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "22",
+                    "data": "OFF PAGE - Link Submission",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "23",
+                    "data": "OFF PAGE - Classified Listing",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "24",
+                    "data": "OFF PAGE - CSS Submission",
+                    "data_points_id": "1"
+                },
+                {
+                    "data_id": "25",
+                    "data": "OFF PAGE - Article Submission",
+                    "data_points_id": "1"
+                }
+            ]
+        },
+        {
+            "points_id": "2",
+            "heading": "SEM",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "3",
+            "heading": "SMM",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "4",
+            "heading": "ORM",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "5",
+            "heading": "E-mail Marketing",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "6",
+            "heading": "YouTube Advertising",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "7",
+            "heading": "Mobile Marketing",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "8",
+            "heading": "Affiliate Marketing",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "9",
+            "heading": "Lead Generation for Business",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "10",
+            "heading": "Content Marketing",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "11",
+            "heading": "Web Analytics",
+            "points_desc_id": "1",
+            "point": []
+        },
+        {
+            "points_id": "12",
+            "heading": "Mobile App Marketing",
+            "points_desc_id": "1",
+            "point": []
+        }
+    ]
+}

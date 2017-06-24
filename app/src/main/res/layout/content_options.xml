@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundGrey"
+    android:orientation="vertical"
+    android:padding="@dimen/dim_4">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dim_1"
+        app:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            android:id="@+id/linOption1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgOption1"
+                android:layout_width="@dimen/dim_45"
+                android:layout_height="@dimen/dim_45"
+                android:background="@color/colorOptionGrey"
+                android:padding="@dimen/dim_9"
+                android:src="@drawable/ic_check_box_outline_blank_black_24dp"
+                android:tint="#fff"
+                />
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtOption1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dim_1"
+                android:paddingLeft="@dimen/dim_10"
+                android:paddingRight="@dimen/dim_5"
+                android:text="Option 1"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_14"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewUserInput1"
+            android:layout_width="@dimen/dim_10"
+            android:layout_height="@dimen/dim_10"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/dim_9"
+            android:background="@drawable/bg_option_yellow_circle"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dim_1"
+        app:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            android:id="@+id/linOption2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgOption2"
+                android:layout_width="@dimen/dim_45"
+                android:layout_height="@dimen/dim_45"
+                android:background="@color/colorOptionGrey"
+                android:padding="@dimen/dim_9"
+                android:src="@drawable/ic_check_box_outline_blank_black_24dp"
+                android:tint="#fff"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtOption2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dim_1"
+                android:paddingLeft="@dimen/dim_10"
+                android:paddingRight="@dimen/dim_5"
+                android:text="Option 2"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_14"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewUserInput2"
+            android:layout_width="@dimen/dim_10"
+            android:layout_height="@dimen/dim_10"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/dim_9"
+            android:background="@drawable/bg_option_yellow_circle"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@id/card3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dim_1"
+        app:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            android:id="@+id/linOption3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgOption3"
+                android:layout_width="@dimen/dim_45"
+                android:layout_height="@dimen/dim_45"
+                android:background="@color/colorOptionGrey"
+                android:padding="@dimen/dim_9"
+                android:src="@drawable/ic_check_box_outline_blank_black_24dp"
+                android:tint="#fff"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtOption3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dim_1"
+                android:paddingLeft="@dimen/dim_10"
+                android:paddingRight="@dimen/dim_5"
+                android:text="Option 3"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_14"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewUserInput3"
+            android:layout_width="@dimen/dim_10"
+            android:layout_height="@dimen/dim_10"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/dim_9"
+            android:background="@drawable/bg_option_yellow_circle"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dim_1"
+        app:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            android:id="@+id/linOption4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgOption4"
+                android:layout_width="@dimen/dim_45"
+                android:layout_height="@dimen/dim_45"
+                android:background="@color/colorOptionGrey"
+                android:padding="@dimen/dim_9"
+                android:src="@drawable/ic_check_box_outline_blank_black_24dp"
+                android:tint="#fff"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtOption4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dim_1"
+                android:paddingLeft="@dimen/dim_10"
+                android:paddingRight="@dimen/dim_5"
+                android:text="Option 4"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_14"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewUserInput4"
+            android:layout_width="@dimen/dim_10"
+            android:layout_height="@dimen/dim_10"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/dim_9"
+            android:background="@drawable/bg_option_yellow_circle"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dim_1"
+        app:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            android:id="@+id/linOption5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgOption5"
+                android:layout_width="@dimen/dim_45"
+                android:layout_height="@dimen/dim_45"
+                android:background="@color/colorOptionGrey"
+                android:padding="@dimen/dim_9"
+                android:src="@drawable/ic_check_box_outline_blank_black_24dp"
+                android:tint="#fff"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtOption5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dim_1"
+                android:paddingLeft="@dimen/dim_10"
+                android:paddingRight="@dimen/dim_5"
+                android:text="Option 5"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_14"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewUserInput5"
+            android:layout_width="@dimen/dim_10"
+            android:layout_height="@dimen/dim_10"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/dim_9"
+            android:background="@drawable/bg_option_yellow_circle"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

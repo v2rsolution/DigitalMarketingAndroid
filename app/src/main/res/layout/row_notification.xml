@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dim_18"
+        android:paddingLeft="@dimen/dim_12"
+        android:paddingRight="@dimen/dim_6"
+        android:paddingTop="@dimen/dim_18">
+
+        <ImageView
+            android:id="@+id/imgNotificationIcon"
+            android:layout_width="@dimen/dim_32"
+            android:layout_height="@dimen/dim_32"
+            android:background="@drawable/bg_notification_curved_tile_2"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_menu_notification"
+            android:padding="@dimen/dim_6"
+            android:tint="#fff"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:id="@+id/txtNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_9"
+            android:lineSpacingExtra="1dp"
+            android:layout_gravity="center_vertical"
+            android:text="Notification Title"
+            android:textColor="@color/colorBrownGreyNice"
+            android:textSize="@dimen/font_size_16"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGreyLine"/>
+
+</LinearLayout>

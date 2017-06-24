@@ -1,0 +1,73 @@
+{
+    "desc_id": "10",
+    "description": "Graphic design, also known as communication design, is the art and practice of planning and projecting ideas and experiences with visual and textual content.",
+    "desc_title": "Graphic Designing",
+    "points": [
+        {
+            "points_id": "145",
+            "heading": "Getting started with Adobe Photoshop",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "146",
+            "heading": "Get to know layers",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "147",
+            "heading": "Combine images using layer masks",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "148",
+            "heading": "Add text and effects",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "149",
+            "heading": "Include vector graphics",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "150",
+            "heading": "Export and save the design",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "151",
+            "heading": "Crop and straighten",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "152",
+            "heading": "Improve lighting and color",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "153",
+            "heading": "Remove unwanted content",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "154",
+            "heading": "Add creative effects",
+            "points_desc_id": "10",
+            "point": []
+        },
+        {
+            "points_id": "155",
+            "heading": "Sharpen and save",
+            "points_desc_id": "10",
+            "point": []
+        }
+    ]
+}

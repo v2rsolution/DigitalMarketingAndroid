@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/dim_10">
+
+        <RelativeLayout
+            android:id="@+id/relCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dim_3">
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtAnswerCount"
+                android:layout_width="@dimen/dim_28"
+                android:layout_height="@dimen/dim_28"
+                android:background="@drawable/ic_answer_count"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dim_3"
+                android:text="0"
+                android:textColor="@color/color_tile_4"
+                android:textSize="@dimen/font_size_10"
+                android:visibility="visible"/>
+
+
+            <RelativeLayout
+                android:id="@+id/relLikeDislike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtAnswerCount"
+                android:layout_marginRight="@dimen/dim_3"
+                android:layout_marginTop="@dimen/dim_5">
+
+                <LinearLayout
+                    android:id="@+id/linLike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.sackcentury.shinebuttonlib.ShineButton
+                        android:id="@+id/btnLike"
+                        android:layout_width="@dimen/dim_20"
+                        android:layout_height="@dimen/dim_20"
+                        android:layout_gravity="center"
+                        app:allow_random_color="false"
+                        app:btn_color="@color/colorGreyLine"
+                        app:btn_fill_color="@color/color_tile_1"
+                        app:shine_turn_angle="180"
+                        app:siShape="@drawable/ic_thumbs_up"/>
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:id="@+id/txtLikes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/dim_6"
+                        android:text="0"
+                        android:layout_marginTop="@dimen/dim_2"
+                        android:textColor="@color/color_tile_1"
+                        android:textSize="@dimen/font_size_12"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linDislike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linLike"
+                    android:layout_marginTop="@dimen/dim_7"
+                    android:orientation="horizontal">
+
+                    <com.sackcentury.shinebuttonlib.ShineButton
+                        android:id="@+id/btnDislike"
+                        android:layout_width="@dimen/dim_20"
+                        android:layout_height="@dimen/dim_20"
+                        android:layout_below="@+id/btnLike"
+                        android:layout_gravity="center"
+                        app:allow_random_color="false"
+                        app:btn_color="@color/colorGreyLine"
+                        app:btn_fill_color="@color/color_tile_5"
+                        app:shine_turn_angle="180"
+                        app:siShape="@drawable/ic_thumbs_down"/>
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:id="@+id/txtDislikes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/dim_6"
+                        android:text="0"
+                        android:layout_marginBottom="@dimen/dim_2"
+                        android:textColor="@color/color_tile_5"
+                        android:textSize="@dimen/font_size_12"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_toRightOf="@+id/relCount">
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtQuesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_3"
+                android:text="Question"
+                android:layout_toLeftOf="@+id/imgMore"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_14"
+                android:transitionName="txtQuesTitle"/>
+
+            <ImageView
+                android:id="@+id/imgMore"
+                android:layout_width="@dimen/dim_20"
+                android:layout_height="@dimen/dim_20"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/txtQuesTitle"
+                android:src="@drawable/ic_more_vert"
+                android:background="?attr/selectableItemBackground"
+                android:tint="@color/colorTextGrey"/>
+
+            <com.dpizarro.autolabel.library.AutoLabelUI
+                android:id="@+id/tagView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtQuesTitle"
+                android:layout_marginTop="@dimen/dim_1"
+                app:label_background_res="@drawable/btn_primary_question_answer"
+                app:label_clickable="false"
+                app:label_padding="@dimen/dim_4"
+                app:max_labels="6"
+                app:show_cross="false"
+                app:text_color="@android:color/white"
+                app:text_size="@dimen/font_size_10"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tagView"
+                android:layout_marginTop="@dimen/dim_7"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apr 3, 2017"
+                    android:textColor="@color/colorTextGrey"
+                    android:textSize="@dimen/font_size_12"
+                />
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtQuesBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dim_7"
+                    android:text="By Lorem Ipsum"
+                    android:textColor="@color/color_tile_4"
+                    android:textSize="@dimen/font_size_12"
+                />
+
+                <ImageView
+                    android:id="@+id/imgUser"
+                    android:layout_width="@dimen/dim_28"
+                    android:layout_height="@dimen/dim_28"
+                    android:layout_marginLeft="@dimen/dim_7"
+                    android:src="@drawable/circle_user"
+                    android:tint="@color/colorTextGrey"
+                    android:visibility="visible"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/relMain"
+        android:background="@color/colorGreyLine"/>
+
+
+</RelativeLayout>

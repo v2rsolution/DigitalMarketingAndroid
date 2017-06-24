@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_my_profile"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGrey"
+    tools:context="com.wscubetech.seovideotutorials.activities.MyProfileActivity">
+
+    <include
+        layout="@layout/toolbar_layout"/>
+
+    <RelativeLayout
+        android:id="@+id/relProfile"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_160"
+        android:layout_below="@+id/toolbar"
+        android:background="@drawable/bg_header">
+
+        <LinearLayout
+            android:id="@+id/linMyProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dim_45"
+            android:layout_marginRight="@dimen/dim_45"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="@dimen/dim_70"
+                android:layout_height="@dimen/dim_70"
+                android:src="@drawable/circle_user"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_3"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_17"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_3"
+                android:gravity="center"
+                android:text="Email"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_15"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgEdit"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="?attr/selectableItemBackground"
+            android:padding="11dp"
+            android:src="@drawable/ic_edit"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relProfile"/>
+
+
+</RelativeLayout>

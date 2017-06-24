@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/background_white_curve"
+    android:orientation="vertical"
+    android:padding="@dimen/dim_20">
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/dim_30"
+        android:layout_height="@dimen/dim_30"
+        android:layout_gravity="center_horizontal"
+        wheel:matProg_barColor="@color/colorPrimary"
+        wheel:matProg_barWidth="@dimen/dim_3"
+        wheel:matProg_progressIndeterminate="true"/>
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+        android:id="@+id/txtPleaseWait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dim_10"
+        android:textSize="@dimen/font_size_14"
+        android:textColor="@color/colorDimPrimary"
+        android:text="Please wait..."/>
+
+</LinearLayout>

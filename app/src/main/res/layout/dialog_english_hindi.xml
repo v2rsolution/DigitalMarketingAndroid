@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linParent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dim_250"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_above="@+id/txtChooseLang"
+            android:background="@drawable/bg_rounded_primary_lang"/>
+
+        <ImageView
+            android:id="@+id/imgCircle"
+            android:layout_width="@dimen/dim_133"
+            android:layout_height="@dimen/dim_128"
+            android:layout_marginBottom="@dimen/minus_20"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/dim_7"
+            android:src="@drawable/ic_lang"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/imgCircle"
+            android:gravity="center"
+            android:id="@+id/txtChooseLang"
+            android:text="Choose Language"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:textSize="@dimen/font_size_16"/>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linEnglish"
+            android:layout_width="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dim_8"
+            android:orientation="horizontal"
+            android:layout_height="@dimen/dim_50">
+
+            <ImageView
+                android:layout_width="@dimen/dim_24"
+                android:layout_height="@dimen/dim_24"
+                android:src="@drawable/ic_english"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtEnglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:layout_marginLeft="@dimen/dim_10"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/dim_16"/>
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_1"
+            android:background="@color/colorGreyLine"/>
+
+
+        <LinearLayout
+            android:id="@+id/linHindi"
+            android:layout_width="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dim_8"
+            android:orientation="horizontal"
+            android:layout_height="@dimen/dim_50">
+
+            <ImageView
+                android:layout_width="@dimen/dim_24"
+                android:layout_height="@dimen/dim_24"
+                android:src="@drawable/ic_hindi"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtHindi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hindi"
+                android:layout_marginLeft="@dimen/dim_10"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/dim_16"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

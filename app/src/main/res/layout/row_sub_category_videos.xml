@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linMain"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+        android:id="@+id/txtSubCatTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/dim_55"
+        android:paddingLeft="@dimen/dim_10"
+        android:paddingRight="@dimen/dim_7"
+        android:textColor="@color/colorBrownGreyNice"
+        android:textSize="@dimen/font_size_16"/>
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGreyLine"/>
+
+</LinearLayout>

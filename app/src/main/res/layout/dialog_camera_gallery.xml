@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linParent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dim_150"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_white_curve"
+    android:orientation="vertical"
+    android:padding="@dimen/dim_3">
+
+    <LinearLayout
+        android:id="@+id/linCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:padding="@dimen/dim_20">
+
+        <ImageView
+            android:id="@+id/imgCamera"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:src="@drawable/ic_camera"
+            android:tint="@color/colorTextGrey"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+            android:id="@+id/txtCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_10"
+            android:text="Camera"
+            android:textColor="@color/colorTextGrey"
+            android:textSize="@dimen/font_size_18"
+        />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_1"
+        android:background="@color/colorBackgroundGrey"/>
+
+    <LinearLayout
+        android:id="@+id/linGallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:padding="@dimen/dim_20">
+
+        <ImageView
+            android:id="@+id/imgGallery"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:src="@drawable/ic_gallery"
+            android:tint="@color/colorTextGrey"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+            android:id="@+id/txtGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_10"
+            android:text="Gallery"
+            android:textColor="@color/colorTextGrey"
+            android:textSize="@dimen/font_size_18"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>

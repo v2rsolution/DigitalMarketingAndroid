@@ -1,0 +1,394 @@
+{
+    "desc_id": "4",
+    "description": "C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features.",
+    "desc_title": "C++",
+    "points": [
+        {
+            "points_id": "13",
+            "heading": "Language Processing",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "26",
+                    "data": "void Structures",
+                    "data_points_id": "13"
+                },
+                {
+                    "data_id": "27",
+                    "data": "I\/O Statements",
+                    "data_points_id": "13"
+                },
+                {
+                    "data_id": "28",
+                    "data": "Expressions",
+                    "data_points_id": "13"
+                },
+                {
+                    "data_id": "29",
+                    "data": "Operators",
+                    "data_points_id": "13"
+                },
+                {
+                    "data_id": "30",
+                    "data": "Comments and Indentation",
+                    "data_points_id": "13"
+                }
+            ]
+        },
+        {
+            "points_id": "14",
+            "heading": "Introduction to programming in C++",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "31",
+                    "data": "Source Files",
+                    "data_points_id": "14"
+                },
+                {
+                    "data_id": "32",
+                    "data": "Programs Separate Compilation",
+                    "data_points_id": "14"
+                },
+                {
+                    "data_id": "33",
+                    "data": "Linkage",
+                    "data_points_id": "14"
+                },
+                {
+                    "data_id": "34",
+                    "data": "Execution of C++ Program",
+                    "data_points_id": "14"
+                },
+                {
+                    "data_id": "35",
+                    "data": "Using Header Files Programs",
+                    "data_points_id": "14"
+                }
+            ]
+        },
+        {
+            "points_id": "15",
+            "heading": "Functions",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "36",
+                    "data": "Functions",
+                    "data_points_id": "15"
+                },
+                {
+                    "data_id": "37",
+                    "data": "Function Declarations",
+                    "data_points_id": "15"
+                },
+                {
+                    "data_id": "38",
+                    "data": "Argument Passing and Value Return",
+                    "data_points_id": "15"
+                },
+                {
+                    "data_id": "39",
+                    "data": "Types of functions",
+                    "data_points_id": "15"
+                },
+                {
+                    "data_id": "40",
+                    "data": "Nested Functions",
+                    "data_points_id": "15"
+                }
+            ]
+        },
+        {
+            "points_id": "16",
+            "heading": "Object-Oriented Features",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "41",
+                    "data": "Basic OO concepts, example",
+                    "data_points_id": "16"
+                },
+                {
+                    "data_id": "42",
+                    "data": "C++ Keywords",
+                    "data_points_id": "16"
+                },
+                {
+                    "data_id": "43",
+                    "data": "C++ features",
+                    "data_points_id": "16"
+                },
+                {
+                    "data_id": "44",
+                    "data": "Classes: definition, attributes, methods",
+                    "data_points_id": "16"
+                },
+                {
+                    "data_id": "45",
+                    "data": "Customer class: definition\/declaration, implementation",
+                    "data_points_id": "16"
+                },
+                {
+                    "data_id": "46",
+                    "data": "File organization: header files",
+                    "data_points_id": "16"
+                },
+                {
+                    "data_id": "47",
+                    "data": "Class functions: declaration, implementation",
+                    "data_points_id": "16"
+                }
+            ]
+        },
+        {
+            "points_id": "17",
+            "heading": "Classes and Objects",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "48",
+                    "data": "Classes Declaration",
+                    "data_points_id": "17"
+                },
+                {
+                    "data_id": "49",
+                    "data": "Classes Access",
+                    "data_points_id": "17"
+                },
+                {
+                    "data_id": "50",
+                    "data": "Member functions",
+                    "data_points_id": "17"
+                },
+                {
+                    "data_id": "51",
+                    "data": "Creating C++ objects",
+                    "data_points_id": "17"
+                },
+                {
+                    "data_id": "52",
+                    "data": "The required main() function",
+                    "data_points_id": "17"
+                },
+                {
+                    "data_id": "53",
+                    "data": "The main() function file",
+                    "data_points_id": "17"
+                }
+            ]
+        },
+        {
+            "points_id": "18",
+            "heading": "Constructors and Destructors",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "54",
+                    "data": "Constructors",
+                    "data_points_id": "18"
+                },
+                {
+                    "data_id": "55",
+                    "data": "Types of Constructors",
+                    "data_points_id": "18"
+                },
+                {
+                    "data_id": "56",
+                    "data": "Constructors initialization",
+                    "data_points_id": "18"
+                },
+                {
+                    "data_id": "57",
+                    "data": "Destructors",
+                    "data_points_id": "18"
+                }
+            ]
+        },
+        {
+            "points_id": "19",
+            "heading": "Inheritance",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "58",
+                    "data": "Introduction to Inheritance and its need",
+                    "data_points_id": "19"
+                },
+                {
+                    "data_id": "59",
+                    "data": "Types of Inheritance",
+                    "data_points_id": "19"
+                },
+                {
+                    "data_id": "60",
+                    "data": "Implementation of different types of inheritance",
+                    "data_points_id": "19"
+                },
+                {
+                    "data_id": "61",
+                    "data": "Constructor in inheritance",
+                    "data_points_id": "19"
+                },
+                {
+                    "data_id": "62",
+                    "data": "Destructor in inheritance",
+                    "data_points_id": "19"
+                },
+                {
+                    "data_id": "63",
+                    "data": "Abstract Classes",
+                    "data_points_id": "19"
+                },
+                {
+                    "data_id": "64",
+                    "data": "Virtual Class",
+                    "data_points_id": "19"
+                }
+            ]
+        },
+        {
+            "points_id": "20",
+            "heading": "Polymorphism",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "65",
+                    "data": "Introduction to Polymorphism and its need",
+                    "data_points_id": "20"
+                },
+                {
+                    "data_id": "66",
+                    "data": "Constructor Overloading",
+                    "data_points_id": "20"
+                },
+                {
+                    "data_id": "67",
+                    "data": "Function Overloading",
+                    "data_points_id": "20"
+                },
+                {
+                    "data_id": "68",
+                    "data": "Function Overriding",
+                    "data_points_id": "20"
+                },
+                {
+                    "data_id": "69",
+                    "data": "Operator Overloading",
+                    "data_points_id": "20"
+                },
+                {
+                    "data_id": "70",
+                    "data": "Overloading Unary Operator by member function",
+                    "data_points_id": "20"
+                },
+                {
+                    "data_id": "71",
+                    "data": "Overloading Unary Operator by Friend function",
+                    "data_points_id": "20"
+                },
+                {
+                    "data_id": "72",
+                    "data": "Overloading Binary Operator by member function",
+                    "data_points_id": "20"
+                },
+                {
+                    "data_id": "73",
+                    "data": "Overloading Binary Operator by Friend function",
+                    "data_points_id": "20"
+                }
+            ]
+        },
+        {
+            "points_id": "21",
+            "heading": "Templates",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "74",
+                    "data": "Concept, flexibility and power",
+                    "data_points_id": "21"
+                },
+                {
+                    "data_id": "75",
+                    "data": "Types of Templates",
+                    "data_points_id": "21"
+                },
+                {
+                    "data_id": "76",
+                    "data": "Formal syntax of Function Templates",
+                    "data_points_id": "21"
+                },
+                {
+                    "data_id": "77",
+                    "data": "Formal syntax of Class Templates",
+                    "data_points_id": "21"
+                },
+                {
+                    "data_id": "78",
+                    "data": "Inheritance in Templates",
+                    "data_points_id": "21"
+                }
+            ]
+        },
+        {
+            "points_id": "22",
+            "heading": "Exception Handling",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "79",
+                    "data": "try, throw and catch",
+                    "data_points_id": "22"
+                },
+                {
+                    "data_id": "80",
+                    "data": "Throwing objects for better exception handling",
+                    "data_points_id": "22"
+                },
+                {
+                    "data_id": "81",
+                    "data": "Exceptions with templates",
+                    "data_points_id": "22"
+                },
+                {
+                    "data_id": "82",
+                    "data": "Exceptions and constructors",
+                    "data_points_id": "22"
+                },
+                {
+                    "data_id": "83",
+                    "data": "Exception in Inheritance",
+                    "data_points_id": "22"
+                }
+            ]
+        },
+        {
+            "points_id": "23",
+            "heading": "File Handling in C++",
+            "points_desc_id": "4",
+            "point": [
+                {
+                    "data_id": "84",
+                    "data": "Introduction to file Stream in c++",
+                    "data_points_id": "23"
+                },
+                {
+                    "data_id": "85",
+                    "data": "Creation of files",
+                    "data_points_id": "23"
+                },
+                {
+                    "data_id": "86",
+                    "data": "File operations",
+                    "data_points_id": "23"
+                },
+                {
+                    "data_id": "87",
+                    "data": "Use of file handling",
+                    "data_points_id": "23"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="@dimen/dim_250"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:id="@+id/linParent"
+              android:background="@drawable/background_white_curve"
+              android:orientation="vertical"
+              android:padding="@dimen/dim_10">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="@dimen/dim_80"
+        android:layout_height="@dimen/dim_80"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dim_10"
+        android:src="@drawable/no_internet"/>
+
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtThank"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/dim_2"
+        android:text="@string/connectionError"
+        android:textColor="@color/colorDimPrimary"
+        android:textSize="@dimen/font_size_14"/>
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+        android:id="@+id/txtOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dim_5"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/dim_10"
+        android:text="OK"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/font_size_16"/>
+
+</LinearLayout>

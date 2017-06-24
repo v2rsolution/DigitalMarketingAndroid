@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.wscubetech.seovideotutorials"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission
+        android:name="android.permission.INTERNET"/>
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name_my_custom"
+        android:supportsRtl="true"
+        android:name=".application.MyApp"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <activity
+            android:name=".activities.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN"/>
+
+                <category
+                    android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.VideoTutorialDetailYoutubeActivity"
+            android:configChanges="screenSize|orientation"/>
+        <activity
+            android:name=".activities.InterviewQuesActivity"
+            android:configChanges="screenSize|orientation"/>
+        <activity
+            android:name=".activities.QuizPlayActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.TestListingActivity"
+            android:configChanges="screenSize|orientation"/>
+        <activity
+            android:name=".activities.ResultActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.ReviewActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- ./Firebase Notifications -->
+        <service
+            android:name=".fcm_package.MyFirebaseMessagingService">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".fcm_package.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activities.VideoTutorialsTabActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.HomeActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.TrainingCourseDetailActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.ServiceDetailActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/api_key_youtube"/>
+
+        <activity
+            android:name=".activities.StudyMaterialQuesActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.StudyMaterialAnsActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.EnquiryTrainingActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.MyProfileActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.SearchVideoActivity"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".activities.EditProfileActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.QuestionListActivity"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".activities.AnswerListActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.PostQuestionActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.ImageEnlargeActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+        <activity
+            android:name=".activities.ChangePasswordActivity"
+            android:configChanges="screenSize|orientation">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,157 @@
+{
+    "desc_id": "9",
+    "description": "Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language. It's fun to work in Python because it allows you to think about the problem rather than focusing on the syntax.",
+    "desc_title": "Python",
+    "points": [
+        {
+            "points_id": "110",
+            "heading": "Hello, World!",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "111",
+            "heading": "Variables and Types",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "112",
+            "heading": "Lists",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "113",
+            "heading": "Basic Operators",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "114",
+            "heading": "String Formatting",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "115",
+            "heading": "Basic String Operations",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "116",
+            "heading": "Conditions",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "117",
+            "heading": "Loops",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "118",
+            "heading": "Functions",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "119",
+            "heading": "Classes and Objects",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "120",
+            "heading": "Dictionaries",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "121",
+            "heading": "Modules and Packages",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "122",
+            "heading": "Numpy Arrays",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "123",
+            "heading": "Pandas Basics",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "124",
+            "heading": "Generators",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "125",
+            "heading": "List Comprehensions",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "126",
+            "heading": "Multiple Function Arguments",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "127",
+            "heading": "Regular Expressions",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "128",
+            "heading": "Exception Handling",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "129",
+            "heading": "Sets",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "130",
+            "heading": "Serialization",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "131",
+            "heading": "Partial functions",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "132",
+            "heading": "Code Introspection",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "133",
+            "heading": "Closures",
+            "points_desc_id": "9",
+            "point": []
+        },
+        {
+            "points_id": "134",
+            "heading": "Decorators",
+            "points_desc_id": "9",
+            "point": []
+        }
+    ]
+}

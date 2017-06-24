@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dim_5"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dim_10"
+    android:paddingRight="@dimen/dim_10">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dim_1"
+        app:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="@dimen/dim_1">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="@dimen/dim_8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgTraining"
+                    android:layout_width="@dimen/dim_100"
+                    android:layout_height="@dimen/dim_100"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_training_html_css"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:orientation="vertical">
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                        android:id="@+id/txtTrainingName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HTML Training"
+                        android:textColor="#bb000000"
+                        android:textSize="@dimen/font_size_18"/>
+
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:id="@+id/txtTrainingDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dim_3"
+                        android:textColor="#88000000"
+                        android:textSize="@dimen/dim_12"
+                    />
+
+                    <!-- <com.wscubetech.custom_views.MyTextViewRegular
+                         android:id="@+id/txtTrainingDesc"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/top_divider"
+                         android:text="@string/contact_us_data"
+                         android:textColor="#88000000"
+                         android:textSize="@dimen/dim_12" />-->
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_8"
+                android:background="@drawable/bg_gray_training"
+                android:orientation="vertical"
+                android:padding="@dimen/dim_8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dim_20"
+                        android:layout_height="@dimen/dim_20"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dim_5"
+                        android:src="@drawable/ic_training_duration"
+                        android:tint="@color/color_tile_6"/>
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dim_10"
+                        android:text="Duration:"
+                        android:textColor="#cc000000"
+                        android:textSize="@dimen/font_size_12"/>
+
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:id="@+id/txtTrainingDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dim_10"
+                        android:text="Duration:"
+                        android:textColor="#88000000"
+                        android:textSize="@dimen/font_size_12"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dim_5"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dim_20"
+                        android:layout_height="@dimen/dim_20"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dim_5"
+                        android:src="@drawable/ic_training_eligibility"
+                        android:tint="@color/color_tile_6"/>
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dim_10"
+                        android:text="Eligibility:"
+                        android:textColor="#cc000000"
+                        android:textSize="@dimen/font_size_12"/>
+
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:id="@+id/txtTrainingEligibilty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dim_10"
+                        android:text="Duration:"
+                        android:textColor="#88000000"
+                        android:textSize="@dimen/font_size_12"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_8"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/btnEnquiry"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dim_40"
+                    android:layout_weight="1"
+                    android:background="@color/color_tile_6"
+                    android:gravity="center"
+                    android:text="ENQUIRY"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/dim_14"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/btnSeeMore"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dim_40"
+                    android:layout_weight="1"
+                    android:background="@color/color_grey_bg"
+                    android:gravity="center"
+                    android:text="SEE MORE"
+                    android:textColor="#aa000000"
+                    android:textSize="@dimen/dim_14"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

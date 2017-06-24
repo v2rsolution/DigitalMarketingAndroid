@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">
+        #2196F3
+    </color>
+    <color name="colorPrimaryDark">
+        #1976D2
+    </color>
+    <color name="colorAccent">
+        #1976D2
+    </color>
+
+    <color name="colorDarkBlue">#0D47A1</color>
+
+
+    <color name="colorTeal">
+        #00b58a
+    </color>
+    <color name="colorTealPressed">
+        #009688
+    </color>
+    <color name="colorTealLightPressed">
+        #22009688
+    </color>
+
+    <color name="colorDimPrimary">
+        #414141
+    </color>
+    <color name="colorBackgroundGrey">
+        #eeeeee
+    </color>
+
+    <color name="colorCardPressed">
+        #222196F3
+    </color>
+
+    <color name="colorBrownGreyNice">
+        #7d7b89
+    </color>
+
+    <color name="colorOptionYellow">
+        #FF9800
+    </color>
+    <color name="colorOptionRed">
+        #FF5722
+    </color>
+
+    <color name="colorOptionGrey">
+        #e1e1e1
+    </color>
+
+    <color name="colorGreyLine">
+        #c1c1c1
+    </color>
+
+    <color name="result_total_question">
+        #13abb8
+    </color>
+    <color name="result_correct">
+        #00a2ea
+    </color>
+    <color name="result_incorrect">
+        #f9731a
+    </color>
+    <color name="result_attempt">
+        #9ec826
+    </color>
+    <color name="result_net_score">
+        #c178d2
+    </color>
+    <color name="result_home">
+        #00b58a
+    </color>
+    <color name="result_home_pressed">
+        #bb00b58a
+    </color>
+
+    <color name="color_tile_0">#2ecc71</color>
+    <color name="color_tile_1">#1abc9c</color>
+    <color name="color_tile_2">#3498db</color>
+    <color name="color_tile_3">#f1c40f</color>
+    <color name="color_tile_4">#FF8A65</color>
+    <!--old e67e22-->
+    <color name="color_tile_5">#F48FB1</color>
+    <color name="color_tile_6">#08cb7f</color>
+    <color name="color_tile_7">#FFB74D</color>
+    <color name="color_tile_8">#4FC3F7</color>
+    <color name="color_tile_9">#E57373</color>
+
+    <!--old 4666cb-->
+
+    <color name="color_tile_4_pressed">#E65100</color>
+
+    <color name="colorTextGrey">#737373</color>
+    <color name="heading_text_color">#454545</color>
+    <color name="background_color">#fafafa</color>
+    <color name="text_color">#000000</color>
+    <color name="text_color_grey">#9a9a9a</color>
+    <color name="text_green_color">#10a3b3</color>
+    <color name="divider_color">#e7e7e7</color>
+    <color name="about_us_background">#f7f2ec</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="orange">#f8833d</color>
+    <color name="dark_purple">#9c244a</color>
+    <color name="dark_pink">#eb2a56</color>
+    <color name="dark_orange">#f25e1e</color>
+    <color name="dark_yellow">#ffa72f</color>
+
+
+    <color name="color_grey_bg">#ebebeb</color>
+
+    <color name="colorHomeTitle1">#5ebcf2</color>
+    <color name="colorHomeTitle1Pressed">#bb5ebcf2</color>
+
+    <color name="colorHomeTitle2">#f8833d</color>
+    <color name="colorHomeTitle2Pressed">#bbf8833d</color>
+
+    <color name="colorHomeTitle3">#6181ba</color>
+    <color name="colorHomeTitle3Pressed">#bb6181ba</color>
+
+    <color name="colorHomeTitle4">#fccd37</color>
+    <color name="colorHomeTitle4Pressed">#bbfccd37</color>
+
+    <color name="colorHomeTitle5">#91c95c</color>
+    <color name="colorHomeTitle5Pressed">#bb91c95c</color>
+
+    <color name="colorHomeTitle6">#f85654</color>
+    <color name="colorHomeTitle6Pressed">#bbf85654</color>
+
+    <color name="colorHomeTitle7">#4992f9</color>
+    <color name="colorHomeTitle7Pressed">#bb4992f9</color>
+
+    <color name="colorHomeTitle8">#62a0c7</color>
+    <color name="colorHomeTitle8Pressed">#bb62a0c7</color>
+
+    <color name="colorHomeTitle9">#fd5f42</color>
+    <color name="colorHomeTitle9Pressed">#bbfd5f42</color>
+
+    <color name="colorHomeTitle10">#26cbbd</color>
+    <color name="colorHomeTitle10Pressed">#bb26cbbd</color>
+
+    <color name="colorHomeTitle11">#f8931f</color>
+    <color name="colorHomeTitle11Pressed">#bbf8931f</color>
+
+
+    <color name="colorHomeTitle12">#3b99d7</color>
+    <color name="colorHomeTitle12Pressed">#bb3b99d7</color>
+</resources>

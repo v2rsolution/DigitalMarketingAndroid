@@ -1,0 +1,368 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/textColorPrimary">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dim_10">
+
+
+            <ImageView
+                android:id="@+id/logo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_250"
+                android:background="@color/about_us_background"
+                android:src="@drawable/about_us_top"/>
+
+            <RelativeLayout
+                android:id="@+id/relDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/logo_layout">
+
+
+                <RelativeLayout
+                    android:id="@+id/relMainDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                        android:id="@+id/heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dim_10"
+                        android:gravity="center_vertical"
+                        android:text="About Us"
+                        android:typeface="sans"
+                        android:visibility="gone"
+                        android:paddingLeft="@dimen/dim_10"
+                        android:textColor="@color/heading_text_color"
+                        android:textSize="@dimen/font_size_18"/>
+
+
+                    <com.wscubetech.seovideotutorials.custom_views.JustifiedTextViewRegular
+                        android:id="@+id/about_us_text_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/heading"
+                        android:layout_marginTop="@dimen/dim_7"
+                        android:paddingLeft="@dimen/dim_10"
+                        android:paddingRight="@dimen/dim_10"
+                        android:typeface="sans"
+                        android:text="@string/about_us_text_first"
+                        android:textColor="@color/colorTextGrey"
+                        android:textSize="@dimen/font_size_15"
+                        />
+
+                    <com.wscubetech.seovideotutorials.custom_views.JustifiedTextViewRegular
+                        android:id="@+id/about_us_text_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/about_us_text_first"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dim_10"
+                        android:paddingLeft="@dimen/dim_20"
+                        android:paddingRight="@dimen/dim_20"
+                        android:text="@string/about_us_text_second"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/dim_16"
+                        android:typeface="sans"
+                        />
+
+
+                    <com.wscubetech.seovideotutorials.custom_views.JustifiedTextViewRegular
+                        android:id="@+id/about_us_text_third"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/about_us_text_second"
+                        android:layout_marginTop="@dimen/dim_10"
+                        android:paddingLeft="@dimen/dim_10"
+                        android:paddingRight="@dimen/dim_10"
+                        android:text="@string/about_us_text_third"
+                        android:textColor="@color/colorTextGrey"
+                        android:typeface="sans"
+                        android:textSize="@dimen/font_size_15"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/top_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_1"
+                    android:layout_below="@+id/relMainDetail"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:layout_marginRight="@dimen/dim_10"
+                    android:layout_marginTop="@dimen/dim_20"
+                    android:background="@color/divider_color"
+                    />
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:id="@+id/how_we_work"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/top_divider"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:text="@string/how_we_work"
+                    android:textSize="@dimen/dim_22"
+                    />
+
+                <View
+                    android:id="@+id/bottom_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_1"
+                    android:layout_below="@+id/how_we_work"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:layout_marginRight="@dimen/dim_10"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:background="@color/divider_color"
+                    />
+
+
+                <LinearLayout
+                    android:id="@+id/layout_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_240"
+                    android:layout_below="@+id/bottom_divider"
+                    android:layout_marginTop="@dimen/dim_20"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/listen_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dim_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/purple_drawable">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                                android:id="@+id/listen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:padding="@dimen/dim_10"
+                                android:text="@string/we_listen_to_you"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="@dimen/dim_18"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/dim_66"
+                                android:layout_height="@dimen/dim_70"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="@dimen/dim_10"
+                                android:layout_marginRight="@dimen/dim_10"
+                                android:background="@drawable/listen"/>
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/two_number_layout"
+                            android:layout_width="@dimen/dim_50"
+                            android:layout_height="@dimen/dim_50"
+                            android:background="@color/dark_purple">
+
+                            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="1"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="@dimen/dim_24"/>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/plan_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/dim_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/pink_drawable">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                                android:id="@+id/plan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:padding="@dimen/dim_10"
+                                android:text="@string/we_plan_your_work"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="@dimen/dim_18"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/dim_66"
+                                android:layout_height="@dimen/dim_70"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="@dimen/dim_10"
+                                android:layout_marginRight="@dimen/dim_10"
+                                android:background="@drawable/plan"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/four_number_layout"
+                            android:layout_width="@dimen/dim_50"
+                            android:layout_height="@dimen/dim_50"
+                            android:background="@color/dark_pink">
+
+                            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="2"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="@dimen/dim_24"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_240"
+                    android:layout_below="@+id/layout_one"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/design_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dim_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/orange_drawable">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                                android:id="@+id/design"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:padding="@dimen/dim_10"
+                                android:text="@string/we_design_creatively"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="@dimen/dim_18"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/dim_66"
+                                android:layout_height="@dimen/dim_70"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="@dimen/dim_10"
+                                android:layout_marginRight="@dimen/dim_10"
+                                android:background="@drawable/design"/>
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/three_number_layout"
+                            android:layout_width="@dimen/dim_50"
+                            android:layout_height="@dimen/dim_50"
+                            android:background="@color/dark_orange">
+
+                            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="3"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="@dimen/dim_24"/>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/execute_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/dim_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/yellow_drawable">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                                android:id="@+id/execute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:padding="@dimen/dim_10"
+                                android:text="@string/we_execute_publish_maintain"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="@dimen/font_size_16"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/dim_66"
+                                android:layout_height="@dimen/dim_70"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="@dimen/dim_10"
+                                android:layout_marginRight="@dimen/dim_10"
+                                android:background="@drawable/execute"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/number_layout"
+                            android:layout_width="@dimen/dim_50"
+                            android:layout_height="@dimen/dim_50"
+                            android:background="@color/dark_yellow">
+
+                            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="4"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="@dimen/dim_24"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</RelativeLayout>

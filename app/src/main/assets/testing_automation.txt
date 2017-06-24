@@ -1,0 +1,130 @@
+{
+    "desc_id": "6",
+    "description": "Automated testing tools are capable of executing tests, reporting outcomes and comparing results with earlier test runs. Tests carried out with these tools can be run repeatedly, at any time of day. The method or process being used to implement automation is called a test automation framework.",
+    "desc_title": "TESTING (Automation)",
+    "points": [
+        {
+            "points_id": "86",
+            "heading": "Basics of Automation Testing",
+            "points_desc_id": "6",
+            "point": [
+                {
+                    "data_id": "149",
+                    "data": "Problems in Manual Testing",
+                    "data_points_id": "86"
+                },
+                {
+                    "data_id": "150",
+                    "data": "What is Automation?",
+                    "data_points_id": "86"
+                },
+                {
+                    "data_id": "151",
+                    "data": "Why Automation?",
+                    "data_points_id": "86"
+                },
+                {
+                    "data_id": "152",
+                    "data": "When Automate?",
+                    "data_points_id": "86"
+                },
+                {
+                    "data_id": "153",
+                    "data": "Which tool used for Automation?",
+                    "data_points_id": "86"
+                },
+                {
+                    "data_id": "154",
+                    "data": "Which test cases to Automate?",
+                    "data_points_id": "86"
+                },
+                {
+                    "data_id": "155",
+                    "data": "Which test cases not to Automate?",
+                    "data_points_id": "86"
+                }
+            ]
+        },
+        {
+            "points_id": "87",
+            "heading": "SELENIUM",
+            "points_desc_id": "6",
+            "point": [
+                {
+                    "data_id": "156",
+                    "data": "Introduction",
+                    "data_points_id": "87"
+                },
+                {
+                    "data_id": "157",
+                    "data": "Selenium IDE-Record-Edit-Playback",
+                    "data_points_id": "87"
+                },
+                {
+                    "data_id": "158",
+                    "data": "Selenium IDE-Debugging",
+                    "data_points_id": "87"
+                },
+                {
+                    "data_id": "159",
+                    "data": "Selenium IDE-Commands",
+                    "data_points_id": "87"
+                }
+            ]
+        },
+        {
+            "points_id": "88",
+            "heading": "BUGZILLA",
+            "points_desc_id": "6",
+            "point": [
+                {
+                    "data_id": "160",
+                    "data": "Getting Started",
+                    "data_points_id": "88"
+                },
+                {
+                    "data_id": "161",
+                    "data": "Bug Life Cycle",
+                    "data_points_id": "88"
+                },
+                {
+                    "data_id": "162",
+                    "data": "Bugzilla Searching Bugs",
+                    "data_points_id": "88"
+                },
+                {
+                    "data_id": "163",
+                    "data": "Reports and Charts",
+                    "data_points_id": "88"
+                }
+            ]
+        },
+        {
+            "points_id": "89",
+            "heading": "Test Link",
+            "points_desc_id": "6",
+            "point": [
+                {
+                    "data_id": "164",
+                    "data": "Introduction to Test Management tool",
+                    "data_points_id": "89"
+                },
+                {
+                    "data_id": "165",
+                    "data": "Creation of Test requirement specification",
+                    "data_points_id": "89"
+                },
+                {
+                    "data_id": "166",
+                    "data": "Creation of Test Scripts",
+                    "data_points_id": "89"
+                },
+                {
+                    "data_id": "167",
+                    "data": "Test Reports",
+                    "data_points_id": "89"
+                }
+            ]
+        }
+    ]
+}

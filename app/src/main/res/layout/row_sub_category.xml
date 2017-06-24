@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dim_5"
+    android:background="@color/colorBackgroundGrey"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dim_7"
+    android:paddingRight="@dimen/dim_7">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dim_1"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/linCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/dim_50"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/imgCat"
+                android:layout_width="@dimen/dim_50"
+                android:layout_height="match_parent"
+                android:background="@color/color_tile_3"
+                android:padding="@dimen/dim_7"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtSubCatTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/dim_10"
+                android:text="Sub Category Title"
+                android:textColor="@color/colorDimPrimary"
+                android:textSize="@dimen/font_size_16"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

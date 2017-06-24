@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dim_300"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardElevation="@dimen/dim_5"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_tile_0"
+            android:gravity="center"
+            android:minHeight="@dimen/dim_130"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgHeader"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/dim_10"
+                android:src="@drawable/ic_tile_video_tutorial"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_7"
+                android:text="Video Tutorials Categories"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_16"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.pnikosis.materialishprogress.ProgressWheel
+                android:id="@+id/progressBar"
+                android:layout_width="@dimen/dim_30"
+                android:layout_height="@dimen/dim_30"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dim_40"
+                android:layout_marginTop="@dimen/dim_40"
+                android:visibility="gone"
+                app:matProg_barColor="@color/color_tile_0"
+                app:matProg_barWidth="@dimen/dim_3"
+                app:matProg_progressIndeterminate="true"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

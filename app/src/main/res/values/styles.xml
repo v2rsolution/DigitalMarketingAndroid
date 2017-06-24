@@ -1,0 +1,109 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">
+            @color/colorPrimary
+        </item>
+        <item name="colorPrimaryDark">
+            @color/colorPrimaryDark
+        </item>
+        <item name="colorAccent">
+            @color/colorAccent
+        </item>
+        <!--<item name="colorControlNormal">@color/colorPrimary</item>-->
+        <!--<item name="colorControlActivated">@color/colorPrimary</item>-->
+        <!--<item name="colorControlHighlight">@color/colorPrimary</item>-->
+    </style>
+
+    <style name="MyOverlayTheme" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:textColorSecondary">
+            #ffffff
+        </item>
+    </style>
+
+    <style name="TextTitleCollapsingToolbar">
+        <item name="android:textSize">
+            @dimen/font_size_18
+        </item>
+        <item name="android:textColor">
+            #fff
+        </item>
+    </style>
+
+    <style name="CollapseToolbarTheme" parent="AppTheme">
+        <item name="android:textColorPrimary">
+            #000
+        </item>
+        <item name="android:textColorSecondary">
+            #000
+        </item>
+        <item name="colorControlNormal">
+            #fff
+        </item>
+    </style>
+
+    <style name="FloatingTextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textSize">
+            @dimen/font_size_12
+        </item>
+        <item name="android:textColor">
+            @color/colorPrimary
+        </item>
+        <item name="android:textColorHint">
+            @color/colorPrimary
+        </item>
+    </style>
+
+    <style name="FloatingTextInputLayoutError" parent="@android:style/TextAppearance">
+        <item name="android:textSize">
+            @dimen/font_size_10
+        </item>
+        <item name="android:textColor">
+            @color/colorOptionRed
+        </item>
+    </style>
+
+    <style name="FloatingTextInputLayoutNormal" parent="@android:style/TextAppearance">
+        <item name="android:textSize">
+            @dimen/font_size_13
+        </item>
+        <item name="android:textColor">
+            @color/colorPrimary
+        </item>
+        <item name="android:textColorHint">
+            @color/colorPrimary
+        </item>
+    </style>
+
+
+    <style name="FloatingTextInputLayoutErrorNormal" parent="@android:style/TextAppearance">
+        <item name="android:textSize">
+            @dimen/font_size_11
+        </item>
+        <item name="android:textColor">
+            @color/colorOptionRed
+        </item>
+    </style>
+
+    <style name="FloatingHint" parent="Widget.Design.TextInputLayout">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/color_tile_4</item>
+        <item name="android:textSize">@dimen/font_size_13</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/color_tile_4</item>
+        <item name="colorControlNormal">@color/color_tile_4</item>
+        <item name="colorControlActivated">@color/color_tile_4</item>
+    </style>
+
+    <style name="TextNavDrawer">
+        <item name="android:textSize">
+            @dimen/font_size_16
+        </item>
+        <item name="android:textColor">
+            #fff
+        </item>
+    </style>
+
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_study_material_ans"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGrey"
+    tools:context="com.wscubetech.seovideotutorials.activities.StudyMaterialAnsActivity">
+
+    <include
+        layout="@layout/toolbar_layout"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/txtMsg"
+        android:layout_below="@+id/toolbar">
+
+    </android.support.v4.view.ViewPager>
+
+    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+        android:id="@+id/txtMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relBottomAd"
+        android:gravity="center"
+        android:padding="@dimen/dim_5"
+        android:text="Swipe left to go to next page"
+        android:textColor="@color/colorBrownGreyNice"/>
+
+    <include
+        layout="@layout/content_ad_banner"/>
+</RelativeLayout>

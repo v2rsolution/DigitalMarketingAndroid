@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dim_300"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardElevation="@dimen/dim_5"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_tile_4"
+            android:gravity="center"
+            android:minHeight="@dimen/dim_80"
+            android:orientation="horizontal"
+            android:padding="@dimen/dim_9">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_tile_ques_ans"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtQuesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_7"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="3"
+                android:text="Ques"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_16"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dim_7">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inpAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorTextAppearance="@style/FloatingTextInputLayoutErrorNormal"
+                app:theme="@style/FloatingHint">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyEditTextRegular
+                    android:id="@+id/etAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:hint="Your answer"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:minLines="3"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_14"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtPostAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35"
+                android:layout_marginTop="@dimen/dim_5"
+                android:background="@drawable/btn_primary_question_answer"
+                android:gravity="center"
+                android:text="Post"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_14"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

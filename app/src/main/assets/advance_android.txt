@@ -1,0 +1,211 @@
+{
+    "desc_id": "2",
+    "desc_title": "ADVANCE ANDROID",
+    "description": "Learn about various advanced android topics such as Firebase Cloud Messaging integration, Third party library integration, Google Places api, location tracking etc and and boost your hirability",
+    "points": [
+        {
+            "points_id": "43",
+            "heading": "Web API Development",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "44",
+            "heading": "In-App Purchase",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "45",
+            "heading": "Payment Gateway Integration",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "46",
+            "heading": "FCM (Firebase Cloud Messaging)",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "47",
+            "heading": "Advance Maps",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "48",
+            "heading": "Android Volley",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "49",
+            "heading": "Lazy Loading",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "50",
+            "heading": "Security in Android",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "51",
+            "heading": "E-commerce app",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "52",
+            "heading": "Latest widgets",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "53",
+            "heading": "Boot up listener",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "54",
+            "heading": "Image Switcher & Text Switcher",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "55",
+            "heading": "Gesture Detector",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "56",
+            "heading": "Notification",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "57",
+            "heading": "Audio Capture",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "58",
+            "heading": "Bluetooth, Wi-Fi",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "59",
+            "heading": "Camera",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "60",
+            "heading": "Clipboard",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "61",
+            "heading": "Custom Fonts",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "62",
+            "heading": "Data Backup",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "63",
+            "heading": "Image Effects",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "64",
+            "heading": "Localization in Android (Multi-Lingual app)",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "65",
+            "heading": "Multi Touch",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "66",
+            "heading": "Network Connection",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "67",
+            "heading": "NFC Guide",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "68",
+            "heading": "Android Render Script",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "69",
+            "heading": "Android RSS Feeds Reader",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "70",
+            "heading": "Android Screen Cast",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "71",
+            "heading": "Android SIP Cast",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "72",
+            "heading": "Android Testing",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "73",
+            "heading": "Text to Speech, Speech to Text",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "74",
+            "heading": "Texture View",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "75",
+            "heading": "Advance UI Design and Patterns",
+            "points_desc_id": "2",
+            "point": []
+        },
+        {
+            "points_id": "76",
+            "heading": "AUTH & SOAP API",
+            "points_desc_id": "2",
+            "point": []
+        }
+    ]
+}

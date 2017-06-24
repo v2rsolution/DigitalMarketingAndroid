@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="center"
+            android:padding="@dimen/dim_10"
+            android:text="INSTRUCTIONS"
+            android:textColor="@color/colorDimPrimary"
+            android:textSize="@dimen/font_size_16"/>
+
+        <LinearLayout
+            android:id="@+id/linInstructionCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dim_10">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_option_box_yellow_boundary">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/dim_20"
+                    android:text="Duration (minutes)"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_16"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:id="@+id/txtDuration"
+                    android:layout_width="@dimen/dim_45"
+                    android:layout_height="@dimen/dim_45"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorOptionYellow"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/font_size_16"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_10"
+                android:background="@drawable/bg_option_box_primary_boundary">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/dim_20"
+                    android:text="Number of Questions"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_16"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:id="@+id/txtTotalQuestions"
+                    android:layout_width="@dimen/dim_45"
+                    android:layout_height="@dimen/dim_45"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/font_size_16"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_10"
+                android:background="@drawable/bg_option_box_teal_boundary"
+                android:visibility="gone">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/dim_20"
+                    android:text="Points for correct answer"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_16"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:layout_width="@dimen/dim_45"
+                    android:layout_height="@dimen/dim_45"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorTeal"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/font_size_16"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_10"
+                android:background="@drawable/bg_option_box_red_boundary"
+                android:visibility="gone">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/dim_20"
+                    android:text="Points for incorrect answer"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_16"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:layout_width="@dimen/dim_45"
+                    android:layout_height="@dimen/dim_45"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorOptionRed"
+                    android:gravity="center"
+                    android:text="-2"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/font_size_16"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_10"
+                android:background="@drawable/bg_option_box_yellow_boundary"
+                android:paddingBottom="@dimen/dim_10"
+                android:paddingLeft="@dimen/dim_20"
+                android:paddingRight="@dimen/dim_20"
+                android:paddingTop="@dimen/dim_10"
+                android:visibility="visible">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Each question carries 1 mark each, no negative marking"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_16"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_10"
+                android:background="@drawable/bg_option_box_primary_boundary"
+                android:padding="@dimen/dim_20"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imgLuck"
+                    android:layout_width="@dimen/dim_44"
+                    android:layout_height="@dimen/dim_44"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_like_thumb"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgLuck"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:gravity="center"
+                    android:text="All the Best\nMake your attempt count!\n:-)"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_16"/>
+            </RelativeLayout>
+
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtStart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dim_20"
+                android:background="@drawable/btn_selector_teal_rectangle_curved"
+                android:gravity="center"
+                android:text="START"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_16"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

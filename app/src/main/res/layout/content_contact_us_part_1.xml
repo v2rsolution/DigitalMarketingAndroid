@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dim_5"
+            android:paddingLeft="@dimen/dim_12"
+            android:paddingRight="@dimen/dim_3"
+            android:paddingTop="@dimen/dim_12">
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtContactInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dim_5"
+                android:text="Contact Information"
+                android:textColor="#000"
+                android:textSize="@dimen/font_size_18"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dim_9">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ic_contact_address"
+                    android:tint="@color/color_tile_8"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@string/contact_us_address"
+                    android:textColor="@color/colorBrownGreyNice"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dim_9">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_contact_phone"
+                    android:tint="@color/color_tile_8"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:lineSpacingExtra="2dp"
+                    android:text="(+91) 92696 - 98122\n(+91) 85610 - 89567"
+                    android:textColor="@color/colorBrownGreyNice"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dim_9">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_contact_email"
+                    android:tint="@color/color_tile_8"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:lineSpacingExtra="2dp"
+                    android:text="info@wscubetech.com"
+                    android:textColor="@color/colorBrownGreyNice"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

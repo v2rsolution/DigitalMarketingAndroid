@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGrey"
+    android:orientation="vertical"
+    tools:context="com.wscubetech.seovideotutorials.activities.ResultActivity">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linCongrats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dim_10">
+
+                <ImageView
+                    android:layout_width="@dimen/dim_44"
+                    android:layout_height="@dimen/dim_44"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_like_thumb"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dim_5"
+                    android:gravity="center"
+                    android:text=""
+                    android:id="@+id/txtPaperTitle"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_16"/>
+
+            </LinearLayout>
+
+
+            <com.wscubetech.seovideotutorials.custom_views.ScrollDisabledRecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dim_10"/>
+
+            <LinearLayout
+                android:id="@+id/linFooter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_70"
+                android:orientation="horizontal"
+                android:padding="@dimen/dim_10"
+                android:weightSum="2">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtRetake"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dim_50"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/dim_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_selector_teal_rectangle_curved_boundary"
+                    android:gravity="center"
+                    android:text="Retake"
+                    android:textColor="@color/colorTeal"
+                    android:textSize="@dimen/font_size_18"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtReview"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dim_50"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_selector_teal_rectangle_curved"
+                    android:gravity="center"
+                    android:text="Review"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/font_size_18"/>
+
+            </LinearLayout>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtEmailResult"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_50"
+                android:layout_marginLeft="@dimen/dim_10"
+                android:layout_marginRight="@dimen/dim_10"
+                android:background="@drawable/btn_primary_selector_rectangle_curved"
+                android:gravity="center"
+                android:text="E-mail my result"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_18"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>
