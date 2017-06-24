@@ -79,7 +79,10 @@ public class QuestionListActivity extends AppCompatActivity implements View.OnCl
     AdClass ad;
 
     UserModel userModel;
-    String comingFrom = "", msgNotFound = ""; //all-> all questions   myQuestions-> my posted questions    myAnswers-> my posted answers
+    
+    String comingFrom = "";//all-> all questions   myQuestions-> my posted questions    myAnswers-> my posted answers
+    
+    String msgNotFound = ""; 
 
     DialogMsg dialogMsg;
 

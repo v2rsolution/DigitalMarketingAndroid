@@ -2,45 +2,14 @@ package com.wscubetech.seovideotutorials.Urls;
 
 import com.wscubetech.seovideotutorials.utils.Constants;
 
-/**
- * Created by wscubetech on 20/8/16.
- */
 public class Urls {
-
-    //Test Url:
-    //http://wscube.com/code/api_old/
-
-    //Test Video Image URL:
-    //http://wscube.com/code/dashboard/videoimage/
-
-    //Test subCategoryUrl
-    //http://wscube.com/code/seo/
-
-    //Main Url:
-    //http://wscubetech.com/api/
-
-    //Video Img Url:
-    //http://wscubetech.com/dashboard/videoimage/
-
-    //subCategoryUrl
-    //http://wscubetech.com/seo/
-
-    //Main URL April 13 2017
-    // http://wscube.com/digital_marketing/api/
-
-    //Main Image URL April 13 2017
-    // http://wscube.com/digital_marketing/uploads/
 
     //360DigiGyan
     //MAIN_URL:- http://www.360digitalgyan.com/api
 
     public static final String mainUrl = "http://www.360digitalgyan.com/api/";
 
-    // public static final String videoImageUrl = "http://wscube.com/digital_marketing/uploads/";
-
     public static final String imageUrl = "http://www.360digitalgyan.com/uploads/";
-
-    //public static final String subCategoryImageUrl = "http://wscube.com/code/seo/";
 
     public static final String viewVideoList = mainUrl + "video.php";
     //course_id= //video_id=
