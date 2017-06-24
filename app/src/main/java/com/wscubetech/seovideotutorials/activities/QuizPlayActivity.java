@@ -1,3 +1,5 @@
+/*Designed and Developed by V2R Solution*/
+
 package com.wscubetech.seovideotutorials.activities;
 
 import android.content.Intent;

@@ -1,3 +1,5 @@
+/*Designed and Developed by V2R Solution*/
+
 package com.wscubetech.seovideotutorials.activities;
 
 import android.content.BroadcastReceiver;
@@ -15,8 +17,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.wscubetech.seovideotutorials.R;
-import com.wscubetech.seovideotutorials.Urls.Urls;
-import com.wscubetech.seovideotutorials.dialogs.DialogMsg;
 import com.wscubetech.seovideotutorials.model.SubCategoryModel;
 import com.wscubetech.seovideotutorials.model.VideoModel;
 import com.wscubetech.seovideotutorials.utils.AdClass;
@@ -24,14 +24,6 @@ import com.wscubetech.seovideotutorials.utils.ConnectionDetector;
 import com.wscubetech.seovideotutorials.utils.Constants;
 import com.wscubetech.seovideotutorials.utils.GetSetSharedPrefs;
 
-import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.HttpUrl;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
