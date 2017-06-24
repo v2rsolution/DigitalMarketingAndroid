@@ -2,28 +2,7 @@ package com.wscubetech.seovideotutorials.Urls;
 
 import com.wscubetech.seovideotutorials.utils.Constants;
 
-/**
- * Created by wscubetech on 20/8/16.
- */
 public class Urls {
-
-    //Test Url:
-    //http://wscube.com/code/api_old/
-
-    //Test Video Image URL:
-    //http://wscube.com/code/dashboard/videoimage/
-
-    //Test subCategoryUrl
-    //http://wscube.com/code/seo/
-
-    //Main Url:
-    //http://wscubetech.com/api/
-
-    //Video Img Url:
-    //http://wscubetech.com/dashboard/videoimage/
-
-    //subCategoryUrl
-    //http://wscubetech.com/seo/
 
     //Main URL April 13 2017
     // http://wscube.com/digital_marketing/api/
