@@ -4,22 +4,12 @@ import com.wscubetech.seovideotutorials.utils.Constants;
 
 public class Urls {
 
-    //Main URL April 13 2017
-    // http://wscube.com/digital_marketing/api/
-
-    //Main Image URL April 13 2017
-    // http://wscube.com/digital_marketing/uploads/
-
     //360DigiGyan
     //MAIN_URL:- http://www.360digitalgyan.com/api
 
     public static final String mainUrl = "http://www.360digitalgyan.com/api/";
 
-    // public static final String videoImageUrl = "http://wscube.com/digital_marketing/uploads/";
-
     public static final String imageUrl = "http://www.360digitalgyan.com/uploads/";
-
-    //public static final String subCategoryImageUrl = "http://wscube.com/code/seo/";
 
     public static final String viewVideoList = mainUrl + "video.php";
     //course_id= //video_id=
