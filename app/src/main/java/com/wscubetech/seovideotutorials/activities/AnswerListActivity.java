@@ -325,7 +325,7 @@ public class AnswerListActivity extends AppCompatActivity implements View.OnClic
         calls.initiateCall(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-
+                Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
             }
 
             @Override

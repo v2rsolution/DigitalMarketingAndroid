@@ -10,17 +10,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.pnikosis.materialishprogress.ProgressWheel;
 import com.wscubetech.seovideotutorials.R;
 import com.wscubetech.seovideotutorials.Urls.Urls;
 import com.wscubetech.seovideotutorials.activities.HomeActivity;
 import com.wscubetech.seovideotutorials.adapters.PlacedStudentsAdapter;
-import com.wscubetech.seovideotutorials.adapters.TestListAdapter;
 import com.wscubetech.seovideotutorials.model.PlacedStudentModel;
-import com.wscubetech.seovideotutorials.model.TestPaperModel;
 import com.wscubetech.seovideotutorials.utils.ConnectionDetector;
-import com.wscubetech.seovideotutorials.utils.Constants;
 import com.wscubetech.seovideotutorials.utils.GridSpacingItemDecoration;
 import com.wscubetech.seovideotutorials.utils.NoRecordFound;
 import com.wscubetech.seovideotutorials.utils.OfflineResponse;
@@ -31,7 +29,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -50,14 +47,14 @@ public class PlacedStudentsFragment extends Fragment implements View.OnClickList
     boolean active;
     ProgressWheel progressBar;
 
-    ArrayList<PlacedStudentModel> arrayModel=new ArrayList<>();
+    ArrayList<PlacedStudentModel> arrayModel = new ArrayList<>();
     PlacedStudentsAdapter adapter;
-    String response="",title="";
+    String response = "", title = "";
 
-    public static Fragment newInstance(String title){
-        Fragment fragment=new PlacedStudentsFragment();
-        Bundle bundle=new Bundle();
-        bundle.putString("Title",title);
+    public static Fragment newInstance(String title) {
+        Fragment fragment = new PlacedStudentsFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("Title", title);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -83,7 +80,7 @@ public class PlacedStudentsFragment extends Fragment implements View.OnClickList
     public void onStart() {
         super.onStart();
         active = true;
-        title=this.getArguments().getString("Title");
+        title = this.getArguments().getString("Title");
         HomeActivity.txtHeader.setText(title);
         if (new ConnectionDetector(HomeActivity.activity).isConnectingToInternet()) {
             viewPlacedStudentsOkHttp();
@@ -102,7 +99,8 @@ public class PlacedStudentsFragment extends Fragment implements View.OnClickList
         OfflineResponse offlineResponse = new OfflineResponse(HomeActivity.activity, "PlacedStudents");
         this.response = offlineResponse.getResponse(OfflineResponse.PLACED_STUDENTS);
         if (this.response.trim().length() < 1) {
-            response = getString(R.string.networkError);
+            if (active)
+                response = getString(R.string.networkError);
         }
         handleResponse(response);
     }
@@ -122,7 +120,8 @@ public class PlacedStudentsFragment extends Fragment implements View.OnClickList
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                getOfflineData();
+                Toast.makeText(getActivity(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                //getOfflineData();
             }
 
             @Override
@@ -156,7 +155,7 @@ public class PlacedStudentsFragment extends Fragment implements View.OnClickList
 
                                 for (int i = 0; i < array.length(); i++) {
                                     JSONObject obj = array.getJSONObject(i);
-                                    PlacedStudentModel model=new PlacedStudentModel(obj.getString("client_name"),obj.getString("client_image"));
+                                    PlacedStudentModel model = new PlacedStudentModel(obj.getString("client_name"), obj.getString("client_image"));
                                     arrayModel.add(model);
                                 }
 
@@ -176,7 +175,6 @@ public class PlacedStudentsFragment extends Fragment implements View.OnClickList
                             Log.v("ParsingException", "" + e);
                         }
                     }
-
 
 
                 } catch (Exception e) {

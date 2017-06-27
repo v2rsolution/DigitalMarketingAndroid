@@ -10,15 +10,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.pnikosis.materialishprogress.ProgressWheel;
 import com.wscubetech.seovideotutorials.R;
 import com.wscubetech.seovideotutorials.Urls.Urls;
 import com.wscubetech.seovideotutorials.activities.HomeActivity;
 import com.wscubetech.seovideotutorials.adapters.NotificationAdapter;
-import com.wscubetech.seovideotutorials.adapters.PlacedStudentsAdapter;
 import com.wscubetech.seovideotutorials.model.NotificationModel;
-import com.wscubetech.seovideotutorials.model.PlacedStudentModel;
 import com.wscubetech.seovideotutorials.model.SubCategoryModel;
 import com.wscubetech.seovideotutorials.utils.ConnectionDetector;
 import com.wscubetech.seovideotutorials.utils.NoRecordFound;
@@ -30,7 +29,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -99,7 +97,8 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
         OfflineResponse offlineResponse = new OfflineResponse(getActivity(), "NotificationList");
         this.response = offlineResponse.getResponse(OfflineResponse.NOTIFICATIONS);
         if (this.response.trim().length() < 1) {
-            response = getString(R.string.networkError);
+            if (active)
+                response = getString(R.string.networkError);
         }
         handleResponse(response);
     }
@@ -119,7 +118,8 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                getOfflineData();
+                Toast.makeText(getActivity(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                //getOfflineData();
             }
 
             @Override

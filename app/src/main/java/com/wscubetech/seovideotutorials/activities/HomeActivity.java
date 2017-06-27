@@ -618,7 +618,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                                 /*Intent intent = new Intent(HomeActivity.this, GreetingActivity.class);
                                 intent.putExtra("ImagePath", Urls.imageUrl + greetingImage);
                                 startActivity(intent);*/
-                                if (greetingId.trim().length() > 0 && greetingImage.trim().length()>1)
+                                if (active && greetingId.trim().length() > 0 && greetingImage.trim().length()>1)
                                     showGreetingDialog(Urls.imageUrl + greetingImage);
                             }
                         }

@@ -286,7 +286,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                getOfflineData();
+                Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
             }
 
             @Override
