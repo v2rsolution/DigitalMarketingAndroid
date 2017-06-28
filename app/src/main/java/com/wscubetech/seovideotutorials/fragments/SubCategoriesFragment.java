@@ -195,8 +195,9 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.v("Failure", "" + e);
-                Toast.makeText(getActivity(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                //Log.v("Failure", "" + e);
+                if(active)
+                    Toast.makeText(getActivity(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
                 //getOfflineData();
             }
 

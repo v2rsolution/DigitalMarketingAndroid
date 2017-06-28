@@ -122,6 +122,7 @@ public class VideoTutorialFragment extends Fragment implements View.OnClickListe
     public void viewVideoListOkHttp() {
         progressWheel.setVisibility(View.VISIBLE);
 
+        //Urls.viewVideoList
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Urls.viewVideoList).newBuilder();
         urlBuilder.addQueryParameter(Constants.KEY_COURSE_ID, Constants.SEO_CAT_ID);
         urlBuilder.addQueryParameter(Constants.KEY_LANGUAGE, englishHindi);
@@ -138,7 +139,8 @@ public class VideoTutorialFragment extends Fragment implements View.OnClickListe
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                Toast.makeText(getActivity(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                if (active)
+                    Toast.makeText(getActivity(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
             }
 
             @Override

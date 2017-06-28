@@ -162,7 +162,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         ad.destroyAd();
-        active=false;
+        active = false;
         super.onDestroy();
     }
 
@@ -565,7 +565,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void sendProfileDetailRequest() {
-        if (new ConnectionDetector(this).isConnectingToInternet()) {
+        if (new ConnectionDetector(this).isConnectingToInternet() && userModel != null && userModel.getUserId().trim().length() > 0) {
             ViewUserDetailsServer detailsServer = new ViewUserDetailsServer(this, active);
             detailsServer.okHttpViewUserDetailsAndSave();
         }
@@ -577,7 +577,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             txtUserName.setText(userModel.getUserName());
             txtUserEmail.setText(userModel.getUserEmail());
             try {
-                Log.v("UrlImage", Urls.imageUrl + userModel.getUserImage());
+                //Log.v("UrlImage", Urls.imageUrl + userModel.getUserImage());
                 if (userModel.getUserImage().trim().length() > 1) {
                     new LoadUserImage().loadImageInImageView(this, Urls.imageUrl + userModel.getUserImage(), imgUser);
                 }
@@ -618,7 +618,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                                 /*Intent intent = new Intent(HomeActivity.this, GreetingActivity.class);
                                 intent.putExtra("ImagePath", Urls.imageUrl + greetingImage);
                                 startActivity(intent);*/
-                                if (active && greetingId.trim().length() > 0 && greetingImage.trim().length()>1)
+                                if (active && greetingId.trim().length() > 0 && greetingImage.trim().length() > 1)
                                     showGreetingDialog(Urls.imageUrl + greetingImage);
                             }
                         }
@@ -637,7 +637,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         dialog.setCancelable(false);
         ImageView imgGreeting = (ImageView) dialog.findViewById(R.id.imgGreeting);
         ImageView imgCross = (ImageView) dialog.findViewById(R.id.imgCross);
-        Glide.with(this).load(imagePath).placeholder(R.drawable.img_placeholder).thumbnail(0.1f).into(imgGreeting);
+        Glide.with(getApplicationContext()).load(imagePath).placeholder(R.drawable.img_placeholder).thumbnail(0.1f).into(imgGreeting);
         imgCross.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

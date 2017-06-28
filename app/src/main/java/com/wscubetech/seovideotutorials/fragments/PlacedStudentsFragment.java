@@ -120,7 +120,8 @@ public class PlacedStudentsFragment extends Fragment implements View.OnClickList
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                Toast.makeText(getActivity(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                if(active)
+                    Toast.makeText(getActivity(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
                 //getOfflineData();
             }
 

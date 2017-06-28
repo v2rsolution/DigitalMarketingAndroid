@@ -212,7 +212,7 @@ public class InterviewQuesActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                getOfflineData();
+                Toast.makeText(InterviewQuesActivity.this,getString(R.string.networkError),Toast.LENGTH_LONG).show();
             }
 
             @Override

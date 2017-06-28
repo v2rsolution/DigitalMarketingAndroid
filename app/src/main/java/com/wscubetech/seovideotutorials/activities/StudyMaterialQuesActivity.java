@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.pnikosis.materialishprogress.ProgressWheel;
 import com.wscubetech.seovideotutorials.R;
@@ -210,7 +211,8 @@ public class StudyMaterialQuesActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                getOfflineData();
+                if(active)
+                    Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
             }
 
             @Override
