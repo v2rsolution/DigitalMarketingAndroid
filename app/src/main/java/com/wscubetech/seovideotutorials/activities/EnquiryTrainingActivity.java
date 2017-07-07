@@ -38,12 +38,12 @@ public class EnquiryTrainingActivity extends AppCompatActivity implements View.O
     Toolbar toolbar;
     EditText etName, etEmail, etPhone, etMessage;
     Spinner spinner;
-    TextView txtSubmit,txtHeader;
+    TextView txtSubmit, txtHeader;
     Dialog progress;
     DialogMsg dialogMsg;
 
     String arrayCourses[];
-    int positionSelected=0;
+    int positionSelected = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +51,8 @@ public class EnquiryTrainingActivity extends AppCompatActivity implements View.O
         setContentView(R.layout.activity_enquiry_training);
         init();
 
-        dialogMsg=new DialogMsg(this);
-        progress=new MyProgressDialog(this).getDialog();
+        dialogMsg = new DialogMsg(this);
+        progress = new MyProgressDialog(this).getDialog();
 
         toolbarOperation();
         txtSubmit.setOnClickListener(this);
@@ -61,8 +61,8 @@ public class EnquiryTrainingActivity extends AppCompatActivity implements View.O
 
     private void init() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        txtHeader=(TextView)toolbar.findViewById(R.id.txtHeader);
-        spinner=(Spinner)findViewById(R.id.spinner);
+        txtHeader = (TextView) toolbar.findViewById(R.id.txtHeader);
+        spinner = (Spinner) findViewById(R.id.spinner);
         etName = (EditText) findViewById(R.id.etName);
         etEmail = (EditText) findViewById(R.id.etEmail);
         etMessage = (EditText) findViewById(R.id.etMessage);
@@ -70,27 +70,27 @@ public class EnquiryTrainingActivity extends AppCompatActivity implements View.O
         txtSubmit = (TextView) findViewById(R.id.txtSubmit);
     }
 
-    private void toolbarOperation(){
+    private void toolbarOperation() {
         setSupportActionBar(toolbar);
         txtHeader.setText("Enquiry");
         toolbar.setBackgroundResource(R.color.color_tile_6);
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-    private void fillSpinnerWithCourses(){
-        positionSelected=getIntent().getExtras().getInt("SelectedIndex");
-        arrayCourses=getResources().getStringArray(R.array.array_training_courses);
+    private void fillSpinnerWithCourses() {
+        positionSelected = getIntent().getExtras().getInt("SelectedIndex");
+        arrayCourses = getResources().getStringArray(R.array.array_training_courses);
 
-        ArrayAdapter adapter=new ArrayAdapter(this,R.layout.row_text_view,arrayCourses);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.row_text_view, arrayCourses);
         spinner.setAdapter(adapter);
         spinner.setSelection(positionSelected);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                positionSelected=i;
+                positionSelected = i;
                 //Toast.makeText(EnquiryTrainingActivity.this,arrayCourses[positionSelected],Toast.LENGTH_LONG).show();
             }
 
@@ -103,7 +103,7 @@ public class EnquiryTrainingActivity extends AppCompatActivity implements View.O
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 break;
@@ -121,7 +121,7 @@ public class EnquiryTrainingActivity extends AppCompatActivity implements View.O
                 strPhone = etPhone.getText().toString().trim();
                 strMessage = etMessage.getText().toString().trim();
 
-                Toast toast = Toast.makeText(HomeActivity.activity, "", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
 
                 MyValidations validations = new MyValidations(HomeActivity.activity);
@@ -149,9 +149,9 @@ public class EnquiryTrainingActivity extends AppCompatActivity implements View.O
                     return;
                 }
 
-                if(new ConnectionDetector(this).isConnectingToInternet()){
-                    okHttpSendQuery(toast,strName,strEmail,strPhone,arrayCourses[positionSelected],strMessage);
-                }else{
+                if (new ConnectionDetector(this).isConnectingToInternet()) {
+                    okHttpSendQuery(toast, strName, strEmail, strPhone, arrayCourses[positionSelected], strMessage);
+                } else {
                     dialogMsg.showNetworkErrorDialog(getString(R.string.connectionError));
                 }
 
@@ -165,7 +165,7 @@ public class EnquiryTrainingActivity extends AppCompatActivity implements View.O
         urlBuilder.addQueryParameter("name", str[0]);
         urlBuilder.addQueryParameter("email", str[1]);
         urlBuilder.addQueryParameter("phone", str[2]);
-        urlBuilder.addQueryParameter("selecttraining",str[3]);
+        urlBuilder.addQueryParameter("selecttraining", str[3]);
         urlBuilder.addQueryParameter("message", str[4]);
         String url = urlBuilder.build().toString();
 
@@ -178,15 +178,17 @@ public class EnquiryTrainingActivity extends AppCompatActivity implements View.O
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                HomeActivity.activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (progress.isShowing())
-                            progress.dismiss();
-                        toast.setText(getString(R.string.networkError));
-                        toast.show();
-                    }
-                });
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (progress.isShowing())
+                                progress.dismiss();
+                            toast.setText(getString(R.string.networkError));
+                            toast.show();
+                        }
+                    });
+
             }
 
             @Override

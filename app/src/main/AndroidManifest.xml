@@ -45,9 +45,6 @@
             android:name=".activities.QuizPlayActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.TestListingActivity"
-            android:configChanges="screenSize|orientation"/>
-        <activity
             android:name=".activities.ResultActivity"
             android:screenOrientation="portrait"/>
         <activity

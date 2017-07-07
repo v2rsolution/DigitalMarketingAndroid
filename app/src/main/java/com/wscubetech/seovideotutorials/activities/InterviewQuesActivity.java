@@ -34,7 +34,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -212,7 +211,14 @@ public class InterviewQuesActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                Toast.makeText(InterviewQuesActivity.this,getString(R.string.networkError),Toast.LENGTH_LONG).show();
+
+                   runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                        }
+                    });
+
             }
 
             @Override

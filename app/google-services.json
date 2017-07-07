@@ -67,6 +67,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "950994437334-knu4ahl3ol2l4j46b8ue0ps3677aak8j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wscubetech.learnjava",
+            "certificate_hash": "bbc135e2ce350135a7e2130de884bd6a802eb79f"
+          }
+        },
+        {
           "client_id": "950994437334-03pfgfuvnjak2rqg0pfmrvf2puf7jdgl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

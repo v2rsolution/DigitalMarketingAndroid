@@ -1,6 +1,7 @@
 package com.wscubetech.seovideotutorials.fragments;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -139,8 +140,19 @@ public class VideoTutorialFragment extends Fragment implements View.OnClickListe
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                if (active)
-                    Toast.makeText(getActivity(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                try {
+                    Activity act = getActivity();
+                    if (act != null) {
+                        act.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getActivity(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                } catch (Exception ex) {
+
+                }
             }
 
             @Override

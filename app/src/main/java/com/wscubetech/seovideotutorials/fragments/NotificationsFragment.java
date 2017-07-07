@@ -118,7 +118,14 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
-                Toast.makeText(getContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                if (HomeActivity.activity != null) {
+                    HomeActivity.activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(HomeActivity.activity,getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
                 //getOfflineData();
             }
 

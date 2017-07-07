@@ -195,10 +195,14 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                //Log.v("Failure", "" + e);
-                if(active)
-                    Toast.makeText(getActivity(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
-                //getOfflineData();
+                if (HomeActivity.activity != null) {
+                    HomeActivity.activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(HomeActivity.activity,getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
             }
 
             @Override
@@ -221,6 +225,7 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
                 @Override
                 public void run() {
                     try {
+
                         if (response.equalsIgnoreCase(getString(R.string.networkError))) {
                             if (active)
                                 dialogMsg.showNetworkErrorDialog(response);

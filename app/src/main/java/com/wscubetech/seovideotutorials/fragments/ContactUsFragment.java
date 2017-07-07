@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -174,9 +173,9 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener,
                     return;
                 }
 
-               // String subject=radioTechnical.isChecked()?"Technical Support":"Training";
+                // String subject=radioTechnical.isChecked()?"Technical Support":"Training";
 
-                String subject="";
+                String subject = "";
 
                 if (new ConnectionDetector(HomeActivity.activity).isConnectingToInternet()) {
                     okHttpSendQuery(toast, strName, strEmail, strPhone, strWebsite, subject, strMessage);
@@ -194,7 +193,7 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener,
 
 
         try {
-            LatLng latLng = new LatLng(26.2737116,73.0305749);
+            LatLng latLng = new LatLng(26.2737116, 73.0305749);
             gMap.addMarker(new MarkerOptions().position(latLng)
                     .title("WsCube Tech"));
 
@@ -225,16 +224,18 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener,
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.v("Failure", "" + e);
-                HomeActivity.activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (progress.isShowing())
-                            progress.dismiss();
-                        toast.setText(getString(R.string.networkError));
-                        toast.show();
-                    }
-                });
+                //Log.v("Failure", "" + e);
+                if (HomeActivity.activity != null) {
+                    HomeActivity.activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (progress.isShowing())
+                                progress.dismiss();
+                            toast.setText(getString(R.string.networkError));
+                            toast.show();
+                        }
+                    });
+                }
             }
 
             @Override

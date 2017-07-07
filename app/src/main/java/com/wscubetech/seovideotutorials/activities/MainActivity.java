@@ -160,8 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.lin3:
-                intent = new Intent(this, TestListingActivity.class);
-                startActivity(intent);
+
                 break;
         }
     }
