@@ -548,6 +548,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 LogOutUser logOutUser = new LogOutUser(this);
                 logOutUser.sureLogOutDialog();
                 break;
+            case R.id.itemWeb:
+                intent=new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://www.360digitalgyan.com"));
+                startActivity(intent);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

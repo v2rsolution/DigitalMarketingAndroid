@@ -17,6 +17,10 @@
                 android:id="@+id/itemLogOut"
                 android:icon="@drawable/ic_menu_log_out"
                 android:title="Log out"/>
+            <item
+                android:id="@+id/itemWeb"
+                android:icon="@drawable/ic_menu_web"
+                android:title="Visit on Web"/>
         </menu>
     </item>
 </menu>

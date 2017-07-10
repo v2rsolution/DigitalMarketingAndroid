@@ -117,15 +117,6 @@ public class TrainingCourseAdapter extends RecyclerView.Adapter<TrainingCourseAd
     }
 
 
-    public void initFragment(Fragment fragment, FragmentManager manager) {
-        if (fragment != null) {
-            FragmentManager fragmentManager = manager;
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.frameContainer, fragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-        }
-    }
 
 
 }

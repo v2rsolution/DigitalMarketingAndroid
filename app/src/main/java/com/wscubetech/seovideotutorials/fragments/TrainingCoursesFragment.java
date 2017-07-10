@@ -156,7 +156,7 @@ public class TrainingCoursesFragment extends Fragment implements View.OnClickLis
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            adapter = new TrainingCourseAdapter(HomeActivity.activity, arrayTrainingModel, getActivity().getSupportFragmentManager());
+            adapter = new TrainingCourseAdapter(getActivity(), arrayTrainingModel, getActivity().getSupportFragmentManager());
             ScaleInAnimationAdapter animationAdapter = new ScaleInAnimationAdapter(adapter);
             recyclerView.setAdapter(animationAdapter);
             progressBar.setVisibility(View.GONE);

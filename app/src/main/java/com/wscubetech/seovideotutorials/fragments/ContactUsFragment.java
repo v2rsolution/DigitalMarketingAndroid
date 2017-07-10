@@ -1,6 +1,8 @@
 package com.wscubetech.seovideotutorials.fragments;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -51,6 +54,9 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener,
     ScrollView scrollView;
     ImageView imgTransparent;
 
+    TextView txtPhone1,txtPhone2;
+    LinearLayout linEmail;
+
     EditText etName, etEmail, etPhone, etWebsiteName, etMessage;
     TextView txtSubmit;
     DialogMsg dialogMsg;
@@ -87,6 +93,10 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener,
         txtSubmit = (TextView) v.findViewById(R.id.txtSubmit);
         radioTechnical = (RadioButton) v.findViewById(R.id.radioTechnical);
         radioTraining = (RadioButton) v.findViewById(R.id.radioTraining);
+
+        linEmail=(LinearLayout)v.findViewById(R.id.linEmail);
+        txtPhone1=(TextView)v.findViewById(R.id.txtPhone1);
+        txtPhone2=(TextView)v.findViewById(R.id.txtPhone2);
     }
 
     private void touchHandleMapAndScrollView() {
@@ -132,10 +142,14 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener,
         touchHandleMapAndScrollView();
 
         txtSubmit.setOnClickListener(this);
+        linEmail.setOnClickListener(this);
+        txtPhone1.setOnClickListener(this);
+        txtPhone2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
+        Intent intent;
         switch (view.getId()) {
             case R.id.txtSubmit:
                 String strName = "", strEmail = "", strPhone = "", strWebsite = "", strMessage = "";
@@ -184,7 +198,25 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener,
                 }
 
                 break;
+            case R.id.txtPhone1:
+                openDialer(txtPhone1.getText().toString().trim());
+                break;
+            case R.id.txtPhone2:
+                openDialer(txtPhone2.getText().toString().trim());
+                break;
+            case R.id.linEmail:
+                intent= new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto: info@wscubetech.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT,getString(R.string.app_name)+" Android App");
+                startActivity(Intent.createChooser(intent, "Send E-mail via"));
+                break;
         }
+    }
+
+    private void openDialer(String strNumber){
+        Intent intent=new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("tel:"+strNumber));
+        startActivity(intent);
     }
 
     @Override

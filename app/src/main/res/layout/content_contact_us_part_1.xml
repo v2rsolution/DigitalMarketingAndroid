@@ -67,18 +67,29 @@
                     android:tint="@color/color_tile_8"/>
 
                 <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
-                    android:id="@+id/txtPhone"
-                    android:layout_width="match_parent"
+                    android:id="@+id/txtPhone1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dim_10"
                     android:lineSpacingExtra="2dp"
-                    android:text="(+91) 92696 - 98122\n(+91) 85610 - 89567"
+                    android:background="?attr/selectableItemBackground"
+                    android:text="(+91) 92696 - 98122 ,"
                     android:textColor="@color/colorBrownGreyNice"/>
 
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtPhone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dim_15"
+                    android:lineSpacingExtra="2dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:text="(+91) 85610 - 89567"
+                    android:textColor="@color/colorBrownGreyNice"/>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -97,6 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dim_10"
                     android:lineSpacingExtra="2dp"
+                    android:background="?attr/selectableItemBackground"
                     android:text="info@wscubetech.com"
                     android:textColor="@color/colorBrownGreyNice"/>
 
