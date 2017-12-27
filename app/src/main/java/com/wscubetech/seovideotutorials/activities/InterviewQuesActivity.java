@@ -180,7 +180,7 @@ public class InterviewQuesActivity extends AppCompatActivity {
 
     public void getOfflineData() {
         OfflineResponse offlineResponse = new OfflineResponse(this, "InterviewQuestionsList");
-        this.response = offlineResponse.getResponse(OfflineResponse.INTERVIEW_QUES_2 + subCategoryModel.getSubCatId() + "_" + subCategoryModel.getSubCatFlag() + "_" + pageNo);
+        this.response = offlineResponse.getResponse(OfflineResponse.INTERVIEW_QUES_2 + subCategoryModel.getSubCatId() + "_" + subCategoryModel.getSubCatFlag() + "_" + pageNo + "_" + Constants.SEO_CAT_ID);
         if (this.response.trim().length() < 1) {
             response = getString(R.string.networkError);
         }
@@ -212,21 +212,29 @@ public class InterviewQuesActivity extends AppCompatActivity {
             public void onFailure(Call call, IOException e) {
                 Log.v("Failure", "" + e);
 
-                   runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            if (active) {
+                                progressWheel.setVisibility(View.GONE);
+                                progressBarBottom.setVisibility(View.GONE);
+                                Toast.makeText(getApplicationContext(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                            }
+                        } catch (Exception e) {
+
                         }
-                    });
+                    }
+                });
 
             }
 
             @Override
             public void onResponse(Call call, Response res) throws IOException {
-                response = Html.fromHtml(res.body().string()).toString();
+                response = res.body().string();
                 Log.v("ResponsePostSuccess", response);
                 OfflineResponse offlineResponse = new OfflineResponse(InterviewQuesActivity.this, "InterviewQuestionsList");
-                offlineResponse.setResponse(OfflineResponse.INTERVIEW_QUES_2 + subCategoryModel.getSubCatId() + "_" + subCategoryModel.getSubCatFlag() + "_" + pageNo, response);
+                offlineResponse.setResponse(OfflineResponse.INTERVIEW_QUES_2 + subCategoryModel.getSubCatId() + "_" + subCategoryModel.getSubCatFlag() + "_" + pageNo + "_" + Constants.SEO_CAT_ID, response);
                 handleResponse();
             }
         });
@@ -252,8 +260,10 @@ public class InterviewQuesActivity extends AppCompatActivity {
                                     JSONObject obj = array.getJSONObject(i);
                                     InterviewModel model = new InterviewModel();
                                     model.setQues(obj.getString(Constants.KEY_QUES).trim());
+                                    model.setQuesCode(obj.getString(Constants.KEY_QUES_CODE).trim());
                                     model.setAns(obj.getString(Constants.KEY_ANS).trim());
                                     model.setAnsCode(obj.getString(Constants.KEY_ANS_CODE).trim().replaceAll("&quot;", "\"").replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&nbsp;", " ").replaceAll("&ldquo;", "\"").replaceAll("&rdquo;", "\"").replaceAll("&amp;", "&"));
+
                                     arrayInterviewModel.add(model);
                                 }
 

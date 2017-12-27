@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linParent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_150"
+                android:background="@drawable/bg_select_course_android">
+
+                <ImageView
+                    android:id="@+id/imgIcon"
+                    android:layout_width="@dimen/dim_80"
+                    android:layout_height="@dimen/dim_68"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dim_22"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_select_course_android"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtCourse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="#22000000"
+                    android:gravity="center"
+                    android:padding="@dimen/dim_12"
+                    android:text="Digital Marketing"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/font_size_14"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

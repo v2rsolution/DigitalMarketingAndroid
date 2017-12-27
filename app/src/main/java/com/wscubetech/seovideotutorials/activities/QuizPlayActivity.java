@@ -3,14 +3,13 @@
 package com.wscubetech.seovideotutorials.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -26,11 +25,9 @@ import android.widget.Toast;
 import com.pnikosis.materialishprogress.ProgressWheel;
 import com.wscubetech.seovideotutorials.R;
 import com.wscubetech.seovideotutorials.Urls.Urls;
-import com.wscubetech.seovideotutorials.adapters.TestListAdapter;
 import com.wscubetech.seovideotutorials.dialogs.DialogMsg;
 import com.wscubetech.seovideotutorials.model.QuizModel;
 import com.wscubetech.seovideotutorials.model.SubCategoryModel;
-import com.wscubetech.seovideotutorials.model.TestPaperModel;
 import com.wscubetech.seovideotutorials.utils.ConnectionDetector;
 import com.wscubetech.seovideotutorials.utils.Constants;
 import com.wscubetech.seovideotutorials.utils.NoRecordFound;
@@ -42,7 +39,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -125,12 +121,12 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
 
         try {
             arrayQuizModel = new ArrayList<>();
-            subCategoryModel=(SubCategoryModel)getIntent().getExtras().getSerializable("SubCategoryModel");
+            subCategoryModel = (SubCategoryModel) getIntent().getExtras().getSerializable("SubCategoryModel");
             //paperModel = (TestPaperModel) getIntent().getExtras().getSerializable("TestPaperModel");
             min = Short.parseShort(subCategoryModel.getSubCatQuizTime());
             TIMER_TOTAL_DURATION = 1000 * 60 * min;
-        }catch (Exception e){
-            Log.v("Exception: ",""+e);
+        } catch (Exception e) {
+            Log.v("Exception: ", "" + e);
         }
 
         if (new ConnectionDetector(this).isConnectingToInternet()) {
@@ -207,7 +203,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
 
     public void toolbarOperation() {
         setSupportActionBar(toolbar);
-        toolbar.setBackgroundColor(ContextCompat.getColor(this,R.color.color_tile_2));
+        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.color_tile_2));
         txtHeader.setText(subCategoryModel.getSubCatTitle());
 
         ActionBar actionBar = getSupportActionBar();
@@ -261,7 +257,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
 
     public void getOfflineData() {
         OfflineResponse offlineResponse = new OfflineResponse(this, "QuizQuestionList");
-        response = offlineResponse.getResponse(OfflineResponse.QUIZ_QUES + subCategoryModel.getSubCatId());
+        response = offlineResponse.getResponse(OfflineResponse.QUIZ_QUES + subCategoryModel.getSubCatId()+"_"+Constants.SEO_CAT_ID);
         if (this.response.trim().length() < 1) {
             response = getString(R.string.networkError);
         }
@@ -275,6 +271,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
 
         HttpUrl.Builder builder = HttpUrl.parse(Urls.viewQuizTestQuestionsNew).newBuilder();
         builder.addQueryParameter(Constants.KEY_SUB_CAT_ID, subCategoryModel.getSubCatId());
+        builder.addQueryParameter(Constants.KEY_SUB_CAT, Constants.SEO_CAT_ID);
         String url = builder.build().toString();
 
         Request request = new Request.Builder()
@@ -289,7 +286,14 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                        try {
+                            if (active) {
+                                progressWheel.setVisibility(View.GONE);
+                                Toast.makeText(getApplicationContext(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                            }
+                        } catch (Exception e) {
+
+                        }
                     }
                 });
             }
@@ -297,10 +301,10 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onResponse(Call call, Response res) throws IOException {
                 if (res.isSuccessful()) {
-                    response = Html.fromHtml(res.body().string()).toString();
+                    response = res.body().string();
                     Log.v("ResponsePostSuccess", response);
                     OfflineResponse offlineResponse = new OfflineResponse(QuizPlayActivity.this, "QuizQuestionList");
-                    offlineResponse.setResponse(OfflineResponse.QUIZ_QUES + subCategoryModel.getSubCatId(), response);
+                    offlineResponse.setResponse(OfflineResponse.QUIZ_QUES + subCategoryModel.getSubCatId()+"_"+Constants.SEO_CAT_ID, response);
                     handleResponse();
                 }
             }
@@ -358,7 +362,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
                                 }
                             }
                         } catch (Exception e) {
-                            Toast.makeText(QuizPlayActivity.this,"Parsing error occurred",Toast.LENGTH_LONG).show();
+                            Toast.makeText(QuizPlayActivity.this, "Parsing error occurred", Toast.LENGTH_LONG).show();
                             Log.v("ParsingException", "" + e);
                         }
                     }
@@ -379,7 +383,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
         final QuizModel quizModel = arrayQuizModel.get(currentIndex);
         txtPrevious.setVisibility(currentIndex == 0 ? View.INVISIBLE : View.VISIBLE);
         txtNext.setText(currentIndex == arrayQuizModel.size() - 1 ? "Submit" : "Next");
-        txtNext.setBackgroundResource(currentIndex==arrayQuizModel.size()-1?R.drawable.btn_primary_selector_rectangle_curved:R.drawable.btn_selector_teal_rectangle_curved);
+        txtNext.setBackgroundResource(currentIndex == arrayQuizModel.size() - 1 ? R.drawable.btn_primary_selector_rectangle_curved : R.drawable.btn_selector_teal_rectangle_curved);
 
         //If number of options are different
         if (quizModel.getOption5().trim().length() < 1) {

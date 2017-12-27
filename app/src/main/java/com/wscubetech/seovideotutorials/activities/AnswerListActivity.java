@@ -328,7 +328,14 @@ public class AnswerListActivity extends AppCompatActivity implements View.OnClic
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                        try {
+                            if (active) {
+                                progressWheel.setVisibility(View.GONE);
+                                Toast.makeText(getApplicationContext(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                            }
+                        } catch (Exception e) {
+
+                        }
                     }
                 });
             }

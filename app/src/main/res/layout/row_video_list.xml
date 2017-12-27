@@ -12,8 +12,8 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
-        app:cardElevation="@dimen/dim_1">
+        app:cardElevation="@dimen/dim_1"
+        app:cardUseCompatPadding="true">
 
         <LinearLayout
             android:id="@+id/linParent"
@@ -24,26 +24,28 @@
             android:padding="@dimen/dim_5">
 
             <RelativeLayout
+                android:id="@+id/relThumbnail"
                 android:layout_width="@dimen/dim_85"
                 android:layout_height="@dimen/dim_85">
+
 
                 <ImageView
                     android:id="@+id/imgThumbnail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="center"
-                    android:transitionName="@string/title_video_tutorials"
-                    android:src="@color/color_tile_0"/>
+                    android:src="@color/color_tile_0"
+                    android:transitionName="@string/title_video_tutorials"/>
 
                 <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
                     android:id="@+id/txtDuration"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dim_15"
                     android:layout_alignParentBottom="true"
+                    android:background="#66000000"
                     android:gravity="center|bottom"
                     android:text="12:00"
                     android:textColor="#fff"
-                    android:background="#66000000"
                     android:textSize="@dimen/font_size_12"/>
 
                 <ImageView
@@ -59,7 +61,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/dim_85"
                 android:layout_marginLeft="@dimen/dim_5"
                 android:orientation="vertical">
 
@@ -67,23 +69,46 @@
                     android:id="@+id/txtTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="2dp"
                     android:maxLines="2"
                     android:text="Title"
-                    android:lineSpacingExtra="2dp"
-                    android:ellipsize="end"
                     android:textColor="@color/colorDimPrimary"
                     android:textSize="@dimen/font_size_14"/>
 
-                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
-                    android:id="@+id/txtDescription"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="3"
-                    android:lineSpacingExtra="2dp"
-                    android:text="Description"
-                    android:textColor="@color/colorDimPrimary"
-                    android:textSize="@dimen/font_size_13"/>
+                    android:layout_height="match_parent">
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:id="@+id/txtDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/txtViews"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="2dp"
+                        android:lines="2"
+                        android:maxLines="2"
+                        android:paddingRight="@dimen/dim_3"
+                        android:paddingTop="@dimen/dim_2"
+                        android:text="Des"
+                        android:textColor="@color/colorDimPrimary"
+                        android:textSize="@dimen/font_size_13"/>
+
+                    <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                        android:id="@+id/txtViews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/colorPrimary"
+                        android:padding="@dimen/dim_3"
+                        android:text="views"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/font_size_11"/>
+
+                </RelativeLayout>
+
 
             </LinearLayout>
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linRating"
+        android:visibility="visible"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:src="@drawable/ic_rating_badge"
+            android:tint="@color/colorPrimary"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_10"
+            android:text="Thank You"
+            android:textColor="#000"
+            android:textSize="@dimen/font_size_24"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_7"
+            android:gravity="center"
+            android:text="for spending your valuable time with us"
+            android:textColor="@color/colorDimPrimary"
+            android:textSize="@dimen/font_size_15"/>
+
+
+        <com.wscubetech.seovideotutorials.custom_views.MyButtonRegular
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/dim_20"
+            android:background="@drawable/flat_primary_selector"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dim_15"
+            android:paddingRight="@dimen/dim_15"
+            android:text="Rate us 5 stars"
+            android:textAllCaps="false"
+            android:id="@+id/btnRateUs"
+            android:textColor="#fff"
+            android:textSize="@dimen/font_size_16"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/dim_20"
+            android:textSize="@dimen/font_size_14"
+            android:textColor="@color/colorTextGrey"
+            android:gravity="center"
+            android:text="We'll keep upgrading to serve you better"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

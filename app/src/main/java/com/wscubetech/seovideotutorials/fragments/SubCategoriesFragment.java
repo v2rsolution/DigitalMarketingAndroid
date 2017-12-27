@@ -20,6 +20,7 @@ import com.wscubetech.seovideotutorials.activities.HomeActivity;
 import com.wscubetech.seovideotutorials.adapters.SubCategoryAdapter;
 import com.wscubetech.seovideotutorials.dialogs.DialogMsg;
 import com.wscubetech.seovideotutorials.model.SubCategoryModel;
+import com.wscubetech.seovideotutorials.utils.AdClass;
 import com.wscubetech.seovideotutorials.utils.ConnectionDetector;
 import com.wscubetech.seovideotutorials.utils.Constants;
 import com.wscubetech.seovideotutorials.utils.NoRecordFound;
@@ -61,7 +62,7 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
 
     View view;
 
-    //AdClass ad;
+    AdClass ad;
 
 
     public static Fragment newInstance(String title) {
@@ -87,7 +88,7 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
     @Override
     public void onResume() {
         super.onResume();
-        //ad.resumeAd();
+        ad.resumeAd();
     }
 
     @Override
@@ -97,6 +98,7 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onPause() {
+        active=false;
         super.onPause();
     }
 
@@ -126,11 +128,12 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
             } else {
                 getOfflineData();
             }
+
         }
-        /*ad = new AdClass(HomeActivity.activity, view);
+        ad = new AdClass(HomeActivity.activity, view);
         if (new ConnectionDetector(HomeActivity.activity).isConnectingToInternet()) {
             ad.showAd();
-        }*/
+        }
     }
 
     private void init(View v) {
@@ -170,7 +173,7 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
 
     public void getOfflineData() {
         OfflineResponse offlineResponse = new OfflineResponse(HomeActivity.activity, "SubCategoriesList");
-        this.response = offlineResponse.getResponse(OfflineResponse.INTERVIEW_QUES_1 + "_" + title.replaceAll(" ", "_"));
+        this.response = offlineResponse.getResponse(OfflineResponse.INTERVIEW_QUES_1 + "_" + title.replaceAll(" ", "_") + "_" + Constants.SEO_CAT_ID);
         if (this.response.trim().length() < 1) {
             if (active)
                 response = getString(R.string.networkError);
@@ -199,7 +202,15 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
                     HomeActivity.activity.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(HomeActivity.activity,getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                            //Toast.makeText(HomeActivity.activity, getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                            try {
+                                if (active) {
+                                    progressWheel.setVisibility(View.GONE);
+                                    Toast.makeText(HomeActivity.activity, getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                                }
+                            } catch (Exception e) {
+
+                            }
                         }
                     });
                 }
@@ -211,7 +222,7 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
                     response = Html.fromHtml(res.body().string()).toString();
                     Log.v("ResponsePostSuccess", response);
                     OfflineResponse offlineResponse = new OfflineResponse(HomeActivity.activity, "SubCategoriesList");
-                    offlineResponse.setResponse(OfflineResponse.INTERVIEW_QUES_1 + "_" + title.replaceAll(" ", "_"), response);
+                    offlineResponse.setResponse(OfflineResponse.INTERVIEW_QUES_1 + "_" + title.replaceAll(" ", "_") + "_" + Constants.SEO_CAT_ID, response);
                     handleResponse();
                 }
             }
@@ -257,7 +268,7 @@ public class SubCategoriesFragment extends Fragment implements View.OnClickListe
 
                                     if (active) {
                                         NoRecordFound noRecordFound = new NoRecordFound(HomeActivity.activity, view);
-                                        noRecordFound.showNoRecordFound("Sorry!\nNo sub categories found on server database");
+                                        noRecordFound.showNoRecordFound("Sorry!\nNo sub categories available for this course");
                                     }
 
                                 }

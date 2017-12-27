@@ -3,17 +3,13 @@ package com.wscubetech.seovideotutorials.adapters;
 import android.app.Activity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wscubetech.seovideotutorials.R;
-import com.wscubetech.seovideotutorials.activities.MainActivity;
-import com.wscubetech.seovideotutorials.custom.CustomFont;
 import com.wscubetech.seovideotutorials.model.InterviewModel;
 
 import java.util.ArrayList;
@@ -46,7 +42,8 @@ public class InterviewQuesAdapter extends RecyclerView.Adapter<InterviewQuesAdap
         InterviewModel model = arrayInterviewModel.get(position);
         int sNo = position + 1;
         //holder.txtQuesNo.setText(subCatFlag.equals("1") ? "Question " + sNo + "." : sNo + ".");
-        holder.txtQuesTitle.setText((position + 1) + ". " + model.getQues().trim());
+        String quesText = model.getQuesCode().trim().length() > 0 ? (position + 1) + ". " + model.getQues().trim() + "\n" + model.getQuesCode() : (position + 1) + ". " + model.getQues().trim();
+        holder.txtQuesTitle.setText(quesText);
         holder.txtAns.setText(model.getAns().trim());
         holder.txtAnsCode.setText(model.getAnsCode().trim());
 

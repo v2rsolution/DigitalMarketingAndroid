@@ -47,6 +47,8 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.View
         holder.txtTitle.setText(model.getVideoTitle().trim());
         holder.txtDescription.setText(model.getVideoDescription().trim());
         holder.txtDuration.setText(model.getVideoDuration().trim());
+        holder.txtViews.setVisibility(model.getVideoViews()==0?View.GONE:View.VISIBLE);
+        holder.txtViews.setText(model.getVideoViews()+" views");
 
         Glide.with(activity)
                 .load(Urls.imageUrl+model.getVideoImage())
@@ -72,7 +74,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtTitle, txtDescription, txtDuration;
+        TextView txtTitle, txtDescription, txtDuration,txtViews;
         ImageView imgThumbnail;
         LinearLayout linParent;
 
@@ -81,6 +83,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.View
             txtTitle = (TextView) v.findViewById(R.id.txtTitle);
             txtDescription = (TextView) v.findViewById(R.id.txtDescription);
             txtDuration = (TextView) v.findViewById(R.id.txtDuration);
+            txtViews=(TextView)v.findViewById(R.id.txtViews);
             imgThumbnail = (ImageView) v.findViewById(R.id.imgThumbnail);
             linParent = (LinearLayout) v.findViewById(R.id.linParent);
         }

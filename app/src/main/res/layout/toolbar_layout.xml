@@ -25,17 +25,41 @@
         android:textColor="#fff"
         android:textSize="18sp"/>
 
-    <ImageView
-        android:id="@+id/imgSearch"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
         android:layout_gravity="right"
-        android:background="?attr/selectableItemBackground"
-        android:padding="10dp"
-        android:src="@drawable/ic_search"
-        android:tint="#fff"
-        android:transitionName="ic_search"
-        android:visibility="gone"/>
+        android:gravity="center_vertical"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:id="@+id/imgSearch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:src="@drawable/ic_search"
+            android:tint="#fff"
+            android:transitionName="ic_search"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/imgMore"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:src="@drawable/ic_more_vert"
+            android:tint="#fff"
+            android:transitionName="ic_search"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+
+
 
 </android.support.v7.widget.Toolbar>
 

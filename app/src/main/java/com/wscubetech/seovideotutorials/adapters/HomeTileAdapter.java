@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wscubetech.seovideotutorials.R;
+import com.wscubetech.seovideotutorials.model.HomeTileModel;
 
 import java.util.ArrayList;
 
@@ -21,20 +22,16 @@ import java.util.ArrayList;
 
 public class HomeTileAdapter extends RecyclerView.Adapter<HomeTileAdapter.ViewHolder> {
 
-    String[] arrayTitles;
-    int[] arrayBgColors;
-    ArrayList<Integer> arrayImages = new ArrayList<>();
-    Activity activity;
 
+    Activity activity;
+    ArrayList<HomeTileModel> arrayHomeTileModel = new ArrayList<>();
 
     private int lastPosition = -1;
     private int minDuration = 600;
 
-    public HomeTileAdapter(Activity activity, String[] arrayTitles, int[] arrayBgColors, ArrayList<Integer> arrayImages) {
+    public HomeTileAdapter(Activity activity, ArrayList<HomeTileModel> arrayHomeTileModel) {
         this.activity = activity;
-        this.arrayTitles = arrayTitles;
-        this.arrayImages = arrayImages;
-        this.arrayBgColors = arrayBgColors;
+        this.arrayHomeTileModel = arrayHomeTileModel;
     }
 
     @Override
@@ -46,12 +43,26 @@ public class HomeTileAdapter extends RecyclerView.Adapter<HomeTileAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.linMain.setBackgroundColor(arrayBgColors[position]);
-        holder.txt.setText(arrayTitles[position].toUpperCase().trim());
-        holder.img.setImageResource(arrayImages.get(position));
+        HomeTileModel model = arrayHomeTileModel.get(position);
+        holder.itemView.setVisibility(View.VISIBLE);
+        holder.linMain.setBackgroundColor(model.bgColor);
+        if (position % 2 == 0) {
+            holder.linLeft.setVisibility(View.VISIBLE);
+            holder.linRight.setVisibility(View.GONE);
 
+            holder.txtTitleLeft.setText(model.title.toUpperCase());
+            holder.txtDescriptionLeft.setText(model.description);
+            holder.imgLeft.setImageResource(model.icon);
+        } else {
+            holder.linLeft.setVisibility(View.GONE);
+            holder.linRight.setVisibility(View.VISIBLE);
 
+            holder.txtTitleRight.setText(model.title.toUpperCase());
+            holder.txtDescriptionRight.setText(model.description);
+            holder.imgRight.setImageResource(model.icon);
+        }
         setAnimation(holder.itemView, position);
+
     }
 
 
@@ -63,7 +74,7 @@ public class HomeTileAdapter extends RecyclerView.Adapter<HomeTileAdapter.ViewHo
             viewToAnimate.startAnimation(anim);
             lastPosition = position;
             minDuration += 100;
-            if (minDuration > 1500) {
+            if (minDuration > 1100) {
                 minDuration = 600;
             }
         }
@@ -71,19 +82,30 @@ public class HomeTileAdapter extends RecyclerView.Adapter<HomeTileAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return arrayTitles.length;
+        return arrayHomeTileModel.size();
+    }
+
+    public HomeTileModel getModel(int position) {
+        return arrayHomeTileModel.get(position);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        LinearLayout linMain;
-        TextView txt;
-        ImageView img;
+        LinearLayout linMain, linLeft, linRight;
+        TextView txtTitleLeft, txtDescriptionLeft, txtTitleRight, txtDescriptionRight;
+        ImageView imgLeft, imgRight;
 
         public ViewHolder(View v) {
             super(v);
             linMain = (LinearLayout) v.findViewById(R.id.linMain);
-            txt = (TextView) v.findViewById(R.id.txt);
-            img = (ImageView) v.findViewById(R.id.img);
+            txtTitleLeft = (TextView) v.findViewById(R.id.txtTitleLeft);
+            txtDescriptionLeft = (TextView) v.findViewById(R.id.txtDescriptionLeft);
+            imgLeft = (ImageView) v.findViewById(R.id.imgLeft);
+            linLeft = (LinearLayout) v.findViewById(R.id.linLeft);
+
+            txtTitleRight = (TextView) v.findViewById(R.id.txtTitleRight);
+            txtDescriptionRight = (TextView) v.findViewById(R.id.txtDescriptionRight);
+            imgRight = (ImageView) v.findViewById(R.id.imgRight);
+            linRight = (LinearLayout) v.findViewById(R.id.linRight);
 
         }
     }

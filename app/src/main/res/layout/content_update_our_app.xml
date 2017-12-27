@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linUpdate"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_update_app"
+            android:tint="@color/colorPrimary"/>
+
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="App Update"
+            android:layout_marginTop="@dimen/dim_5"
+            android:textColor="#000"
+            android:textSize="@dimen/font_size_24"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_10"
+            android:gravity="center"
+            android:text="Please update your app to stay up to date with our latest app features and smoother experience"
+            android:textColor="@color/colorDimPrimary"
+            android:textSize="@dimen/font_size_14"/>
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_marginTop="@dimen/dim_15"
+            android:src="@drawable/app_logo"
+            android:layout_width="128dp"
+            android:layout_height="128dp"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyButtonRegular
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/dim_20"
+            android:background="@drawable/flat_primary_selector"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dim_15"
+            android:paddingRight="@dimen/dim_15"
+            android:text="Update Now"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="@dimen/font_size_16"/>
+
+        <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+            android:layout_width="wrap_content"
+            android:padding="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_10"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_size_16"
+            android:text="Cancel"
+            android:id="@+id/txtCancel"
+            android:background="?attr/selectableItemBackground"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

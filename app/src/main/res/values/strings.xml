@@ -1,77 +1,114 @@
 <resources>
-    <string name="app_name">360DigitalGyan.com</string>
-    <string name="app_name_my_custom">360DigitalGyan</string>
+    <string
+        name="app_name">
+        360DigitalGyan.com
+    </string>
+    <string
+        name="app_name_my_custom">
+        360DigitalGyan
+    </string>
 
-    <string name="title_home">
+    <string
+        name="str_splash_learn_things">
+        LEARN
+        DIGITAL
+        MARKETING,
+        JAVA,
+        ANDROID,
+        SOFTWARE
+        TESTING
+        &amp;
+        MORE
+    </string>
+
+    <string
+        name="title_home">
         Home
     </string>
-    <string name="title_technical_terms">
+    <string
+        name="title_technical_terms">
         Technical
         Terms
     </string>
-    <string name="title_video_tutorials">
+    <string
+        name="title_video_tutorials">
         Video
         Tutorials
     </string>
-    <string name="title_interview_ques">
+    <string
+        name="title_interview_ques">
         Interview
         Questions
     </string>
-    <string name="title_quiz_test">
+    <string
+        name="title_quiz_test">
         Quiz
         Tests
     </string>
-    <string name="title_ques_ans">
+    <string
+        name="title_ques_ans">
         Questions
         &amp;
         Answers
     </string>
-    <string name="title_notifications">
+    <string
+        name="title_notifications">
         Notifications
     </string>
-    <string name="title_suggestions">
+    <string
+        name="title_suggestions">
         Suggestions
         &amp;
         Complaints
     </string>
-    <string name="title_rate_us">
+    <string
+        name="title_rate_us">
         Rate
         Us
     </string>
-    <string name="title_share">
+    <string
+        name="title_share">
         Share
     </string>
-    <string name="title_about_us">
+    <string
+        name="title_about_us">
         About
         Us
     </string>
-    <string name="title_contact_us">
+    <string
+        name="title_contact_us">
         Contact
         Us
     </string>
 
-    <string name="title_training_courses">
+    <string
+        name="title_training_courses">
         Training
         Courses
     </string>
-    <string name="title_our_services">
+    <string
+        name="title_our_services">
         Our
-        services
+        Services
     </string>
-    <string name="title_placed_students">
+    <string
+        name="title_placed_students">
         Placed
         Students
     </string>
-    <string name="title_students_view">
+    <string
+        name="title_students_view">
         Students
         View
     </string>
-    <string name="title_study_material">
+    <string
+        name="title_study_material">
         Study
         Material
     </string>
 
-    <string-array name="array_home_tiles">
+    <string-array
+        name="array_home_tiles">
         <item>
             @string/title_video_tutorials
         </item>
@@ -90,7 +127,7 @@
         <item>
             @string/title_study_material
         </item>
-        <item>
+        <!--<item>
             @string/title_training_courses
         </item>
         <item>
@@ -101,10 +138,131 @@
         </item>
         <item>
             @string/title_placed_students
+        </item>-->
+
+    </string-array>
+
+    <string-array
+        name="array_home_descriptions">
+        <item>
+            Enter
+            into
+            our
+            visual
+            world
+            where
+            you
+            can
+            enrich
+            your
+            skills
+            and
+            get
+            a
+            better
+            learning
+            experience.
+        </item>
+        <item>
+            Get
+            to
+            know
+            the
+            frequently
+            asked
+            questions
+            in
+            Company
+            Interview
+            with
+            our
+            excellent
+            set
+            of
+            questions.
+        </item>
+        <item>
+            Self
+            evaluation
+            is
+            important
+            to
+            know
+            how
+            well
+            you
+            are
+            familiar
+            with
+            the
+            topics.
+        </item>
+        <item>
+            Welcome
+            to
+            360DigitalGyan
+            an
+            Glossary
+            where
+            you
+            get
+            the
+            meaning
+            of
+            terms
+            used
+            in
+            the
+            Marketing
+            world.
+        </item>
+        <item>
+            We
+            provide
+            you
+            a
+            medium
+            for
+            open
+            discussion
+            where
+            you
+            can
+            share
+            your
+            knowledge
+            or
+            post
+            a
+            question.
+        </item>
+        <item>
+            Enhance
+            your
+            Digital
+            skills
+            via
+            our
+            study
+            material
+            guide,
+            which
+            will
+            give
+            you
+            an
+            insight
+            of
+            the
+            various
+            useful
+            topics.
         </item>
 
     </string-array>
-    <integer-array name="array_home_tiles_colors">
+
+    <integer-array
+        name="array_home_tiles_colors">
         <item>
             @color/color_tile_0
         </item>
@@ -137,59 +295,106 @@
         </item>
     </integer-array>
 
-    <string name="title_php">
+    <string
+        name="title_php">
         PHP
     </string>
-    <string name="title_web">
+    <string
+        name="title_web">
         WEB
         DEVELOPMENT
     </string>
-    <string name="title_android">
+    <string
+        name="title_android">
         ANDROID
     </string>
-    <string name="title_java">
+    <string
+        name="title_java">
         JAVA
     </string>
-    <string name="title_seo">
+    <string
+        name="title_seo">
         SEO
     </string>
-    <string name="title_adv_php">
+    <string
+        name="title_adv_php">
         ADVANCED
         PHP
     </string>
-    <string name="title_iphone">
+    <string
+        name="title_iphone">
         iPHONE
     </string>
-    <string name="title_html_css">
+    <string
+        name="title_html_css">
         HTML
         &amp;
         CSS
     </string>
-    <string name="title_wordpress">
+    <string
+        name="title_wordpress">
         WORDPRESS
     </string>
-    <string name="title_c">
+    <string
+        name="title_c">
         C
     </string>
-    <string name="title_c_plus_plus">
+    <string
+        name="title_c_plus_plus">
         C++
     </string>
-    <string name="title_cake_php">
+    <string
+        name="title_cake_php">
         CAKE
         PHP
     </string>
-    <string name="title_magento">
+    <string
+        name="title_magento">
         Magento
     </string>
-    <string name="title_digital_marketing">Digital Marketing</string>
-    <string name="title_adv_java">Advanced Java</string>
-    <string name="title_adv_android">Advanced Android</string>
-    <string name="title_testing_manual">Testing(Manual)</string>
-    <string name="title_testing_automation">Testing(Automation)</string>
-    <string name="title_laravel">Laravel Framework</string>
-    <string name="title_ruby_rails">Ruby on Rails</string>
-    <string name="title_python">Python</string>
-    <string name="title_graphic_design">Graphic Designing</string>
+    <string
+        name="title_digital_marketing">
+        Digital
+        Marketing
+    </string>
+    <string
+        name="title_adv_java">
+        Advanced
+        Java
+    </string>
+    <string
+        name="title_adv_android">
+        Advanced
+        Android
+    </string>
+    <string
+        name="title_testing_manual">
+        Testing(Manual)
+    </string>
+    <string
+        name="title_testing_automation">
+        Testing(Automation)
+    </string>
+    <string
+        name="title_laravel">
+        Laravel
+        Framework
+    </string>
+    <string
+        name="title_ruby_rails">
+        Ruby
+        on
+        Rails
+    </string>
+    <string
+        name="title_python">
+        Python
+    </string>
+    <string
+        name="title_graphic_design">
+        Graphic
+        Designing
+    </string>
 
     <string
         name="training_number_1">
@@ -241,15 +446,33 @@
         <item>
             @string/title_magento
         </item>
-        <item>@string/title_digital_marketing</item>
-        <item>@string/title_adv_java</item>
-        <item>@string/title_adv_android</item>
-        <item>@string/title_testing_manual</item>
-        <item>@string/title_testing_automation</item>
-        <item>@string/title_laravel</item>
-        <item>@string/title_ruby_rails</item>
-        <item>@string/title_python</item>
-        <item>@string/title_graphic_design</item>
+        <item>
+            @string/title_digital_marketing
+        </item>
+        <item>
+            @string/title_adv_java
+        </item>
+        <item>
+            @string/title_adv_android
+        </item>
+        <item>
+            @string/title_testing_manual
+        </item>
+        <item>
+            @string/title_testing_automation
+        </item>
+        <item>
+            @string/title_laravel
+        </item>
+        <item>
+            @string/title_ruby_rails
+        </item>
+        <item>
+            @string/title_python
+        </item>
+        <item>
+            @string/title_graphic_design
+        </item>
     </string-array>
 
     <string-array
@@ -306,9 +529,125 @@
     </string-array>
 
 
-    <string name="service_desc_website_development">
-        WsCube Tech was established in the year 2010 with an aim to become the fastest emerging Offshore Outsourcing Company which will aid its clientele to grow high with rapid pace. At WsCube Tech, we offer a business solution emphasizing on the client stipulation all on an affordable range. Our online trade solutions are offered to business enterprises all around the globe.\n\n
-        We are a highly specialized Website Development Company offering cutting edge Web Development Services. We offer superior customer service to the wide base of our clients. Our business-driven approach separates us from typical Web Design Companies. For the past Five years, we have built a reputation for creating a positive return on investment for our clients.
+    <string
+        name="service_desc_website_development">
+        WsCube
+        Tech
+        was
+        established
+        in
+        the
+        year
+        2010
+        with
+        an
+        aim
+        to
+        become
+        the
+        fastest
+        emerging
+        Offshore
+        Outsourcing
+        Company
+        which
+        will
+        aid
+        its
+        clientele
+        to
+        grow
+        high
+        with
+        rapid
+        pace.
+        At
+        WsCube
+        Tech,
+        we
+        offer
+        a
+        business
+        solution
+        emphasizing
+        on
+        the
+        client
+        stipulation
+        all
+        on
+        an
+        affordable
+        range.
+        Our
+        online
+        trade
+        solutions
+        are
+        offered
+        to
+        business
+        enterprises
+        all
+        around
+        the
+        globe.\n\n
+        We
+        are
+        a
+        highly
+        specialized
+        Website
+        Development
+        Company
+        offering
+        cutting
+        edge
+        Web
+        Development
+        Services.
+        We
+        offer
+        superior
+        customer
+        service
+        to
+        the
+        wide
+        base
+        of
+        our
+        clients.
+        Our
+        business-driven
+        approach
+        separates
+        us
+        from
+        typical
+        Web
+        Design
+        Companies.
+        For
+        the
+        past
+        Five
+        years,
+        we
+        have
+        built
+        a
+        reputation
+        for
+        creating
+        a
+        positive
+        return
+        on
+        investment
+        for
+        our
+        clients.
     </string>
 
 
@@ -1247,8 +1586,24 @@
     </string>
 
 
-    <string name="service_desc_seo_packages">
-        Please tap on the link below to find out the various SEO packages offered by us
+    <string
+        name="service_desc_seo_packages">
+        Please
+        tap
+        on
+        the
+        link
+        below
+        to
+        find
+        out
+        the
+        various
+        SEO
+        packages
+        offered
+        by
+        us
     </string>
 
 
@@ -1768,7 +2123,8 @@
     nileshwscube@gmail.com
     wscube123321
     -->
-    <string name="api_key_youtube">
+    <string
+        name="api_key_youtube">
         AIzaSyCrH-mBwPvLMb-7z9d976K234fy4Gr5vsw
     </string>
 

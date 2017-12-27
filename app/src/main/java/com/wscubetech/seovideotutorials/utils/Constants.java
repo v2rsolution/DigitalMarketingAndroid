@@ -15,15 +15,24 @@ public class Constants {
     public static final String KEY_VIDEO_DURATION = "duration";
     public static final String KEY_VIDEO_IMAGE = "image";
 
+    public static final String DIGITAL_MARKETING_ID="30";
+    public static final String JAVA_ID="49";
+    public static final String ANDROID_ID="10";
+    public static final String SOFTWARE_TESTING_ID="50";
+    public static final String WEBSITE_DEVELOPMENT_ID="52";
 
-    public static final String SEO_CAT_ID = "30";
+    //30->Digital Marketing, 49-> Java, 10-> Android, 50-> Software Testing, 52-> Website Development
+    public static String SEO_CAT_ID = DIGITAL_MARKETING_ID;
     //API----Urls.viewInterviewQues----response
     public static final String KEY_CAT_ID = "cat_id";
     public static final String KEY_SUB_CAT_ID_INTERVIEW = "sub_cat_id";
     public static final String KEY_PAGE_NO = "page_no";
     public static final String KEY_QUES = "question";
+    public static final String KEY_QUES_CODE = "question_coding";
     public static final String KEY_ANS = "answer";
     public static final String KEY_ANS_CODE = "coding";
+
+
 
 
     //Quiz Questions

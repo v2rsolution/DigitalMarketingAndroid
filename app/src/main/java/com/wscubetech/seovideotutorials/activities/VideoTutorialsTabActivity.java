@@ -4,7 +4,6 @@ package com.wscubetech.seovideotutorials.activities;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,12 +14,13 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -60,14 +60,17 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class VideoTutorialsTabActivity extends AppCompatActivity implements View.OnClickListener {
+public class VideoTutorialsTabActivity extends AppCompatActivity implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
 
     ViewPager viewPager;
     TabLayout tabLayout;
+    ViewPagerAdapter viewPagerAdapter;
 
     Toolbar toolbar;
     TextView txtHeader;
     ImageView imgSearch;
+    public static ImageView imgMore;
+    PopupMenu popupMenu;
     String response = "";
 
     public static VideoTutorialsTabActivity activity;
@@ -83,6 +86,7 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
     Dialog progress;
 
     String subCatId = "", subCatName = "", subCatHindiCount = "", subCatEnglishCount = "";
+    int totalCount = 0;
 
     AdClass ad;
 
@@ -121,6 +125,7 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
 
         fabFilter.setOnClickListener(this);
         imgSearch.setOnClickListener(this);
+        imgMore.setOnClickListener(this);
 
         ad = new AdClass(this);
         if (new ConnectionDetector(this).isConnectingToInternet()) {
@@ -165,13 +170,16 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
         imgSearch = (ImageView) toolbar.findViewById(R.id.imgSearch);
         imgSearch.setVisibility(View.VISIBLE);
 
+        imgMore = (ImageView) toolbar.findViewById(R.id.imgMore);
+        //imgMore.setVisibility(View.VISIBLE);
+
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
     }
 
     public void toolbarOperation() {
         setSupportActionBar(toolbar);
-        txtHeader.setText(subCatId.equals("") ? getString(R.string.title_video_tutorials) + " - All" : subCatName);
+        txtHeader.setText(subCatId.equals("") ? getString(R.string.title_video_tutorials) : subCatName);
         toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.color_tile_0));
 
         ActionBar actionBar = getSupportActionBar();
@@ -200,12 +208,22 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
     }
 
     private void setUpViewPager() {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         //adapter.addFragment(VideoTutorialFragment.newInstance("0", subCatId), "All");
         String tabHeaders[] = getTabHeaders();
-        adapter.addFragment(VideoTutorialFragment.newInstance("2", subCatId), tabHeaders[0]);
-        adapter.addFragment(VideoTutorialFragment.newInstance("1", subCatId), tabHeaders[1]);
-        viewPager.setAdapter(adapter);
+
+        if (Constants.SEO_CAT_ID.equals(Constants.DIGITAL_MARKETING_ID)) {
+            viewPagerAdapter.addFragment(VideoTutorialFragment.newInstance("2", subCatId), tabHeaders[0]);
+            viewPagerAdapter.addFragment(VideoTutorialFragment.newInstance("1", subCatId), tabHeaders[1]);
+            tabLayout.setVisibility(View.VISIBLE);
+        } else {
+            viewPagerAdapter.addFragment(VideoTutorialFragment.newInstance("", subCatId), "All Video Tutorials");
+            tabLayout.setVisibility(View.GONE);
+        }
+        if (totalCount > 0) {
+            txtHeader.setText(txtHeader.getText().toString().trim() + "(" + totalCount + ")");
+        }
+        viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
     }
@@ -213,15 +231,15 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
     private void setTabHeadersForOffline() {
         OfflineResponse response = new OfflineResponse(this, "TabHeaders");
         String tabHeaders[] = getTabHeaders();
-        response.setResponse("HindiHeader_" + subCatId, subCatHindiCount.equals("0") ? (tabHeaders[0].equals("") ? "Hindi" : tabHeaders[0]) : "Hindi (" + subCatHindiCount + ")");
-        response.setResponse("EnglishHeader_" + subCatId, subCatEnglishCount.equals("0") ? (tabHeaders[1].equals("") ? "English" : tabHeaders[1]) : "English (" + subCatEnglishCount + ")");
+        response.setResponse("HindiHeader_" + subCatId + "_" + Constants.SEO_CAT_ID, subCatHindiCount.equals("0") ? (tabHeaders[0].equals("") ? "Hindi" : tabHeaders[0]) : "Hindi (" + subCatHindiCount + ")");
+        response.setResponse("EnglishHeader_" + subCatId + "_" + Constants.SEO_CAT_ID, subCatEnglishCount.equals("0") ? (tabHeaders[1].equals("") ? "English" : tabHeaders[1]) : "English (" + subCatEnglishCount + ")");
     }
 
     private String[] getTabHeaders() {
         OfflineResponse response = new OfflineResponse(this, "TabHeaders");
         String arrHeaders[] = new String[2];
-        arrHeaders[0] = response.getResponse("HindiHeader_" + subCatId);
-        arrHeaders[1] = response.getResponse("EnglishHeader_" + subCatId);
+        arrHeaders[0] = response.getResponse("HindiHeader_" + subCatId + "_" + Constants.SEO_CAT_ID);
+        arrHeaders[1] = response.getResponse("EnglishHeader_" + subCatId + "_" + Constants.SEO_CAT_ID);
         return arrHeaders;
     }
 
@@ -240,6 +258,9 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
                 } else {
                     startActivity(intent);
                 }
+                break;
+            case R.id.imgMore:
+                viewMoreOptions();
                 break;
         }
     }
@@ -311,7 +332,7 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
     public void getOfflineData() {
         if (active) {
             OfflineResponse offlineResponse = new OfflineResponse(VideoTutorialsTabActivity.this, "VideosSubCategoriesList");
-            this.response = offlineResponse.getResponse(OfflineResponse.INTERVIEW_QUES_1 + "_" + "VideoList");
+            this.response = offlineResponse.getResponse(OfflineResponse.INTERVIEW_QUES_1 + "_" + Constants.SEO_CAT_ID + "_" + "VideoList");
             if (this.response.trim().length() < 1) {
                 response = getString(R.string.networkError);
             }
@@ -346,7 +367,7 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
 
                     if (active) {
                         OfflineResponse offlineResponse = new OfflineResponse(VideoTutorialsTabActivity.this, "VideosSubCategoriesList");
-                        offlineResponse.setResponse(OfflineResponse.INTERVIEW_QUES_1 + "_" + "VideoList", response);
+                        offlineResponse.setResponse(OfflineResponse.INTERVIEW_QUES_1 + "_" + Constants.SEO_CAT_ID + "_" + "VideoList", response);
                         handleResponse(progressWheel);
                     }
                 }
@@ -436,6 +457,7 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
         progress = new MyProgressDialog(this).getDialog();
         progress.show();
         ArrayList<KeyValueModel> arrayKeyValueModel = new ArrayList<>();
+        arrayKeyValueModel.add(new KeyValueModel(Constants.KEY_COURSE_ID, Constants.SEO_CAT_ID));
         OkHttpCalls calls = new OkHttpCalls(Urls.viewVideoCountAll, arrayKeyValueModel);
         calls.initiateCall(new Callback() {
             @Override
@@ -466,9 +488,11 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
                             int hindiCount = 0, englishCount = 0;
                             hindiCount = json.getInt("hindi_video");
                             englishCount = json.getInt("english_video");
+                            totalCount = hindiCount + englishCount;
 
                             subCatHindiCount = String.valueOf(hindiCount);
                             subCatEnglishCount = String.valueOf(englishCount);
+
                             setUpHeadersAndPager();
                         }
                     } catch (Exception e) {
@@ -477,5 +501,52 @@ public class VideoTutorialsTabActivity extends AppCompatActivity implements View
                 }
             }
         });
+    }
+
+
+    private void viewMoreOptions() {
+        if (popupMenu == null) {
+            popupMenu = new PopupMenu(this, imgMore);
+            popupMenu.getMenuInflater().inflate(R.menu.menu_video_tutorials_more, popupMenu.getMenu());
+            popupMenu.setOnMenuItemClickListener(this);
+        }
+
+        Menu menu = popupMenu.getMenu();
+        MenuItem itemMostViewed = menu.findItem(R.id.itemMostViewed);
+        itemMostViewed.setVisible(new ConnectionDetector(getApplicationContext()).isConnectingToInternet());
+
+        popupMenu.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+
+        byte flag = 1;
+        switch (item.getItemId()) {
+            case R.id.itemNewest:
+                flag = 1;
+                break;
+            case R.id.itemOldest:
+                flag = 2;
+                break;
+            case R.id.itemMostViewed:
+                flag = 3;
+                break;
+
+        }
+
+        item.setChecked(true);
+        VideoTutorialFragment fragment1, fragment2;
+        if (Constants.SEO_CAT_ID.equals(Constants.DIGITAL_MARKETING_ID)) {
+            fragment1 = (VideoTutorialFragment) viewPagerAdapter.getItem(0);
+            fragment2 = (VideoTutorialFragment) viewPagerAdapter.getItem(1);
+            fragment1.sortAccordingly(flag);
+            fragment2.sortAccordingly(flag);
+        } else {
+            fragment1 = (VideoTutorialFragment) viewPagerAdapter.getItem(0);
+            fragment1.sortAccordingly(flag);
+        }
+
+        return true;
     }
 }

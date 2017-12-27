@@ -10,6 +10,10 @@
         app:showAsAction="ifRoom">
         <menu>
             <item
+                android:id="@+id/itemSelectCourse"
+                android:icon="@drawable/ic_menu_switch_course"
+                android:title="Switch Course"/>
+            <item
                 android:id="@+id/itemMyProfile"
                 android:icon="@drawable/ic_login_person"
                 android:title="My Profile"/>

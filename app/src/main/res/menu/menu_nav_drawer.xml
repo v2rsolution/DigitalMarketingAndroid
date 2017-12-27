@@ -40,6 +40,22 @@
     </group>
     <group
         android:id="@+id/groupExtras">
+
+        <item
+            android:id="@+id/itemTrainingCourses"
+            android:icon="@drawable/ic_menu_training_courses"
+            android:title="@string/title_training_courses"/>
+
+        <item
+            android:id="@+id/itemOurServices"
+            android:icon="@drawable/ic_menu_our_services"
+            android:title="@string/title_our_services"/>
+
+        <item
+            android:id="@+id/itemPlacedStudents"
+            android:icon="@drawable/ic_menu_placed_students"
+            android:title="@string/title_placed_students"/>
+
         <item
             android:id="@+id/itemShare"
             android:icon="@drawable/ic_menu_share"

@@ -217,7 +217,15 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         Intent intent;
         switch (view.getId()) {
             case R.id.txtRetake:
+                if(Constants.SEO_CAT_ID.equals(Constants.ANDROID_ID)){
+                    intent=ResultActivity.this.getIntent();
+                    intent.setClass(ResultActivity.this,QuizPlayActivity.class);
+                    startActivity(intent);
+                    finish();
+                    return;
+                }
                 finish();
+
                 break;
             case R.id.txtReview:
                 intent = new Intent(this, ReviewActivity.class);

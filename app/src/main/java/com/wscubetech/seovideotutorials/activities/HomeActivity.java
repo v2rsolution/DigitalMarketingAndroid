@@ -16,7 +16,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
@@ -33,12 +33,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.wscubetech.seovideotutorials.BuildConfig;
 import com.wscubetech.seovideotutorials.R;
 import com.wscubetech.seovideotutorials.Urls.Urls;
 import com.wscubetech.seovideotutorials.adapters.HomeTileAdapter;
 import com.wscubetech.seovideotutorials.custom.CustomFont;
 import com.wscubetech.seovideotutorials.custom.CustomTypefaceSpan;
-import com.wscubetech.seovideotutorials.dialogs.DialogMsg;
 import com.wscubetech.seovideotutorials.dialogs.MyDialog;
 import com.wscubetech.seovideotutorials.fragments.ContactUsFragment;
 import com.wscubetech.seovideotutorials.fragments.FragmentAboutUs;
@@ -48,9 +48,11 @@ import com.wscubetech.seovideotutorials.fragments.ServicesFragment;
 import com.wscubetech.seovideotutorials.fragments.SubCategoriesFragment;
 import com.wscubetech.seovideotutorials.fragments.SuggestionsFragment;
 import com.wscubetech.seovideotutorials.fragments.TrainingCoursesFragment;
+import com.wscubetech.seovideotutorials.model.HomeTileModel;
 import com.wscubetech.seovideotutorials.model.KeyValueModel;
 import com.wscubetech.seovideotutorials.model.NotificationModel;
 import com.wscubetech.seovideotutorials.model.QuestionListModel;
+import com.wscubetech.seovideotutorials.model.SubCategoryModel;
 import com.wscubetech.seovideotutorials.user_model.UserDetailsPrefs;
 import com.wscubetech.seovideotutorials.user_model.UserModel;
 import com.wscubetech.seovideotutorials.user_model.ViewUserDetailsServer;
@@ -58,7 +60,6 @@ import com.wscubetech.seovideotutorials.utils.AdClass;
 import com.wscubetech.seovideotutorials.utils.ConnectionDetector;
 import com.wscubetech.seovideotutorials.utils.Constants;
 import com.wscubetech.seovideotutorials.utils.GetSetSharedPrefs;
-import com.wscubetech.seovideotutorials.utils.GridSpacingItemDecoration;
 import com.wscubetech.seovideotutorials.utils.InitializeFragment;
 import com.wscubetech.seovideotutorials.utils.LoadUserImage;
 import com.wscubetech.seovideotutorials.utils.LogOutUser;
@@ -100,6 +101,30 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     String greetingId = "", greetingImage = "";
 
+    //Current course selected
+    String courseTitle = "";
+
+    //MenuItem technical terms for hide/show
+    MenuItem itemTechnicalTerms, itemVideoTutorials;
+
+    static final String TITLE_VIDEOS = "Video Tutorials";
+    static final String TITLE_INTERVIEW_QUES = "Interview Questions";
+    static final String TITLE_QUIZ = "Quiz Tests";
+    static final String TITLE_TECHNICAL_TERMS = "Technical Terms";
+    static final String TITLE_QUES_ANS = "Questions & Answers";
+    static final String TITLE_STUDY_MATERIAL = "Study Material";
+    static final String TITLE_TRAINING_COURSES = "Training Courses";
+    static final String TITLE_SERVICES = "Our Services";
+    static final String TITLE_CONTACT_US = "Contact Us";
+    static final String TITLE_PLACED_STUDENTS = "Placed Students";
+
+    HomeTileAdapter adapter;
+    ArrayList<HomeTileModel> arrayHomeTileModel = new ArrayList<>();
+
+    int totalCount = 0;
+
+    public static boolean showRatingActivity=true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,15 +139,19 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         active = true;
         userModel = new UserDetailsPrefs(this).getUserModel();
         activity = this;
+
+        GetSetSharedPrefs prefs = new GetSetSharedPrefs(this, "CourseSelection");
+        courseTitle = "Learn " + prefs.getData("SelectedCourseName");
+
         toolbarOperation();
         navigationDrawerOperation();
 
-        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, getResources().getDimensionPixelSize(R.dimen.dim_7), true));
         setUpMainItemsRecyclerView();
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                clickItem(position);
+                HomeTileAdapter adapter = (HomeTileAdapter) recyclerView.getAdapter();
+                clickItem(adapter.getModel(position).title);
             }
 
             @Override
@@ -137,7 +166,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         checkIfLoggedInAndUpdateDeviceId();
-        checkIfComingFromNotification();
+
+        checkAppVersion();
+
 
     }
 
@@ -176,6 +207,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     protected void onStart() {
         super.onStart();
         active = true;
+        updateVideoCountUi();
     }
 
     @Override
@@ -193,13 +225,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 int times = Integer.parseInt(timesUse);
                 if (times > 0) {
-                    if (times % 8 == 0) {
-                        DialogMsg dialogRate = new DialogMsg(this);
-                        dialogRate.showRateUsDialog();
+                    if (times % 18 == 0 && showRatingActivity) {
+                        /*DialogMsg dialogRate = new DialogMsg(this);
+                        dialogRate.showRateUsDialog();*/
+                        Intent intent = new Intent(HomeActivity.this, RateOrUpdateActivity.class);
+                        intent.putExtra("ComingFrom",0);
+                        startActivity(intent);
                     }
                     times += 1;
                     timesUse = String.valueOf(times);
                 }
+
             } catch (Exception e) {
                 Log.v("ExceptionRateUsDialog", "" + e);
             }
@@ -209,8 +245,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void init() {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         txtHeader = (TextView) toolbar.findViewById(R.id.txtHeader);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -219,7 +255,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void toolbarOperation() {
         setSupportActionBar(toolbar);
-        txtHeader.setText(getString(R.string.app_name));
+        txtHeader.setText(courseTitle);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
     }
@@ -246,13 +282,30 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     applyFontToMenuItem(subMenuItem);
                 }
             }
+
+            switch (mi.getItemId()) {
+                case R.id.itemTechnicalTerms:
+                    itemTechnicalTerms = mi;
+                    break;
+                case R.id.itemVideoTutorials:
+                    itemVideoTutorials = mi;
+                    break;
+            }
+
             //the method we have create in activity
             applyFontToMenuItem(mi);
         }
 
+        //hideShowDrawerOption();
+
+        //hide video tutorials from drawer when course Website development or course Java is selected
+        if (itemVideoTutorials != null) {
+            itemVideoTutorials.setVisible(!(Constants.SEO_CAT_ID.equals(Constants.WEBSITE_DEVELOPMENT_ID) || Constants.SEO_CAT_ID.equals(Constants.JAVA_ID)));
+        }
 
         //My Profile menu in nav drawer based on user log in
         navMenu.findItem(R.id.itemMyProfileDrawer).setVisible(userModel.getUserId().trim().length() >= 1);
+
 
         //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -269,7 +322,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                     case R.id.itemHome:
                         clearAllBackStack();
-                        txtHeader.setText(getString(R.string.app_name));
+                        txtHeader.setText(courseTitle);
                         toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.colorPrimary));
                         break;
 
@@ -279,29 +332,47 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case R.id.itemVideoTutorials:
-                        clickItem(0);
+                        clickItem(TITLE_VIDEOS);
                         break;
 
                     case R.id.itemInterviewQues:
                         clearAllBackStack();
-                        clickItem(1);
+                        clickItem(TITLE_INTERVIEW_QUES);
                         break;
 
                     case R.id.itemQuizTest:
                         clearAllBackStack();
-                        clickItem(2);
+                        clickItem(TITLE_QUIZ);
                         break;
                     case R.id.itemTechnicalTerms:
                         clearAllBackStack();
-                        clickItem(3);
+                        clickItem(TITLE_TECHNICAL_TERMS);
                         break;
                     case R.id.itemQuesAns:
-                        clickItem(4);
+                        clickItem(TITLE_QUES_ANS);
                         break;
                     case R.id.itemNotifications:
                         fragmentReset();
                         clearAllBackStack();
                         gotToNotificationFragment();
+                        break;
+
+                    case R.id.itemTrainingCourses:
+                        title = getString(R.string.title_training_courses);
+                        toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_6));
+                        showFragment(TrainingCoursesFragment.newInstance(title), title);
+                        break;
+
+                    case R.id.itemOurServices:
+                        title = getString(R.string.title_our_services);
+                        toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_7));
+                        showFragment(ServicesFragment.newInstance(title), title);
+                        break;
+
+                    case R.id.itemPlacedStudents:
+                        title = getString(R.string.title_placed_students);
+                        toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_9));
+                        showFragment(PlacedStudentsFragment.newInstance(title), title);
                         break;
 
                     case R.id.itemShare:
@@ -323,7 +394,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                     case R.id.itemContactUs:
                         clearAllBackStack();
-                        clickItem(8);
+                        clickItem(TITLE_CONTACT_US);
                         break;
                     case R.id.itemAboutUs:
                         clearAllBackStack();
@@ -400,14 +471,18 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             drawerLayout.closeDrawer(Gravity.LEFT);
             return;
         }
-        txtHeader.setText(getString(R.string.app_name));
+        txtHeader.setText(courseTitle);
         toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.colorPrimary));
         super.onBackPressed();
     }
 
     private void setUpMainItemsRecyclerView() {
+        arrayHomeTileModel.clear();
+
         String[] arrayTitles = getResources().getStringArray(R.array.array_home_tiles);
+        String[] arrayDescription = getResources().getStringArray(R.array.array_home_descriptions);
         int arrayBgColors[] = getResources().getIntArray(R.array.array_home_tiles_colors);
+
         ArrayList<Integer> arrayImageRes = new ArrayList<>();
         arrayImageRes.add(R.drawable.ic_tile_video_tutorial);
         arrayImageRes.add(R.drawable.ic_tile_interview_ques);
@@ -415,20 +490,56 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         arrayImageRes.add(R.drawable.ic_tile_technical_terms);
         arrayImageRes.add(R.drawable.ic_tile_ques_ans);
         arrayImageRes.add(R.drawable.ic_tile_study_material);
-        arrayImageRes.add(R.drawable.ic_tile_training_courses);
+        /*arrayImageRes.add(R.drawable.ic_tile_training_courses);
         arrayImageRes.add(R.drawable.ic_tile_our_services);
         arrayImageRes.add(R.drawable.ic_tile_contact_us);
-        arrayImageRes.add(R.drawable.ic_tile_placed_students);
+        arrayImageRes.add(R.drawable.ic_tile_placed_students);*/
+
         //arrayImageRes.add(R.drawable.ic_tile_students_view);
-        HomeTileAdapter adapter = new HomeTileAdapter(this, arrayTitles, arrayBgColors, arrayImageRes);
+        //ArrayList<HomeTileModel> arrayHomeTileModel = new ArrayList<>();
+        for (int i = 0; i < arrayTitles.length; i++) {
+            HomeTileModel model = new HomeTileModel();
+            model.title = arrayTitles[i];
+            model.description = arrayDescription[i];
+            model.bgColor = arrayBgColors[i];
+            model.icon = arrayImageRes.get(i);
+            arrayHomeTileModel.add(model);
+
+            //hide study material from home tiles when any course is selected except Digital Marketing and Software Testing
+            /*if (!Constants.SEO_CAT_ID.equals(Constants.DIGITAL_MARKETING_ID) && !Constants.SEO_CAT_ID.equals(Constants.SOFTWARE_TESTING_ID)) {
+                if (model.title.equals(TITLE_STUDY_MATERIAL)) {
+                    if (arrayHomeTileModel.size() > 0)
+                        arrayHomeTileModel.remove(arrayHomeTileModel.size() - 1);
+                }
+            }*/
+
+            //hide video tutorials from home tiles when course Website development or course Java is selected
+            if (model.title.equals(TITLE_VIDEOS) && (Constants.SEO_CAT_ID.equals(Constants.WEBSITE_DEVELOPMENT_ID) || Constants.SEO_CAT_ID.equals(Constants.JAVA_ID))) {
+                if (arrayHomeTileModel.size() > 0)
+                    arrayHomeTileModel.remove(arrayHomeTileModel.size() - 1);
+            }
+
+            if (model.title.equals(TITLE_STUDY_MATERIAL) && (Constants.SEO_CAT_ID.equals(Constants.JAVA_ID) || Constants.SEO_CAT_ID.equals(Constants.ANDROID_ID) || Constants.SEO_CAT_ID.equals(Constants.WEBSITE_DEVELOPMENT_ID))) {
+                if (arrayHomeTileModel.size() > 0)
+                    arrayHomeTileModel.remove(arrayHomeTileModel.size() - 1);
+            }
+
+        }
+        adapter = new HomeTileAdapter(this, arrayHomeTileModel);
         recyclerView.setAdapter(adapter);
+
+        if (new ConnectionDetector(getApplicationContext()).isConnectingToInternet())
+            okHttpViewVideoCountAll();
 
     }
 
-    private void clickItem(int position) {
+    private void clickItem(String itemTitle) {
         String title = "";
-        switch (position) {
-            case 0:
+        if (itemTitle.contains("(")) {
+            itemTitle = itemTitle.substring(0, itemTitle.indexOf("(")).trim();
+        }
+        switch (itemTitle) {
+            case TITLE_VIDEOS:
                 Intent intent = new Intent(HomeActivity.this, VideoTutorialsTabActivity.class);
                 intent.putExtra("SubCatId", "");
                 intent.putExtra("SubCatName", "");
@@ -436,54 +547,73 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("SubCatEnglishCount", "0");
                 startActivity(intent);
                 break;
-            case 1:
+            case TITLE_INTERVIEW_QUES:
+                /*if (Constants.SEO_CAT_ID.equals(Constants.ANDROID_ID)) {
+                    goToInterviewQuesActivity("1", getString(R.string.title_interview_ques));
+                    return;
+                }*/
                 fragmentReset();
                 title = getString(R.string.title_interview_ques);
                 toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_1));
                 showFragment(SubCategoriesFragment.newInstance(title), title);
                 break;
-            case 2:
+            case TITLE_QUIZ:
+                if (Constants.SEO_CAT_ID.equals(Constants.ANDROID_ID)) {
+                    intent = new Intent(this, QuizPlayActivity.class);
+                    SubCategoryModel model = new SubCategoryModel();
+                    model.setSubCatTitle(getString(R.string.title_quiz));
+                    model.setSubCatQuizTime("10");
+                    intent.putExtra("SubCategoryModel", model);
+                    startActivity(intent);
+                    return;
+                }
                 fragmentReset();
                 title = getString(R.string.title_quiz_test);
                 toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_2));
                 showFragment(SubCategoriesFragment.newInstance(title), title);
                 break;
-            case 3:
+            case TITLE_TECHNICAL_TERMS:
+                if (Constants.SEO_CAT_ID.equals(Constants.ANDROID_ID) || Constants.SEO_CAT_ID.equals(Constants.JAVA_ID) || Constants.SEO_CAT_ID.equals(Constants.SOFTWARE_TESTING_ID)) {
+                    goToInterviewQuesActivity("2", getString(R.string.title_technical_terms));
+                    return;
+                }
                 fragmentReset();
                 title = getString(R.string.title_technical_terms);
                 toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_3));
                 showFragment(SubCategoriesFragment.newInstance(title), title);
                 break;
-            case 4:
+            case TITLE_QUES_ANS:
                 intent = new Intent(HomeActivity.this, QuestionListActivity.class);
                 intent.putExtra("ComingFrom", "all");
                 startActivity(intent);
                 break;
-            case 5:
+            case TITLE_STUDY_MATERIAL:
+                if (Constants.SEO_CAT_ID.equals(Constants.SOFTWARE_TESTING_ID)) {
+                    intent = new Intent(this, StudyMaterialQuesActivity.class);
+                    SubCategoryModel model = new SubCategoryModel();
+                    model.setSubCatTitle(getString(R.string.title_study_material));
+                    intent.putExtra("SubCategoryModel", model);
+                    startActivity(intent);
+                    return;
+                }
                 fragmentReset();
                 title = getString(R.string.title_study_material);
                 toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_5));
                 showFragment(SubCategoriesFragment.newInstance(title), title);
                 break;
-            case 6:
-                title = getString(R.string.title_training_courses);
-                toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_6));
-                showFragment(TrainingCoursesFragment.newInstance(title), title);
+            case TITLE_TRAINING_COURSES:
+
                 break;
-            case 7:
-                title = getString(R.string.title_our_services);
-                toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_7));
-                showFragment(ServicesFragment.newInstance(title), title);
+            case TITLE_SERVICES:
+
                 break;
-            case 8:
+            case TITLE_CONTACT_US:
                 title = getString(R.string.title_contact_us);
                 toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_8));
                 showFragment(ContactUsFragment.newInstance(title), title);
                 break;
-            case 9:
-                title = getString(R.string.title_placed_students);
-                toolbar.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_tile_9));
-                showFragment(PlacedStudentsFragment.newInstance(title), title);
+            case TITLE_PLACED_STUDENTS:
+
                 break;
         }
     }
@@ -492,11 +622,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         new InitializeFragment(this, "add", "yes", title).initFragment(fragment, getSupportFragmentManager());
     }
 
+    //For omitting the sub category fragment page
+    //subCatFlag->Interview Ques, subCatFlag->Technical Terms
+    private void goToInterviewQuesActivity(String subCatFlag, String title) {
+        Intent intent = new Intent(HomeActivity.this, InterviewQuesActivity.class);
+        SubCategoryModel model = new SubCategoryModel();
+        model.setSubCatFlag(subCatFlag);
+        model.setSubCatTitle(title);
+        intent.putExtra("SubCategoryModel", model);
+        startActivity(intent);
+    }
+
+
     private void checkIfComingFromNotification() {
 
         try {
             NotificationModel model = (NotificationModel) getIntent().getExtras().getSerializable("NotificationModel");
             if (model != null) {
+                showRatingActivity=false;
                 if (model.getNotificationFor().equalsIgnoreCase("6")) {
                     QuestionListModel quesModel = (QuestionListModel) getIntent().getExtras().getSerializable("QuesModel");
                     Intent intent = new Intent(HomeActivity.this, AnswerListActivity.class);
@@ -549,9 +692,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 logOutUser.sureLogOutDialog();
                 break;
             case R.id.itemWeb:
-                intent=new Intent(Intent.ACTION_VIEW);
+                intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("http://www.360digitalgyan.com"));
                 startActivity(intent);
+                break;
+            case R.id.itemSelectCourse:
+                switchCourseOperation();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -595,7 +741,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void okHttpViewGreeting() {
         final GetSetSharedPrefs prefs = new GetSetSharedPrefs(this, "Greeting");
         //prefs.putData("ShowGreeting_4","");
-        OkHttpCalls calls = new OkHttpCalls(Urls.VIEW_GREETING, new ArrayList<KeyValueModel>());
+        OkHttpCalls calls = new OkHttpCalls(Urls.VIEW_GREETING_NEW, new ArrayList<KeyValueModel>());
         calls.initiateCall(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -655,9 +801,104 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void checkIfLoggedInAndUpdateDeviceId() {
-        if (userModel.getUserId().trim().length() > 0) {
-            SendDeviceIdToServer server = new SendDeviceIdToServer(this);
-            server.sendDeviceIdAndNotifyStatusToServer();
+        SendDeviceIdToServer server = new SendDeviceIdToServer(this);
+        server.sendDeviceIdAndNotifyStatusToServer();
+    }
+
+    private void switchCourseOperation() {
+        GetSetSharedPrefs prefs = new GetSetSharedPrefs(this, "CourseSelection");
+        prefs.putData("SelectedCourseId", "");
+        prefs.putData("SelectedCourseName", "");
+        Intent intent = new Intent(this, SelectCourseActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    //technical terms
+    private void hideShowDrawerOption() {
+        if (itemTechnicalTerms != null)
+            itemTechnicalTerms.setVisible(Constants.SEO_CAT_ID.equals("30"));
+    }
+
+
+    private void okHttpViewVideoCountAll() {
+        ArrayList<KeyValueModel> arrayKeyValueModel = new ArrayList<>();
+        arrayKeyValueModel.add(new KeyValueModel(Constants.KEY_COURSE_ID, Constants.SEO_CAT_ID));
+        OkHttpCalls calls = new OkHttpCalls(Urls.viewVideoCountAll, arrayKeyValueModel);
+        calls.initiateCall(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+            }
+
+            @Override
+            public void onResponse(Call call, Response res) throws IOException {
+                String response = res.body().string();
+                handleResponseVideoCount(false, response);
+            }
+        });
+    }
+
+    private void handleResponseVideoCount(final boolean failed, final String response) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    JSONObject json = new JSONObject(response);
+                    if (json.getInt("response") == 1) {
+                        int hindiCount = 0, englishCount = 0;
+                        hindiCount = json.getInt("hindi_video");
+                        englishCount = json.getInt("english_video");
+                        totalCount = hindiCount + englishCount;
+                        updateVideoCountUi();
+                    }
+                } catch (Exception e) {
+                    Log.v("JsonExceptionViewTotal", "" + e);
+                }
+
+            }
+        });
+    }
+
+    private void updateVideoCountUi() {
+        if (totalCount > 0) {
+            if (active) {
+                if (arrayHomeTileModel.size() > 0) {
+                    String videoTitle = arrayHomeTileModel.get(0).title;
+                    if (videoTitle.equals(TITLE_VIDEOS)) {
+                        if (adapter != null) {
+                            HomeTileModel model = arrayHomeTileModel.get(0);
+                            if (!model.title.contains("(")) {
+                                model.title = model.title + " (" + totalCount + ")";
+                                arrayHomeTileModel.set(0, model);
+                                adapter.notifyItemChanged(0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    private void checkAppVersion() {
+        GetSetSharedPrefs prefs = new GetSetSharedPrefs(getApplicationContext(), "App_Version_");
+        try {
+            double serverAppVersion = Double.parseDouble(prefs.getData("ServerAppVersion"));
+            int mandatoryUpdate = Integer.parseInt(prefs.getData("ServerAppMandatory")); //0-> not mandatory, 1->mandatory
+
+            double myAppCurVersion = Double.parseDouble(BuildConfig.VERSION_NAME);
+            if (myAppCurVersion < serverAppVersion) {
+                showRatingActivity=false;
+                Intent intent = new Intent(getApplicationContext(), RateOrUpdateActivity.class);
+                intent.putExtra("ComingFrom", mandatoryUpdate == 0 ? 2 : 1);
+                startActivity(intent);
+            }else{
+                checkIfComingFromNotification();
+            }
+        } catch (Exception e) {
+            checkIfComingFromNotification();
+            Log.v("ParseServerApp", "" + e);
         }
     }
 

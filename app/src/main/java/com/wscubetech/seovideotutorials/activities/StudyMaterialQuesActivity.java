@@ -1,10 +1,10 @@
 /*Designed and Developed by V2R Solution*/
 package com.wscubetech.seovideotutorials.activities;
 
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -18,10 +18,8 @@ import android.widget.Toast;
 import com.pnikosis.materialishprogress.ProgressWheel;
 import com.wscubetech.seovideotutorials.R;
 import com.wscubetech.seovideotutorials.Urls.Urls;
-import com.wscubetech.seovideotutorials.adapters.InterviewQuesAdapter;
 import com.wscubetech.seovideotutorials.adapters.StudyMaterialQuesAdapter;
 import com.wscubetech.seovideotutorials.dialogs.DialogMsg;
-import com.wscubetech.seovideotutorials.model.InterviewModel;
 import com.wscubetech.seovideotutorials.model.StudyMaterialModel;
 import com.wscubetech.seovideotutorials.model.SubCategoryModel;
 import com.wscubetech.seovideotutorials.utils.AdClass;
@@ -143,7 +141,7 @@ public class StudyMaterialQuesActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         active = true;
-        adapter = new StudyMaterialQuesAdapter(StudyMaterialQuesActivity.this, arrayQuesModel,subCategoryModel);
+        adapter = new StudyMaterialQuesAdapter(StudyMaterialQuesActivity.this, arrayQuesModel, subCategoryModel);
         //ScaleInAnimationAdapter animationAdapter = new ScaleInAnimationAdapter(adapter);
         recyclerView.setAdapter(adapter);
     }
@@ -181,7 +179,7 @@ public class StudyMaterialQuesActivity extends AppCompatActivity {
 
     public void getOfflineData() {
         OfflineResponse offlineResponse = new OfflineResponse(this, "StudyMaterialQuesList");
-        this.response = offlineResponse.getResponse(OfflineResponse.STUDY_MATERIAL + subCategoryModel.getSubCatId() + "_" + pageNo);
+        this.response = offlineResponse.getResponse(OfflineResponse.STUDY_MATERIAL + subCategoryModel.getSubCatId() + "_" + pageNo + "_" + Constants.SEO_CAT_ID);
         if (this.response.trim().length() < 1) {
             response = getString(R.string.networkError);
         }
@@ -214,7 +212,15 @@ public class StudyMaterialQuesActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                        try {
+                            if (active) {
+                                progressWheel.setVisibility(View.GONE);
+                                progressBarBottom.setVisibility(View.GONE);
+                                Toast.makeText(getApplicationContext(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                            }
+                        } catch (Exception e) {
+
+                        }
                     }
                 });
             }
@@ -225,7 +231,7 @@ public class StudyMaterialQuesActivity extends AppCompatActivity {
                     response = Html.fromHtml(res.body().string()).toString();
                     Log.v("ResponsePostSuccess", response);
                     OfflineResponse offlineResponse = new OfflineResponse(StudyMaterialQuesActivity.this, "StudyMaterialQuesList");
-                    offlineResponse.setResponse(OfflineResponse.STUDY_MATERIAL + subCategoryModel.getSubCatId() + "_" + pageNo, response);
+                    offlineResponse.setResponse(OfflineResponse.STUDY_MATERIAL + subCategoryModel.getSubCatId() + "_" + pageNo + "_" + Constants.SEO_CAT_ID, response);
                     handleResponse();
                 }
             }

@@ -44,10 +44,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         //Log.d(TAG, "From: " + remoteMessage.getFrom());
         Map<String, String> dataMap = remoteMessage.getData();
 //        Log.v(TAG,"Notification: "+remoteMessage.getNotification().getBody());
-        Log.d(TAG, "Notification Message Body: " + dataMap.get("body"));
 
         //Calling method to generate notification
         String response = dataMap.get("body");
+        Log.d(TAG, "Notification Message Body: " + response);
 
         parseMyNotification(response);
     }
@@ -56,13 +56,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private void parseMyNotification(String response) {
         Log.v("NotifyingResponse", response);
         NotificationModel notificationModel = new NotificationModel();
-        QuestionListModel quesModel=new QuestionListModel();
+        QuestionListModel quesModel = new QuestionListModel();
         try {
             JSONObject json = new JSONObject(response);
             notificationModel.setNotificationTitle(json.getString("msg"));
             notificationModel.setNotificationFor(json.getString("notification_for"));
             //for answer posted, notify user who has posted the question
-            if(notificationModel.getNotificationFor().trim().equals("6")){
+            if (notificationModel.getNotificationFor().trim().equals("6")) {
                 quesModel.setQuesId(json.getString("ques_id"));
                 quesModel.setQuesTitle(json.getString("user_question"));
                 quesModel.setTags(json.getString("question_tags"));
@@ -75,27 +75,27 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
                 quesModel.setTotalViews(Integer.parseInt(json.getString("total_views")));
 
-                UserModel userModel=new UserDetailsPrefs(this).getUserModel();
+                UserModel userModel = new UserDetailsPrefs(this).getUserModel();
                 if (userModel.getUserId().trim().length() > 0) {
                     quesModel.setLiked(Integer.parseInt(json.getString("liked")));
                 }
 
 
-                userModel=new UserModel();
+                userModel = new UserModel();
                 userModel.setUserId(json.getString("ques_user_id"));
                 userModel.setUserName(json.getString("seo_users_name"));
                 userModel.setUserEmail(json.getString("seo_users_email"));
                 userModel.setUserImage(json.getString("seo_users_image"));
                 quesModel.setUserModel(userModel);
-            }else{
-                quesModel=null;
+            } else {
+                quesModel = null;
             }
             notificationModel.setNotificationImage(json.getString("image"));
             notificationModel.setNotificationId(json.getString("notification_id"));
         } catch (Exception e) {
             Log.v("ExceptionNotifying", "" + e);
         }
-        sendNotification(notificationModel,quesModel);
+        sendNotification(notificationModel, quesModel);
     }
 
 
@@ -104,8 +104,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         intent.putExtra("NotificationModel", model);
 
         //for answer posted, notify user who has posted the question
-        if(model.getNotificationFor().equalsIgnoreCase("6") && quesModel!=null){
-            intent.putExtra("QuesModel",quesModel);
+        if (model.getNotificationFor().equalsIgnoreCase("6") && quesModel != null) {
+            intent.putExtra("QuesModel", quesModel);
         }
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -185,8 +185,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 Log.v("NotifyingImageException", "" + e);
             }
 
-            UserModel userModel=new UserDetailsPrefs(MyFirebaseMessagingService.this).getUserModel();
-            if(model.getNotificationFor().equals("6") && userModel.getUserId().trim().length()<1){
+            UserModel userModel = new UserDetailsPrefs(MyFirebaseMessagingService.this).getUserModel();
+            if (model.getNotificationFor().equals("6") && userModel.getUserId().trim().length() < 1) {
                 //user not logged in
                 return;
             }

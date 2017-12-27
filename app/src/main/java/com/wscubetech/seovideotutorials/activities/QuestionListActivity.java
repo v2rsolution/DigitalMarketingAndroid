@@ -80,10 +80,10 @@ public class QuestionListActivity extends AppCompatActivity implements View.OnCl
     AdClass ad;
 
     UserModel userModel;
-    
+
     String comingFrom = "";//all-> all questions   myQuestions-> my posted questions    myAnswers-> my posted answers
-    
-    String msgNotFound = ""; 
+
+    String msgNotFound = "";
 
     DialogMsg dialogMsg;
 
@@ -98,7 +98,7 @@ public class QuestionListActivity extends AppCompatActivity implements View.OnCl
     String tagArray[], selectedTags = "";
 
     String flagFilter = "1";// 1->Trending;
-    /*1 -> Trending (Default)
+    /*1 -> Trending (Default) //earlier, now 3
     2 -> Most Popular
     3 -> Most Recent
     4 -> Most Answered
@@ -251,7 +251,17 @@ public class QuestionListActivity extends AppCompatActivity implements View.OnCl
         int colorTheme = ContextCompat.getColor(this, R.color.color_tile_4);
         toolbar.setBackgroundColor(colorTheme);
         txtHeader.setText("Questions");
-        msgNotFound = comingFrom.equals("all") ? "Oops!\nNo questions there to entertain" : "Oops!\nNo questions posted yet by you";
+        switch (comingFrom){
+            case "all":
+                msgNotFound="Oops!\nNo questions there to entertain";
+                break;
+            case "myQuestions":
+                msgNotFound="Oops!\nNo questions posted yet by you";
+                break;
+            case "myAnswers":
+                msgNotFound="Oops!\nNo answers for any question posted yet by you";
+                break;
+        }
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
@@ -345,7 +355,7 @@ public class QuestionListActivity extends AppCompatActivity implements View.OnCl
 
     public void getOfflineData() {
         OfflineResponse offlineResponse = new OfflineResponse(this, "QuestionList");
-        this.response = offlineResponse.getResponse(OfflineResponse.QUES_LIST + flagFilter + "_" + selectedTags + "_" + pageNo);
+        this.response = offlineResponse.getResponse(OfflineResponse.QUES_LIST + flagFilter + "_" + selectedTags + "_" + pageNo+"_"+Constants.SEO_CAT_ID);
         if (this.response.trim().length() < 1) {
             response = getString(R.string.networkError);
         }
@@ -360,19 +370,27 @@ public class QuestionListActivity extends AppCompatActivity implements View.OnCl
 
         ArrayList<KeyValueModel> arrayKeyValueModel = new ArrayList<>();
         arrayKeyValueModel.add(new KeyValueModel("user_id", userModel.getUserId()));
-        arrayKeyValueModel.add(new KeyValueModel("ques_main_cat_id", Constants.SEO_CAT_ID));
+        //arrayKeyValueModel.add(new KeyValueModel("ques_main_cat_id", Constants.SEO_CAT_ID));
         arrayKeyValueModel.add(new KeyValueModel("page_no", String.valueOf(pageNo)));
         arrayKeyValueModel.add(new KeyValueModel("flag", flagFilter));
         arrayKeyValueModel.add(new KeyValueModel("filter_tag", selectedTags));
 
-        OkHttpCalls calls = new OkHttpCalls(Urls.VIEW_POSTED_QUESTIONS, arrayKeyValueModel);
+        OkHttpCalls calls = new OkHttpCalls(Urls.VIEW_POSTED_QUESTIONS_NEW, arrayKeyValueModel);
         calls.initiateCall(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
+                        try {
+                            if (active) {
+                                progressWheel.setVisibility(View.GONE);
+                                progressBarBottom.setVisibility(View.GONE);
+                                Toast.makeText(getApplicationContext(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                            }
+                        } catch (Exception e) {
+
+                        }
                     }
                 });
             }
@@ -382,7 +400,7 @@ public class QuestionListActivity extends AppCompatActivity implements View.OnCl
                 response = Html.fromHtml(res.body().string()).toString();
                 Log.v("ResponseQuestions", response);
                 OfflineResponse offlineResponse = new OfflineResponse(QuestionListActivity.this, "QuestionList");
-                offlineResponse.setResponse(OfflineResponse.QUES_LIST + flagFilter + "_" + selectedTags + "_" + pageNo, response);
+                offlineResponse.setResponse(OfflineResponse.QUES_LIST + flagFilter + "_" + selectedTags + "_" + pageNo+"_"+Constants.SEO_CAT_ID, response);
                 handleResponse();
             }
         });
@@ -451,7 +469,8 @@ public class QuestionListActivity extends AppCompatActivity implements View.OnCl
                             } else {
 
                                 if (active) {
-                                    noRecordFound.showNoRecordFound(msgNotFound);
+                                    if (pageNo == 1)
+                                        noRecordFound.showNoRecordFound(msgNotFound);
                                 }
 
                             }

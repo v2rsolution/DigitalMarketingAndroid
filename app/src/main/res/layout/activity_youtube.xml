@@ -16,6 +16,7 @@
             android:orientation="vertical">
 
             <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtHeaderTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dim_10"
@@ -26,20 +27,41 @@
             <com.google.android.youtube.player.YouTubePlayerView
                 android:id="@+id/youtube_view"
                 android:layout_width="match_parent"
-                android:transitionName="@string/title_video_tutorials"
-                android:layout_height="@dimen/dim_250"/>
+                android:layout_height="@dimen/dim_250"
+                android:transitionName="@string/title_video_tutorials"/>
 
-
-            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
-                android:id="@+id/txtTitle"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/dim_10"
-                android:paddingLeft="@dimen/dim_10"
-                android:paddingRight="@dimen/dim_10"
-                android:text="Video Title"
-                android:textColor="@color/colorDimPrimary"
-                android:textSize="@dimen/font_size_16"/>
+                android:gravity="center_vertical">
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                    android:id="@+id/txtViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dim_3"
+                    android:layout_alignParentRight="true"
+                    android:text="views"
+                    android:background="@color/colorPrimary"
+                    android:textColor="#fff"
+                    android:layout_margin="@dimen/dim_3"
+                    android:textSize="@dimen/font_size_12"/>
+
+                <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dim_10"
+                    android:paddingRight="@dimen/dim_2"
+                    android:paddingTop="@dimen/dim_5"
+                    android:text="Video Title"
+                    android:layout_toLeftOf="@+id/txtViews"
+                    android:textColor="@color/colorDimPrimary"
+                    android:textSize="@dimen/font_size_16"/>
+
+
+            </RelativeLayout>
+
 
             <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
                 android:id="@+id/txtDescription"

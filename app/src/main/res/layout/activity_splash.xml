@@ -45,10 +45,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="LEARN DIGITAL MARKETING"
+                android:gravity="center"
+                android:padding="9dp"
+                android:text="@string/str_splash_learn_things"
                 android:textColor="@color/colorDarkBlue"
-                android:textSize="18sp"/>
+                android:textSize="12sp"/>
 
         </LinearLayout>
 

@@ -220,7 +220,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private void handleSignInResult(GoogleSignInResult result) {
-        Log.d(TAG, "handleSignInResult:" + result.isSuccess());
+        Log.d(TAG, "handleSignInResult:" + result.isSuccess()+"\n"+result.getStatus()+"\n"+result.getSignInAccount());
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
@@ -260,6 +260,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         } else {
             // Signed out, show unauthenticated UI.
             //updateUI(false);
+            Toast.makeText(getApplicationContext(),getString(R.string.networkError),Toast.LENGTH_LONG).show();
         }
     }
 

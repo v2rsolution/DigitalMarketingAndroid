@@ -9,6 +9,12 @@
         android:title="more"
         app:showAsAction="ifRoom">
         <menu>
+
+            <item
+                android:id="@+id/itemSelectCourse"
+                android:icon="@drawable/ic_menu_switch_course"
+                android:title="Switch Course"/>
+
             <item
                 android:id="@+id/itemLogin"
                 android:icon="@drawable/ic_login_person"

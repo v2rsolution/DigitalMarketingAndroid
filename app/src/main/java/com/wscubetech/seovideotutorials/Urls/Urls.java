@@ -1,7 +1,5 @@
 package com.wscubetech.seovideotutorials.Urls;
 
-import com.wscubetech.seovideotutorials.utils.Constants;
-
 public class Urls {
 
     //360DigiGyan
@@ -16,7 +14,8 @@ public class Urls {
     //language= //1 for English  //2 for Hindi
     //&sub_category_id=3
 
-    public static final String viewVideoCountAll = mainUrl + "video_count.php";
+    public static final String viewVideoCountAll = mainUrl + "video_count.php?";
+    //category_id=30
 
 
     public static final String viewSubCategoriesIq = mainUrl + "view_sub_cat.php?";
@@ -106,7 +105,7 @@ public class Urls {
     //ques_id=&user_question=&ques_user_id=&ques_main_cat_id=
     // &question_tags= (comma separated tag titles)
 
-    public static final String DELETE_QUESTION=mainUrl+"delete_question.php?";
+    public static final String DELETE_QUESTION = mainUrl + "delete_question.php?";
     //question_id=
 
     public static final String ADD_ANSWER = mainUrl + "add_answer.php?";
@@ -119,6 +118,23 @@ public class Urls {
     //answer_id=
 
     public static final String VIEW_POSTED_QUESTIONS = mainUrl + "view_posted_question.php?";
+    //user_id=1&ques_main_cat_id=30
+    // &limit=1 (no. of ques in one page, by default 25)
+    // &page_no=
+    //&flag=1  (1->  for my posted questions, blank for all questions)
+    /*&flag=>
+    1 -> Trending (Default)
+    2 -> Most Popular
+    3 -> Most Recent
+    4 -> Most Answered
+    5 -> Unanswered
+    6 -> My Questions (user_id)
+    7 -> My Answers (user_id)
+    */
+    //filter_tags => (comma separated tags) (empty by default)
+    //liked=> 0->nothing,  1->liked   2->Disliked
+
+    public static final String VIEW_POSTED_QUESTIONS_NEW = mainUrl + "view_posted_question_new.php?";
     //user_id=1&ques_main_cat_id=30
     // &limit=1 (no. of ques in one page, by default 25)
     // &page_no=
@@ -156,5 +172,16 @@ public class Urls {
     //user_id=1&user_name=sandeep&user_photo=
 
     public static final String VIEW_GREETING = mainUrl + "view_greeting.php";
+
+    public static final String VIEW_GREETING_NEW = mainUrl + "view_greeting_new.php";
+
+
+    //You Tube Data API 3.0, under account nileshwscube@gmail.com
+    public static final String YOU_TUBE_DATA_API_KEY = "AIzaSyC3g422LrqS0cZbUU6Cj9YMW4sZe7D86E4";
+
+    public static final String YOU_TUBE_DATA_API = "https://www.googleapis.com/youtube/v3/videos?part=statistics&key=" + YOU_TUBE_DATA_API_KEY;
+    //id= comma separated video ids
+
+    public static final String CURRENT_APP_VERSION = mainUrl + "app_version.php";
 
 }

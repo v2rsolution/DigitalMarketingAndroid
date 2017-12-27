@@ -4117,5 +4117,8 @@
         -20dp
     </dimen>
 
+    <dimen name="minus_25">-25dp</dimen>
+    <dimen name="minus_26">-26dp</dimen>
+
 
 </resources>

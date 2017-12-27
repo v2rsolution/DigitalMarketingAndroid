@@ -1042,5 +1042,7 @@
         -30dp
     </dimen>
 
+    <dimen name="minus_25">-37.5dp</dimen>
+    <dimen name="minus_26">-39dp</dimen>
 
 </resources>

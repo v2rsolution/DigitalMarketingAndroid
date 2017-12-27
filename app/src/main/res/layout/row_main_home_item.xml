@@ -4,40 +4,122 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dim_5"
     android:background="@color/colorPrimary"
+    android:elevation="@dimen/dim_2"
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/linLeft"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:orientation="vertical"
         android:clickable="true"
         android:descendantFocusability="blocksDescendants"
-        android:paddingBottom="@dimen/dim_5"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dim_20"
+        android:paddingLeft="@dimen/dim_10"
+        android:paddingRight="@dimen/dim_10"
         android:paddingTop="@dimen/dim_20">
-        
+
         <ImageView
-            android:id="@+id/img"
+            android:id="@+id/imgLeft"
             android:layout_width="75dp"
             android:layout_height="60dp"
-            android:layout_gravity="center"/>
-
-        <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
-            android:id="@+id/txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/dim_6"
-            android:gravity="center"
-            android:lines="2"
-            android:maxLines="2"
-            android:paddingLeft="@dimen/dim_7"
-            android:paddingRight="@dimen/dim_7"
-            android:paddingBottom="@dimen/dim_5"
-            android:text="Title"
-            android:textColor="#fff"
-            android:textSize="@dimen/font_size_14"/>
+            android:src="@drawable/ic_tile_video_tutorial"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_7"
+            android:orientation="vertical">
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtTitleLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_1"
+                android:maxLines="1"
+                android:text="Title"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_15"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtDescriptionLeft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_3"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="Description"
+                android:textColor="#bbffffff"
+                android:textSize="@dimen/font_size_13"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linRight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:descendantFocusability="blocksDescendants"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dim_20"
+        android:paddingLeft="@dimen/dim_10"
+        android:paddingRight="@dimen/dim_10"
+        android:paddingTop="@dimen/dim_20"
+        android:visibility="visible">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dim_7"
+            android:layout_marginLeft="@dimen/dim_7"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgRight"
+                android:layout_width="75dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_tile_interview_ques"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewBold
+                android:id="@+id/txtTitleRight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dim_7"
+                android:layout_marginTop="@dimen/dim_1"
+                android:layout_toLeftOf="@+id/imgRight"
+                android:maxLines="1"
+                android:text="Title"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_15"/>
+
+            <com.wscubetech.seovideotutorials.custom_views.MyTextViewRegular
+                android:id="@+id/txtDescriptionRight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTitleRight"
+                android:layout_marginRight="@dimen/dim_7"
+                android:layout_marginTop="@dimen/dim_3"
+                android:layout_toLeftOf="@+id/imgRight"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="Description"
+                android:textColor="#bbffffff"
+                android:textSize="@dimen/font_size_13"/>
+
+        </RelativeLayout>
+
 
     </LinearLayout>
 

@@ -29,4 +29,6 @@
 
     <include layout="@layout/content_empty_screen"/>
 
+    <include layout="@layout/content_ad_banner"/>
+
 </RelativeLayout>

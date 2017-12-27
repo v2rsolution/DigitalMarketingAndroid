@@ -18,6 +18,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.ActionBar;
@@ -81,7 +82,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     int flagCameraGallery = 0;
     File imageFile;
     Uri fileUri;
-    static final String FOLDER_PROFILE = "Digital Marketing";
+    static final String FOLDER_PROFILE = "360 Digital Gyan";
 
     Bitmap myBmp;
 
@@ -272,7 +273,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         imageFile = new File(Environment.getExternalStorageDirectory() + File.separator
                 + FOLDER_PROFILE + "/my_profile" + ".jpg");
 
-        fileUri = Uri.fromFile(imageFile);
+        fileUri = FileProvider.getUriForFile(getApplicationContext(), getApplicationContext().getPackageName() + ".provider", imageFile);
+        // Uri.fromFile(imageFile);
         chooserIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
         startActivityForResult(chooserIntent, 10);
     }

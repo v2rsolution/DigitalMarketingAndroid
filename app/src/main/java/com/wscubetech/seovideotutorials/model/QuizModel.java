@@ -1,5 +1,7 @@
 package com.wscubetech.seovideotutorials.model;
 
+import android.text.Html;
+
 import java.io.Serializable;
 
 /**
@@ -55,7 +57,7 @@ public class QuizModel implements Serializable {
     }
 
     public void setQues(String ques) {
-        this.ques = ques;
+        this.ques = filteredString(ques);
     }
 
     public String getOption1() {
@@ -63,7 +65,7 @@ public class QuizModel implements Serializable {
     }
 
     public void setOption1(String option1) {
-        this.option1 = option1;
+        this.option1 = filteredString(option1);
     }
 
     public String getOption2() {
@@ -71,7 +73,7 @@ public class QuizModel implements Serializable {
     }
 
     public void setOption2(String option2) {
-        this.option2 = option2;
+        this.option2 = filteredString(option2);
     }
 
     public String getOption3() {
@@ -79,7 +81,7 @@ public class QuizModel implements Serializable {
     }
 
     public void setOption3(String option3) {
-        this.option3 = option3;
+        this.option3 = filteredString(option3);
     }
 
     public String getOption4() {
@@ -87,7 +89,7 @@ public class QuizModel implements Serializable {
     }
 
     public void setOption4(String option4) {
-        this.option4 = option4;
+        this.option4 = filteredString(option4);
     }
 
     public String getOption5() {
@@ -95,6 +97,10 @@ public class QuizModel implements Serializable {
     }
 
     public void setOption5(String option5) {
-        this.option5 = option5;
+        this.option5 = filteredString(option5);
+    }
+
+    private String filteredString(String str){
+        return Html.fromHtml(str).toString().trim();
     }
 }
